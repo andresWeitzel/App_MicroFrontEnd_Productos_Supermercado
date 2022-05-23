@@ -1,0 +1,49 @@
+<header>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <!--Icono-->
+            <div>
+                <img src="assets/images/icon.png" alt="" width="40" height="40" class="d-inline-block align-text-center m-2 "> Productos
+            </div>
+            <!--Fin Icono-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <!--Boton Close-->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="assets/images/elect02.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> Productos</h5>
+
+                    <button type="button" class="btn-close bg-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--Fin Boton Close-->
+                <div class="offcanvas-body text-white justify-content-end">
+                    <ul class="navbar-nav text-white ">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/inicio-componentes']">Inicio</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/listado-componentes']">Listado</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/graficos-componentes']">Gráficos</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/agregar-componentes']">Agregar</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/novedades-componentes']">Novedades</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link text-white" [routerLink]="['/ayuda']">Ayuda</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+</header>
