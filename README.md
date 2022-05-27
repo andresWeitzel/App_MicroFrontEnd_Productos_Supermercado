@@ -1,27 +1,13 @@
-# MicroFrontProductosSupermercado
+# App_MicroFrontEnd_Productos_SpringBoot_Docker_Kubernate_PostgreSQL
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+</br>
 
-## Development server
+## Descripción 
+* Micro Front End Acerca de Productos de Supermercado aplicando Docker, Kubernate, Spring Security, Spring Boot, Spring MVC, Microservicios, Open-Api, PostgreSQL y Otras Tecnologías
+* Repositorio Base de Datos : https://github.com/andresWeitzel/db_supermercado 
+* Repositorio Api-Rest : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<hr>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Autenticacion jwt spring angular : https://www.youtube.com/watch?v=EnSjThm-U0Y&list=PL4bT56Uw3S4z9rtwwGvuk1Mjhu5sdLSwX
