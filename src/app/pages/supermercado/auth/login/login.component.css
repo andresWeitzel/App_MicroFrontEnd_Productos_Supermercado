@@ -1,0 +1,115 @@
+div .alert {
+  opacity: 0.8;
+}
+
+table {
+  background-color: #d3d2d2;
+  opacity: 0.8;
+}
+
+#particles-js {
+  height: 100%;
+}
+
+.loginBox {
+  position: relative;
+  width: 350px;
+  min-height: 200px;
+  background: #D2EED6;
+  border-radius: 10px;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.user {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+h4 {
+  border-radius: 0.6em;
+  color: #2C5D33;
+  background-color: #D2EED6;
+  padding: 0.5em;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  padding: 0 0 20px;
+  color: #78C182;
+  text-align: center;
+}
+
+.loginBox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
+  border: none;
+  border-bottom: 2px solid #2C5D33;
+  outline: none;
+  height: 40px;
+  color: #2C5D33;
+  background: transparent;
+  font-size: 16px;
+  padding-left: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loginBox input[type="text"]:hover,
+.loginBox input[type="password"]:hover {
+  color: #1f5026;
+  border: 1px solid #28572f;
+  -webkit-box-shadow: 0 0 5px rgba(3, 54, 3, 0.3), 0 0 10px rgba(0, 255, 0, 0.2), 0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 #2C5D33;
+          box-shadow: 0 0 5px rgba(3, 54, 3, 0.3), 0 0 10px rgba(0, 255, 0, 0.2), 0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 #2C5D33;
+}
+
+.loginBox input[type="text"]:focus,
+.loginBox input[type="password"]:focus {
+  border-bottom: 2px solid #2C5D33;
+}
+
+.inputBox {
+  position: relative;
+}
+
+.inputBox span {
+  position: absolute;
+  top: 10px;
+  color: #2C5D33;
+}
+
+.loginBox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #2C5D33;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.loginBox a {
+  color: #2C5D33;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+a:hover {
+  color: #2C5D33;
+}
+
+p {
+  color: #2C5D33;
+}
+/*# sourceMappingURL=login.component.css.map */

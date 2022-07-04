@@ -12,8 +12,7 @@ import { CarouselModule } from './components/carousel/carousel.module';
 
 
 import { FormsModule }   from '@angular/forms';
-import { LoginComponent } from './components/auth/login/login.component';
-import { SigninComponent } from './components/auth/signin/signin.component';
+
 
 
 @NgModule({
@@ -22,8 +21,6 @@ import { SigninComponent } from './components/auth/signin/signin.component';
     NavbarComponent,
     FooterComponent,
     CarouselComponent,
-    LoginComponent,
-    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +28,7 @@ import { SigninComponent } from './components/auth/signin/signin.component';
     NavbarModule,
     FooterModule,
     CarouselModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

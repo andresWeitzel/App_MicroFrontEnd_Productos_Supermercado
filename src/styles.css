@@ -1,0 +1,9 @@
+body {
+  background-image: url(/assets/background/back-supermercado05.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 500px;
+}
+/*# sourceMappingURL=styles.css.map */

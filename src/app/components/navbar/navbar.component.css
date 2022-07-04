@@ -1,0 +1,18 @@
+nav {
+  background-color: #285B2F;
+  color: white;
+  opacity: 0.88;
+}
+
+nav button {
+  background-color: #285B2F;
+  color: #17421D;
+}
+
+nav button,
+.offcanvas {
+  background-color: #285B2F;
+  color: white;
+  opacity: 0.97;
+}
+/*# sourceMappingURL=navbar.component.css.map */

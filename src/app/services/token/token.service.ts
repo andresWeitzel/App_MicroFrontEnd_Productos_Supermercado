@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 //Variables que se almacenan en el cliente
 const TOKEN_KEY = 'AuthToken';
-const USUARIO_KEY = 'AuthUsuario';
+const USERNAME_KEY = 'AuthUsername';
 const AUTHORITIES_KEY = 'AuthAuthorities';
 
 
@@ -27,13 +27,13 @@ public getToken(): string{
 }
 
 
-  //================= USUARIO ===============
-  public setUsuario(usuario:string):void{
-    window.sessionStorage.removeItem(USUARIO_KEY);
-    window.sessionStorage.setItem(USUARIO_KEY,usuario);
+  //================= USERNAME ===============
+  public setUsername(username:string):void{
+    window.sessionStorage.removeItem(USERNAME_KEY);
+    window.sessionStorage.setItem(USERNAME_KEY,username);
   }
-  public getUsuario(): string{
-    return sessionStorage.getItem(USUARIO_KEY)!;
+  public getUsername(): string{
+    return sessionStorage.getItem(USERNAME_KEY)!;
   }
 
   //================= AUTHORITIES ===============
