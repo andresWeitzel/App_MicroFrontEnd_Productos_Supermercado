@@ -11,19 +11,27 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from './components/carousel/carousel.module';
 
 
+import { FormsModule }   from '@angular/forms';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavbarModule,
     FooterModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

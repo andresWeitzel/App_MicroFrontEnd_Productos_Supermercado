@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 
+
 //Variables que se almacenan en el cliente
 const TOKEN_KEY = 'AuthToken';
 const USUARIO_KEY = 'AuthUsuario';
 const AUTHORITIES_KEY = 'AuthAuthorities';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class TokenServiceService {
+export class TokenService {
 
   roles: Array<string> = [];
 
@@ -53,7 +55,6 @@ public getToken(): string{
   public logOut() : void{
     window.sessionStorage.clear();
   }
-
 
 
 }
