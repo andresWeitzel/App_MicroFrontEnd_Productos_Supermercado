@@ -10,8 +10,9 @@ import { FooterModule } from './components/footer/footer.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from './components/carousel/carousel.module';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -28,6 +29,8 @@ import { FormsModule }   from '@angular/forms';
     NavbarModule,
     FooterModule,
     CarouselModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
     FormsModule,
   ],
   providers: [],

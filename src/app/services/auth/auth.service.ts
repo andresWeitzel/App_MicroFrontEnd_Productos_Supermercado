@@ -11,7 +11,7 @@ import { JwtDto } from 'src/app/models/JwtDto';
 })
 export class AuthService {
 
-  AUTH_URL = 'http://localhost:8098/auth';
+  AUTH_URL = 'http://localhost:8098/api/v1/auth/';
 
   constructor(private httpClient : HttpClient) {  }
 

@@ -1,71 +1,57 @@
-<p>login works!</p>
 <div class="container mt-5">
-    <div class="row justify-content-center mt-5">
 
-        <h2>LOGIN</h2>
+
+    <div *ngIf="isLogged ; else loggedOut">
+        <h2>Ya se ha Inicado Sesión Previamente</h2>
 
     </div>
-</div>
 
 
 
+    <ng-template #loggedOut>
 
-<!--
-
-
-<div class="container mt-5">
+        <div class="row justify-content-center mt-5">
 
 
-  <div *ngIf="isLogged ; else loggedOut">
-      <h2>Ya se ha Inicado Sesión Previamente</h2>
+            <div class="text-center d-flex justify-content-center  mt-5 ms-1 me-1" role="alert">
+                <div class="alert ">
+                    <h4 class=""><strong> SESIÓN DE USUARIO </strong></h4>
+                </div>
+            </div>
 
-  </div>
+            <div class="loginBox mt-0 mb-5">
+                <img class="user" src="./assets/images/icon.png" height="100px" width="100px">
+                <h3>Ingresar</h3>
+                <form #form="ngForm" (ngSubmit)="onLogin()" novalidate class="mt-3">
 
+                    <div class="form-group">
 
+                        <input id="uname" type="text" placeholder="Usuario" name="username" id="username" class="form-control" [(ngModel)]="username" required>
 
-  <ng-template #loggedOut>
+                        <input type="password" name="password" id="password" placeholder="*********" class="form-control" [(ngModel)]="password" required>
 
-      <div class="row justify-content-center mt-5">
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <!--LOGIN-->
+                        <button class="btn btn-outline-success btn-block justify-content-center m-2" [disabled]="!form.valid">
+                   <a >Ingresar</a> </button>
+                        <!--FIN LOGIN-->
+                        <!--SIGNIN-->
+                        <button class="btn btn-outline-success btn-block justify-content-center m-2">
+                          <a [routerLink]="['/signin']">
+                        Registrarse
+                    </a></button>
+                        <!--FIN SIGNIN-->
+                    </div>
 
-
-          <div class="text-center d-flex justify-content-center  mt-5 ms-1 me-1" role="alert">
-              <div class="alert ">
-                  <h4 class=""><strong> SESIÓN DE USUARIOS </strong></h4>
-              </div>
-          </div>
-
-          <div class="loginBox mt-0 mb-5">
-              <img class="user" src="assets/images/icon.png" height="100px" width="100px">
-              <h3>Productos</h3>
-              <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-
-                  <div class="form-group">
-
-                      <input id="uname" type="text" placeholder="Usuario" name="username" id="username" class="form-control" [(ngModel)]="username" required>
-
-                      <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
-
-                  </div>
-                  <div class="form-group">
-                      <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
-                  </div>
-
-              </form>
+                </form>
 
 
-              <a href="#">Has Olvidado la Contraseña?<br> </a>
-              <div class="text-center">
-                  <p style="color: #2C5D33;">Registrarse</p>
-              </div>
 
-          </div>
-      </div>
+            </div>
+        </div>
 
-  </ng-template>
+    </ng-template>
 
 
 </div>
-
-
--->
