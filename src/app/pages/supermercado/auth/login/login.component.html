@@ -2,12 +2,28 @@
 
 
     <div *ngIf="isLogged ; else loggedOut">
-        <h2>Ya se ha Inicado Sesión Previamente</h2>
 
+        <!--INFORMATION ALERT-->
+        <div class="container mt-5 ms-5 me-5 " #aviso>
+            <div class="alert alert-dismissible fade show border-start border-5 mt-5 ms-5 me-5" role="alert" id="aviso">
+
+                <div class=" d-flex flex-column justify-content-center">
+
+                    <h1> <strong>Ya se ha Iniciado Sesión Previamente!</strong>.</h1>
+
+                    <div class=" d-flex justify-content-end ">
+
+                        <button type="button" class="btn btn-lg  border border-2 d-flex justify-content-end  p-2" data-bs-dismiss="alert" aria-label="Close"><strong>De Acuerdo</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--FIN INFORMATION ALERT-->
     </div>
 
 
-
+    <!--Template Login-->
     <ng-template #loggedOut>
 
         <div class="row justify-content-center mt-5">
@@ -15,11 +31,25 @@
 
             <div class="text-center d-flex justify-content-center  mt-5 ms-1 me-1" role="alert">
                 <div class="alert ">
+                    <!--Login Fail-->
+                    <div *ngIf="form.submitted && isLoginFail" class="alert alert-danger d-flex align-items-center m-2 border-1" role="alert">
+
+                        <div class="d-flex d-row">
+                            <img class="user" src="./assets/icons/danger.png" height="30px" width="30px" #loginFail>
+                            <p> Error :{{errMsj}}</p>
+
+                        </div>
+                    </div>
+                    <!--FIN Login Fail-->
+
                     <h4 class=""><strong> SESIÓN DE USUARIO </strong></h4>
+
+
                 </div>
             </div>
 
             <div class="loginBox mt-0 mb-5">
+
                 <img class="user" src="./assets/images/icon.png" height="100px" width="100px">
                 <h3>Ingresar</h3>
                 <form #form="ngForm" (ngSubmit)="onLogin()" novalidate class="mt-3">
@@ -48,10 +78,12 @@
 
 
 
+
             </div>
         </div>
 
     </ng-template>
+    <!--Fin Template Login-->
 
 
 </div>

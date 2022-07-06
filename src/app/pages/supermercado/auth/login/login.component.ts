@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         this.roles = data.authorities;
 
         this.toastr.success('Bienvenido ' + data.username, 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
+          timeOut: 3000, positionClass: 'toast-top'
         });
 
         this.router.navigate(['/inicio']);
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
         this.errMsj = err.error.message;
 
         this.toastr.error(this.errMsj, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000,  positionClass: 'toast-top',
         });
 
         console.log(this.errMsj);

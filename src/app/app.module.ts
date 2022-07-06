@@ -15,13 +15,12 @@ import { FormsModule }   from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    CarouselComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     CarouselModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

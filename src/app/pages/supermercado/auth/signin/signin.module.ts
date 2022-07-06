@@ -6,6 +6,7 @@ import { SigninComponent } from './signin.component';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     SigninComponent
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SigninRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class SigninModule { }

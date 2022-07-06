@@ -39,7 +39,7 @@ export class SigninComponent implements OnInit {
     this.authService.signin(this.nuevoUsuario).subscribe(
       data => {
         this.toastr.success('Cuenta Creada', 'OK', {
-          timeOut: 3000, positionClass: 'toast-top-center'
+          timeOut: 3000, positionClass: 'toast-top'
         });
 
         this.router.navigate(['/login']);
@@ -47,7 +47,7 @@ export class SigninComponent implements OnInit {
       err => {
         this.errMsj = err.error.mensaje;
         this.toastr.error(this.errMsj, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000,  positionClass: 'toast-top',
         });
         // console.log(err.error.message);
       }
