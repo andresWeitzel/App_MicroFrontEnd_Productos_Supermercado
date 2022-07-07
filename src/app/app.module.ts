@@ -12,7 +12,7 @@ import { CarouselModule } from './components/carousel/carousel.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 @NgModule({
@@ -28,9 +28,9 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarModule,
     FooterModule,
     CarouselModule,
-    ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

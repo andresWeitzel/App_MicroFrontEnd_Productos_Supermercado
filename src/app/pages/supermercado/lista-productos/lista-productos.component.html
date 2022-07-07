@@ -1,0 +1,321 @@
+<!-- LISTADO DE PRODUCTOS -->
+<div class="container text-center mt-5  p-1">
+
+    <!-- TITULO LISTADO DE PRODUCTOS -->
+    <div class="d-flex flex-row justify-content-center bd-highlight mt-4 mb-5 p-3 ">
+        <h1>
+            <span class="badge  text-decoration-underline mt-2">Listado de Productos</span>
+        </h1>
+    </div>
+    <!-- FIN TITULO LISTADO DE PRODUCTOS -->
+
+
+
+
+    <!--FILTRO Y UTILIDADES-->
+    <div class="d-flex flex-row justify-content-center mt-5 ms-2">
+        <!-- FILTER COMPONENTE -->
+        <div class="text-left me-5 ms-0">
+            <div class="d-flex flex-row justify-content-center mt-3">
+                <!-- VALOR BUSQUEDA -->
+                <div class="text-left ms-0">
+                    <h2>
+                        <span class="badge bg-none ms-0"><img src="./assets/icons/products-storage.png" alt="" width="45"
+                          height="45" class=""></span>
+                    </h2>
+                </div>
+                <!-- FIN  VALOR BUSQUEDA -->
+                <!-- FORM FILTRO -->
+                <div class="text-left ms-0 me-5 col-12">
+                    <form class="d-flex flex-row text-left col-12">
+                        <input type="text" name="filtro" class="form-control bg-white" placeholder="Ingresar valor Búsqueda" aria-label="valor" id="filtro">
+
+                        <!--BTN BUSQUEDA-->
+                        <button type="submit" class="btn bg-none p-1 ">
+              <img src="./assets/icons/search02.png" alt="" width="45"
+                height="45" class="">
+            </button>
+                        <!--FIN BTN BUSQUEDA-->
+
+
+                        <!--BTN LIMPIAR-->
+                        <button class="btn bg-none p-1 me-5" onclick="limpiarFiltro()">
+              <img src="./assets/icons/recycle.png" alt="" width="45"
+                height="45" class="">
+            </button>
+                        <!--FIN BTN LIMPIAR-->
+
+                    </form>
+                </div>
+                <!-- FIN FORM FILTRO -->
+            </div>
+        </div>
+        <!-- FIN FILTER COMPONENTE-->
+
+
+        <!--BTN PDF-->
+        <div class="p-1 ms-4">
+            <a target="_blanck">
+                <button type="button" class="btn bg-none p-1 m-2">
+          <img src="assets/icons/pdf.png" alt="" width="45"
+            height="45">
+        </button>
+            </a>
+        </div>
+        <!--BTN PDF-->
+
+        <!--BTN EXCEL-->
+        <div class="p-1 ">
+            <a target="_blanck">
+                <button type="button" class="btn bg-none p-1 m-2">
+        <img src="assets/icons/excel.png" alt="" width="45"
+          height="45">
+      </button>
+            </a>
+        </div>
+        <!--BTN EXCEL-->
+
+
+
+    </div>
+    <!--FIN FILTRO Y UTILIDADES-->
+
+
+
+
+
+    <!-- TABLA PRODUCTOS -->
+    <table class="table table-bordered  table-hover text-center " id="table">
+
+        <thead>
+            <tr>
+                <th class="">ID
+                    <!-- BTN ORDER BY ID ASC DESC -->
+                    <div class="d-flex justify-content-center ">
+                        <a>
+                            <button type="button" class="btn-sm  m-2">
+                <img src="assets/icons/sort.png" alt=""
+                  width="15" height="15">
+              </button>
+                        </a>
+                    </div>
+                    <!-- FIN BTN ORDER BY ID ASC DESC -->
+
+                </th>
+                <th class="text-center">CÓDIGO
+                        <!-- BTN ORDER BY CODIGO ASC DESC -->
+                        <div class="d-flex justify-content-center ">
+                          <a>
+                              <button type="button" class="btn-sm  m-2">
+                  <img src="assets/icons/sort.png" alt=""
+                    width="15" height="15">
+                </button>
+                          </a>
+                      </div>
+                      <!-- FIN BTN ORDER BY CODIGO ASC DESC -->
+                </th>
+                <th class="text-center">IMAGEN
+                    <!-- BTN ORDER BY IMAGEN ASC DESC -->
+                    <div class="d-flex justify-content-center ">
+                      <a>
+                          <button type="button" class="btn-sm  m-2">
+              <img src="assets/icons/sort.png" alt=""
+                width="15" height="15">
+            </button>
+                      </a>
+                  </div>
+                  <!-- FIN BTN ORDER BY IMAGEN ASC DESC -->
+                </th>
+                <th class="text-center">NOMBRE
+                  <!-- BTN ORDER BY NOMBRE ASC DESC -->
+                  <div class="d-flex justify-content-center ">
+                    <a>
+                        <button type="button" class="btn-sm  m-2">
+            <img src="assets/icons/sort.png" alt=""
+              width="15" height="15">
+          </button>
+                    </a>
+                </div>
+                <!-- FIN BTN ORDER BY NMOBRE ASC DESC -->
+              </th>
+              <th class="text-center">MARCA
+                <!-- BTN ORDER BY MARCA ASC DESC -->
+                <div class="d-flex justify-content-center ">
+                  <a>
+                      <button type="button" class="btn-sm  m-2">
+          <img src="assets/icons/sort.png" alt=""
+            width="15" height="15">
+        </button>
+                  </a>
+              </div>
+              <!-- FIN BTN ORDER BY MARCA ASC DESC -->
+            </th>
+            <th class="text-center">TIPO
+              <!-- BTN ORDER BY TIPO ASC DESC -->
+              <div class="d-flex justify-content-center ">
+                <a>
+                    <button type="button" class="btn-sm  m-2">
+        <img src="assets/icons/sort.png" alt=""
+          width="15" height="15">
+      </button>
+                </a>
+            </div>
+            <!-- FIN BTN ORDER BY TIPO ASC DESC -->
+          </th>
+          <th class="text-center">GRUPO
+            <!-- BTN ORDER BY GRUPOE ASC DESC -->
+            <div class="d-flex justify-content-center ">
+              <a>
+                  <button type="button" class="btn-sm  m-2">
+      <img src="assets/icons/sort.png" alt=""
+        width="15" height="15">
+    </button>
+              </a>
+          </div>
+          <!-- FIN BTN ORDER BY GRUPO ASC DESC -->
+        </th>
+        <th class="text-center">PESO
+          <!-- BTN ORDER BY PESO ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+                <button type="button" class="btn-sm  m-2">
+    <img src="assets/icons/sort.png" alt=""
+      width="15" height="15">
+  </button>
+            </a>
+        </div>
+        <!-- FIN BTN ORDER BY PESO ASC DESC -->
+      </th>
+      <th class="text-center">PRECIO UNIDAD
+        <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+        <div class="d-flex justify-content-center ">
+          <a>
+              <button type="button" class="btn-sm  m-2">
+  <img src="assets/icons/sort.png" alt=""
+    width="15" height="15">
+</button>
+          </a>
+      </div>
+      <!-- FIN BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+    </th>
+                <th>
+                    <div class="d-flex justify-content-center mb-3">ACCION</div>
+                </th>
+
+
+            </tr>
+        </thead>
+
+
+        <!-- REGISTROS SIN FILTRO -->
+        <tbody >
+            <tr >
+                <td ></td>
+                <td ></td>
+                <td><a target="_blank">Link</a></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+
+                <td>
+                    <div class="d-flex justify-content-center p-1">
+                        <a >
+                            <button type="button" class="btn bg-none ">
+                <img src="assets/icons/edit.png" alt="" width="45"
+                  height="45">
+              </button>
+                        </a>
+                        <a >
+                            <button type="button" class="btn bg-none ">
+                              <img src="assets/icons/delete.png" alt="" width="45"
+                              height="45">
+              </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <!-- FIN REGISTROS SIN FILTRO -->
+
+    </table>
+    <!-- FIN TABLA PRODUCTOS -->
+
+
+    <!-- PAGINACION -->
+    <div class="d-flex justify-content-center p-1" id="pagination">
+
+        <!-- PRIMERA PÁGINA -->
+        <a >
+            <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1"> <img src="assets/icons/lastPagePrevious.png" alt="" width="25" height="25"></button>
+        </a>
+        <!-- FIN PRIMERA PÁGINA -->
+
+        <!-- BTN LAST PAGINA -->
+        <a >
+          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1"> <img src="assets/icons/pagePrevious.png" alt="" width="25" height="25"></button>
+      </a>
+        <!-- BTN LAST PAGINA -->
+
+        <!--NUMEROS -->
+        <!-- NUMERO 1 -->
+        <a >
+            <button class="btn border-none p-1" type="button">
+              <h2 class="text-white ">1</h2>
+            </button>
+        </a>
+        <!-- FIN  NUMERO 1 -->
+
+        <!-- NUMERO 2 -->
+        <a >
+          <button class="btn border-none p-1" type="button">
+            <h2 class="text-white ">2</h2>
+          </button>
+      </a>
+        <!-- FIN  NUMERO 2 -->
+
+        <!-- NUMERO 3 -->
+        <a >
+          <button class="btn border-none p-1" type="button">
+            <h2 class="text-white ">3</h2>
+          </button>
+      </a>
+        <!-- FIN NUMERO 3 -->
+
+        <!-- FIN NUMEROS -->
+
+        <!-- BTN NEXT PAGINA -->
+        <a >
+          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1"> <img src="assets/icons/pageNext.png" alt="" width="25" height="25"></button>
+      </a>
+        <!-- FIN BTN NEXT PAGINA -->
+
+
+        <!-- ÚLTIMA PÁGINA -->
+        <a >
+          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1"> <img src="assets/icons/lastPageNext.png" alt="" width="25" height="25"></button>
+      </a>
+        <!-- FIN ÚLTIMA PÁGINA -->
+
+        <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
+        <div class="bg-none text-white d-inline-block align-text-center ms-5 mt-3">
+            <h5 class="ms-5">
+                | Página: <span class="bg-none " ></span> de <span class="bg-none "></span> |
+            </h5>
+        </div>
+
+        <!-- ELEMENTOS SIN FILTRO -->
+        <div class="bg-none text-white d-inline-block align-text-center ms-3 mt-3">
+
+            <h5 class="" >
+                | Elementos: <span class="bg-none " ></span> de <span class="bg-none " ></span> |
+            </h5>
+        </div>
+        <!-- FIN ELEMENTOS SIN FILTRO -->
+        <!-- FIN INFO NRO DE PAGINA Y ELEMENTOS -->
+    </div>
+    <!-- FIN PAGINACION -->
+</div>
+<!-- FIN LISTADO DE PRODUCTOS -->

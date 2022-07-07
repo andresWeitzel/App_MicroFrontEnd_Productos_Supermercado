@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { NgToastService } from 'ng-angular-popup';
 import { LoginUsuarioDto } from 'src/app/models/LoginUsuarioDto';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenService } from 'src/app/services/token/token.service';
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private tokenService: TokenService,
     private authService : AuthService,
     private router: Router,
-    private toastr: ToastrService
+    private toast: NgToastService
   ) {
 
   }
@@ -56,11 +56,15 @@ export class LoginComponent implements OnInit {
 
         this.roles = data.authorities;
 
-        this.toastr.success('Bienvenido ' + data.username, 'OK', {
-          timeOut: 3000, positionClass: 'toast-top'
-        });
-
         this.router.navigate(['/inicio']);
+
+
+        this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:4000});
+
+
+        window.setTimeout(function(){location.reload()},3000)
+
+
         console.log('logueado');
       },
       err => {
@@ -70,9 +74,7 @@ export class LoginComponent implements OnInit {
 
         this.errMsj = err.error.message;
 
-        this.toastr.error(this.errMsj, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top',
-        });
+        this.toast.error({detail:"ERROR",summary:'Credenciales Inválidas!' , duration:2000});
 
         console.log(this.errMsj);
       }
