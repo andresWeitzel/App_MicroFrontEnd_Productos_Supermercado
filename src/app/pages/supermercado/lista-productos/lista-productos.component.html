@@ -209,16 +209,18 @@
 
         <!-- REGISTROS SIN FILTRO -->
         <tbody >
-            <tr >
-                <td ></td>
-                <td ></td>
-                <td><a target="_blank">Link</a></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
+            <tr *ngFor="let producto of productos">
+                <td >{{producto.id}}</td>
+                <td >{{producto.codigo}}</td>
+                <td>{{producto.imagen}}<a target="_blank">Link</a></td>
+                <td >{{producto.nombre}}</td>
+                <td >{{producto.marca}}</td>
+                <td >{{producto.tipo}}</td>
+                <td >{{producto.grupo}}</td>
+                <td >{{producto.peso}}</td>
+                <td >{{producto.precioUnidad}}</td>
+                <td >{{producto.stock}}</td>
+
 
                 <td>
                     <div class="d-flex justify-content-center p-1">

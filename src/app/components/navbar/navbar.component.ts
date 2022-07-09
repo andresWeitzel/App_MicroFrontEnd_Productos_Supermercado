@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgToastService } from 'ng-angular-popup';
 import { TokenService } from 'src/app/services/token/token.service';
+import { NgxUiLoaderService } from "ngx-ui-loader";
+
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +16,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private ngxService: NgxUiLoaderService
 
     ) { }
 
@@ -28,13 +31,28 @@ ngOnInit(){
 
   onLogOut(){
 
+  //SPIN LOADING
+    this.ngxService.start();
+    setTimeout(() => {
+      this.ngxService.stop();
+    }, 300);
+    //FIN SPIN LOADING
 
-    this.tokenService.logOut();
+    //LOGOUT AND TOASTS
+    setTimeout(() => {
 
-    this.toast.info({detail:"Info",summary:'Sesión Cerrada Correctamente', duration:3000});
+      this.tokenService.logOut();
+
+      this.toast.info({detail:"Info",summary:'Sesión Cerrada Correctamente', duration:2000});
+
+      window.setTimeout(function(){location.reload()},2000)
 
 
-    window.setTimeout(function(){location.reload()},3000)
+    }, 600);
+    //FIN LOGOUT AND TOASTS
+
+
+
 
 
 

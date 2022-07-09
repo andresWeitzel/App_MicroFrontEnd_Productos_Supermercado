@@ -6,4 +6,12 @@ body {
   background-attachment: fixed;
   min-height: 500px;
 }
-/*# sourceMappingURL=styles.css.map */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}/*# sourceMappingURL=styles.css.map */

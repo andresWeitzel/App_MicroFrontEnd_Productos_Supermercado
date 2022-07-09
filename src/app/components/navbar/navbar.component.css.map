@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,GAAG,CAAC;EACA,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;CAChB;;AAED,AAAA,GAAG,CAAC,MAAM,CAAC;EACP,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;CAEjB;;AAED,AAAA,GAAG,CAAC,MAAM;AACV,UAAU,CAAC;EACP,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;CAChB",
-    "sources": [
-        "navbar.component.scss"
-    ],
-    "names": [],
-    "file": "navbar.component.css"
-}
+{"version":3,"sources":["navbar.component.scss","navbar.component.css"],"names":[],"mappings":"AACA;EACI,yBAAA;EACA,YAAA;EACA,aAAA;ACAJ;;ADGA;EACI,yBAAA;EACA,cAAA;ACAJ;;ADIA;;EAEI,yBAAA;EACA,YAAA;EACA,aAAA;ACDJ","file":"navbar.component.css"}

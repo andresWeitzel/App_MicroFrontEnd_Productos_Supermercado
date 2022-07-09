@@ -27,10 +27,6 @@ table {
   color: white;
 }
 
-#loginFail {
-  opacity: 1;
-}
-
 #particles-js {
   height: 100%;
 }
@@ -128,4 +124,8 @@ h3 {
 
 a:hover {
   color: #2C5D33;
-}/*# sourceMappingURL=login.component.css.map */
+}
+
+p {
+  color: #2C5D33;
+}/*# sourceMappingURL=signin.component.css.map */

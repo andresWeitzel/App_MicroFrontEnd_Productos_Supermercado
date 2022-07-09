@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { LoginUsuarioDto } from 'src/app/models/LoginUsuarioDto';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenService } from 'src/app/services/token/token.service';
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     private tokenService: TokenService,
     private authService : AuthService,
     private router: Router,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private ngxService: NgxUiLoaderService
   ) {
 
   }
@@ -43,6 +45,17 @@ export class LoginComponent implements OnInit {
 
 
   onLogin(): void {
+
+        //SPIN LOADING
+        this.ngxService.start();
+        setTimeout(() => {
+          this.ngxService.stop();
+        }, 300);
+        //FIN SPIN LOADING
+
+
+        //LOGIN AND TOASTS
+  setTimeout(() => {
     this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
     this.authService.login(this.loginUsuarioDto).subscribe(
       data => {
@@ -58,15 +71,13 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(['/inicio']);
 
+        this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:2000});
 
-        this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:4000});
-
-
-        window.setTimeout(function(){location.reload()},3000)
-
+        window.setTimeout(function(){location.reload()},2000)
 
         console.log('logueado');
       },
+
       err => {
 
         this.isLogged = false;
@@ -74,11 +85,26 @@ export class LoginComponent implements OnInit {
 
         this.errMsj = err.error.message;
 
+          //SPIN LOADING
+          this.ngxService.start();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 100);
+          //FIN SPIN LOADING
+
+          //TOAST ERROR
+      setTimeout(() => {
         this.toast.error({detail:"ERROR",summary:'Credenciales Inválidas!' , duration:2000});
+      }, 200);
+      //FIN TOAST ERROR
 
         console.log(this.errMsj);
-      }
+      },
     );
+  }, 600);
+  //FIN LOGIN AND TOASTS
   }
 
 }
+
+

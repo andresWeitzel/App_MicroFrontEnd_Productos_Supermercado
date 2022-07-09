@@ -13,6 +13,23 @@ import { CarouselModule } from './components/carousel/carousel.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
+import { interceptorProvider } from './services/interceptors/productos/interceptors-productos.service';
+
+
+
+//--CONFIG SPINNER--
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+
+  fgsType: SPINNER.cubeGrid, // foreground spinner type
+  fgsSize: 100,
+  fgsColor: 'green',
+  bgsColor:'green',
+  pbColor:'green'
+
+};
+//--FIN CONFIG SPINNER--
 
 
 @NgModule({
@@ -20,7 +37,7 @@ import { NgToastModule } from 'ng-angular-popup';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +47,12 @@ import { NgToastModule } from 'ng-angular-popup';
     CarouselModule,
     HttpClientModule,
     FormsModule,
-    NgToastModule
+    NgToastModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true })
+
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

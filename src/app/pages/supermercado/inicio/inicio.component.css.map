@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "inicio.component.scss"
-    ],
-    "names": [],
-    "file": "inicio.component.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"inicio.component.css"}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { SigninUsuarioDto } from 'src/app/models/SigninUsuarioDto';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { TokenService } from 'src/app/services/token/token.service';
@@ -24,7 +25,8 @@ export class SigninComponent implements OnInit {
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit(): void {
@@ -38,9 +40,18 @@ export class SigninComponent implements OnInit {
     this.nuevoUsuario = new SigninUsuarioDto(this.nombre, this.username, this.password, this.email);
     this.authService.signin(this.nuevoUsuario).subscribe(
       data => {
+
+         //SPIN LOADING
+         this.ngxService.start();
+         setTimeout(() => {
+           this.ngxService.stop();
+         }, 300);
+         //FIN SPIN LOADING
+
         this.toastr.success('Cuenta Creada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top'
         });
+
 
         this.router.navigate(['/login']);
       },
