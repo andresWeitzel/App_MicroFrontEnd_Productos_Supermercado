@@ -45,12 +45,14 @@ export class ListaProductosComponent implements OnInit {
   }
 
 
-listarProductos():void{
+listarProductos(){
   this.productoService.listado(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
     (data:any)=>{
-      this.productos = data;
+      this.productos = data.content;
       this.primeraPagina = data.first;
       this.ultimaPagina = data.last;
+
+      console.log(this.productos);
     },
     err => {
       console.log(err);

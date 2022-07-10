@@ -222,9 +222,9 @@
         <!-- REGISTROS SIN FILTRO -->
         <tbody >
             <tr *ngFor="let producto of productos">
-                <td >{{producto.id}}</td>
+              <th scope="row">{{producto.id}}</th>
                 <td >{{producto.codigo}}</td>
-                <td>{{producto.imagen}}<a target="_blank">Link</a></td>
+                <td><a target="_blank"><img src="{{producto.imagen}}" alt="" width="100px" height="100px"></a></td>
                 <td >{{producto.nombre}}</td>
                 <td >{{producto.marca}}</td>
                 <td >{{producto.tipo}}</td>
