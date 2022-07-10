@@ -93,7 +93,7 @@
                     <!-- BTN ORDER BY ID ASC DESC -->
                     <div class="d-flex justify-content-center ">
                         <a>
-                            <button type="button" class="btn-sm  m-2">
+                            <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('id')">
                 <img src="assets/icons/sort.png" alt=""
                   width="15" height="15">
               </button>
@@ -106,7 +106,7 @@
                         <!-- BTN ORDER BY CODIGO ASC DESC -->
                         <div class="d-flex justify-content-center ">
                           <a>
-                              <button type="button" class="btn-sm  m-2">
+                              <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('codigo')">
                   <img src="assets/icons/sort.png" alt=""
                     width="15" height="15">
                 </button>
@@ -118,7 +118,7 @@
                     <!-- BTN ORDER BY IMAGEN ASC DESC -->
                     <div class="d-flex justify-content-center ">
                       <a>
-                          <button type="button" class="btn-sm  m-2">
+                          <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('imagen')">
               <img src="assets/icons/sort.png" alt=""
                 width="15" height="15">
             </button>
@@ -130,7 +130,7 @@
                   <!-- BTN ORDER BY NOMBRE ASC DESC -->
                   <div class="d-flex justify-content-center ">
                     <a>
-                        <button type="button" class="btn-sm  m-2">
+                        <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('nombre')">
             <img src="assets/icons/sort.png" alt=""
               width="15" height="15">
           </button>
@@ -142,7 +142,7 @@
                 <!-- BTN ORDER BY MARCA ASC DESC -->
                 <div class="d-flex justify-content-center ">
                   <a>
-                      <button type="button" class="btn-sm  m-2">
+                      <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('marca')">
           <img src="assets/icons/sort.png" alt=""
             width="15" height="15">
         </button>
@@ -154,7 +154,7 @@
               <!-- BTN ORDER BY TIPO ASC DESC -->
               <div class="d-flex justify-content-center ">
                 <a>
-                    <button type="button" class="btn-sm  m-2">
+                    <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('tipo')">
         <img src="assets/icons/sort.png" alt=""
           width="15" height="15">
       </button>
@@ -166,7 +166,7 @@
             <!-- BTN ORDER BY GRUPOE ASC DESC -->
             <div class="d-flex justify-content-center ">
               <a>
-                  <button type="button" class="btn-sm  m-2">
+                  <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('grupo')">
       <img src="assets/icons/sort.png" alt=""
         width="15" height="15">
     </button>
@@ -178,7 +178,7 @@
           <!-- BTN ORDER BY PESO ASC DESC -->
           <div class="d-flex justify-content-center ">
             <a>
-                <button type="button" class="btn-sm  m-2">
+                <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('peso')">
     <img src="assets/icons/sort.png" alt=""
       width="15" height="15">
   </button>
@@ -190,7 +190,7 @@
         <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
         <div class="d-flex justify-content-center ">
           <a>
-              <button type="button" class="btn-sm  m-2">
+              <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('precioUnidad')">
   <img src="assets/icons/sort.png" alt=""
     width="15" height="15">
 </button>
@@ -202,7 +202,7 @@
       <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
       <div class="d-flex justify-content-center ">
         <a>
-            <button type="button" class="btn-sm  m-2">
+            <button type="button" class="btn-sm  m-2" (click)="ordenacionTipo('stock')">
 <img src="assets/icons/sort.png" alt=""
   width="15" height="15">
 </button>
@@ -224,26 +224,26 @@
             <tr *ngFor="let producto of productos">
               <th scope="row">{{producto.id}}</th>
                 <td >{{producto.codigo}}</td>
-                <td><a target="_blank"><img src="{{producto.imagen}}" alt="" width="100px" height="100px"></a></td>
+                <td class="bg-white"><a target="_blank"><img src="{{producto.imagen}}" alt="" width="100px" height="100px"></a></td>
                 <td >{{producto.nombre}}</td>
                 <td >{{producto.marca}}</td>
                 <td >{{producto.tipo}}</td>
                 <td >{{producto.grupo}}</td>
-                <td >{{producto.peso}}</td>
-                <td >{{producto.precioUnidad}}</td>
-                <td >{{producto.stock}}</td>
+                <td >{{producto.peso}} Kg</td>
+                <td >${{producto.precioUnidad}}</td>
+                <td >{{producto.stock}}u</td>
 
 
                 <td>
                     <div class="d-flex justify-content-center p-1">
                         <a >
-                            <button type="button" class="btn bg-none ">
+                            <button type="button" class="btn bg-none " (click)="editarProducto(producto)">
                 <img src="assets/icons/edit.png" alt="" width="45"
                   height="45">
               </button>
                         </a>
                         <a >
-                            <button type="button" class="btn bg-none ">
+                            <button type="button" class="btn bg-none "(click)="eliminarProducto(producto)">
                               <img src="assets/icons/delete.png" alt="" width="45"
                               height="45">
               </button>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ProductoDto } from 'src/app/models/ProductoDto';
 import { ProductoService } from 'src/app/services/producto/producto.service';
 import { TokenService } from 'src/app/services/token/token.service';
@@ -10,6 +12,13 @@ import { TokenService } from 'src/app/services/token/token.service';
   styleUrls: ['./lista-productos.component.scss']
 })
 export class ListaProductosComponent implements OnInit {
+
+  navigationExtras : NavigationExtras = {
+
+    state : {
+      value :null
+    }
+};
 
   productos: ProductoDto[] = [];
   roles: string[]=[];
@@ -27,7 +36,9 @@ export class ListaProductosComponent implements OnInit {
   constructor(
     private router: Router,
     private productoService:ProductoService,
-    private tokenService:TokenService
+    private tokenService:TokenService,
+    private toast: NgToastService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit(){
@@ -44,6 +55,8 @@ export class ListaProductosComponent implements OnInit {
 
   }
 
+  //=========== METODOS CRUD ==============
+
 
 listarProductos(){
   this.productoService.listado(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
@@ -59,6 +72,63 @@ listarProductos(){
     }
   );
 }
+
+  // Editar Productos
+  editarProducto(producto : any): void{
+            //SPIN LOADING
+            this.ngxService.start();
+            setTimeout(() => {
+              this.ngxService.stop();
+            }, 100);
+            //FIN SPIN LOADING
+
+
+    this.navigationExtras.state['value'] = producto;
+    this.router.navigate(['editar-productos'] , this.navigationExtras);
+  }
+
+  // Eliminar Productos
+  eliminarProducto(producto : any): void{
+
+    this.listarProductos();
+       this.toast.success({detail:"Operación Exitosa",summary:'Se ha Eliminado el Producto!!', duration:2000});
+  }
+
+
+
+//=========== METODOS PAGINACION ==============
+
+//Ordenar los registros por tipo
+ordenacionTipo(tipo:string):void{
+  this.ordenacion = tipo;
+  this.listarProductos();
+}
+
+
+//Pagina Anterior
+paginaAnterior():void{
+  if(!this.primeraPagina){
+this.nroPagina--;
+this.listarProductos();
+  }
+}
+
+  //Pagina Anterior
+  paginaSiguiente():void{
+    if(!this.ultimaPagina){
+      this.nroPagina++;
+      this.listarProductos();
+    }
+  }
+
+  cambiarPagina(pagina:number):void{
+    this.nroPagina=pagina;
+    this.listarProductos();
+  }
+
+
+
+
 
 
 }
