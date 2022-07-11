@@ -19,8 +19,13 @@ export class ProductoService {
   ) { }
 
 
-  public listado(nroPagina:number , nroElementos:number , ordenacion:string, ascendente:boolean):Observable<ProductoDto[]>{
-    return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado?page=${nroPagina}&size=${nroElementos}&sort=${ordenacion}&asc=${ascendente}`);
+  public listado(nroPagina:number , nroElementos:number , orderType:string, orderBy:string):Observable<ProductoDto[]>{
+    return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
+  }
+
+
+  public listadoFilter(nroPagina:number , nroElementos:number , orderType:string, orderBy:string):Observable<ProductoDto[]>{
+    return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado-filter?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
 

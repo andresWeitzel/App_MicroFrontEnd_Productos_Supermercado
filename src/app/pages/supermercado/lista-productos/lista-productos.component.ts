@@ -27,11 +27,13 @@ export class ListaProductosComponent implements OnInit {
    //Paginado
    nroPagina=0;
    nroElementos=10;
-   ordenacion='id';
-   ascendente=true;
+   orderBy='id';
+   direction='asc';
 
-   primeraPagina=false;
-   ultimaPagina=false;
+   firstPage=false;
+   lastPage=false;
+
+   //filtro:string=null;
 
   constructor(
     private router: Router,
@@ -59,11 +61,27 @@ export class ListaProductosComponent implements OnInit {
 
 
 listarProductos(){
-  this.productoService.listado(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
+  this.productoService.listado(this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
     (data:any)=>{
       this.productos = data.content;
-      this.primeraPagina = data.first;
-      this.ultimaPagina = data.last;
+      this.firstPage = data.first;
+      this.lastPage = data.last;
+
+      console.log(this.productos);
+    },
+    err => {
+      console.log(err);
+    }
+  );
+}
+
+
+listarProductosFilter(){
+  this.productoService.listadoFilter(this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
+    (data:any)=>{
+      this.productos = data.content;
+      this.firstPage = data.first;
+      this.lastPage = data.last;
 
       console.log(this.productos);
     },
@@ -98,16 +116,17 @@ listarProductos(){
 
 //=========== METODOS PAGINACION ==============
 
-//Ordenar los registros por tipo
-ordenacionTipo(tipo:string):void{
-  this.ordenacion = tipo;
+//Ordenar los registros por type
+orderByDirection(type:string,direct:string):void{
+  this.orderBy = type;
+  this.direction = direct;
   this.listarProductos();
 }
 
 
 //Pagina Anterior
 paginaAnterior():void{
-  if(!this.primeraPagina){
+  if(!this.firstPage){
 this.nroPagina--;
 this.listarProductos();
   }
@@ -115,7 +134,7 @@ this.listarProductos();
 
   //Pagina Anterior
   paginaSiguiente():void{
-    if(!this.ultimaPagina){
+    if(!this.lastPage){
       this.nroPagina++;
       this.listarProductos();
     }
@@ -125,7 +144,6 @@ this.listarProductos();
     this.nroPagina=pagina;
     this.listarProductos();
   }
-
 
 
 
