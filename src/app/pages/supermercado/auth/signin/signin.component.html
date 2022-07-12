@@ -38,7 +38,7 @@
                 <h3>Nuevo Usuario</h3>
 
 
-                <form #f="ngForm" (ngSubmit)="onRegister()" novalidate class="mt-3">
+                <form class="mt-3" #form="ngForm" (ngSubmit)="onRegister()" novalidate>
 
                     <div class="form-group ">
 
@@ -58,7 +58,7 @@
                     <div class="form-group d-flex justify-content-center">
 
                         <!--SIGNIN-->
-                        <button class="btn btn-outline-success btn-block justify-content-center m-2" [disabled]="!f.valid">
+                        <button class="btn btn-outline-success btn-block justify-content-center m-2" [disabled]="!form.valid">
                         <a [routerLink]="['/signin']">
                       Registrarse
                   </a></button>

@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
 
           //TOAST ERROR
       setTimeout(() => {
-        this.toast.error({detail:"ERROR",summary:'Credenciales Inválidas!' , duration:2000});
+        this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
       }, 200);
       //FIN TOAST ERROR
 
