@@ -40,8 +40,20 @@ export class LoginComponent implements OnInit {
       this.isLoginFail = false;
       this.roles = this.tokenService.getAuthorities();
     }
+
   }
 
+
+  redirectPage() : void{
+         //SPIN LOADING
+         this.ngxService.start();
+         setTimeout(() => {
+           this.ngxService.stop();
+         }, 300);
+         //FIN SPIN LOADING
+
+  this.router.navigate(['/inicio']);
+  }
 
 
   onLogin(): void {
@@ -60,22 +72,33 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuarioDto).subscribe(
       data => {
 
-        this.isLogged = true;
-        this.isLoginFail=false;
-
-        this.tokenService.setToken(data.token);
-        this.tokenService.setUsername(data.username);
-        this.tokenService.setAuthorities(data.authorities);
-
-        this.roles = data.authorities;
-
         this.router.navigate(['/inicio']);
 
-        this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:2000});
 
-        window.setTimeout(function(){location.reload()},2000)
+        setTimeout(() => {
 
-        console.log('logueado');
+          this.isLogged = true;
+          this.isLoginFail=false;
+
+          this.tokenService.setToken(data.token);
+          this.tokenService.setUsername(data.username);
+          this.tokenService.setAuthorities(data.authorities);
+
+          this.roles = data.authorities;
+
+
+
+          this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:1400});
+
+
+          window.setTimeout(function(){location.reload()},1500)
+
+          console.log('logueado');
+
+
+         }, 600);
+
+
       },
 
       err => {
@@ -95,7 +118,7 @@ export class LoginComponent implements OnInit {
           //TOAST ERROR
       setTimeout(() => {
         this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
-      }, 200);
+      }, 600);
       //FIN TOAST ERROR
 
         console.log(this.errMsj);

@@ -47,12 +47,13 @@ export class SigninComponent implements OnInit {
 
 
             //SIGNIN AND TOASTS
-      setTimeout(() => {
-
-    this.nuevoUsuario = new SigninUsuarioDto(this.nombre, this.username, this.password, this.email);
+  setTimeout(() => {
+    this.nuevoUsuario = new SigninUsuarioDto(this.nombre
+      , this.username, this.password, this.email);
     this.authService.signin(this.nuevoUsuario).subscribe(
       data => {
 
+        
 
          //SPIN LOADING
          this.ngxService.start();
@@ -61,7 +62,9 @@ export class SigninComponent implements OnInit {
          }, 300);
          //FIN SPIN LOADING
 
-         this.toast.success({detail:"Operación Exitosa ",summary:'Se ha registrado un nuevo Usuario!', duration:2000});
+         this.toast.success({detail:"Operación Exitosa "
+         ,summary:'Se ha registrado un nuevo Usuario!'
+         , duration:2000});
 
         this.router.navigate(['/login']);
 

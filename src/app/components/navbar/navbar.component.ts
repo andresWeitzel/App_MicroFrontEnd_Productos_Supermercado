@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgToastService } from 'ng-angular-popup';
 import { TokenService } from 'src/app/services/token/token.service';
 import { NgxUiLoaderService } from "ngx-ui-loader";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private toast: NgToastService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private router: Router,
 
     ) { }
 
@@ -43,9 +45,19 @@ ngOnInit(){
 
       this.tokenService.logOut();
 
-      this.toast.info({detail:"Info",summary:'Sesión Cerrada Correctamente', duration:2000});
+      this.router.navigate(['/login']);
 
-      window.setTimeout(function(){location.reload()},2000)
+
+      setTimeout(() => {
+
+        this.toast.info({detail:"Info",summary:'Sesión Cerrada Correctamente', duration:1400});
+
+        window.setTimeout(function(){location.reload()},1500);
+
+
+       }, 600);
+
+
 
 
     }, 600);

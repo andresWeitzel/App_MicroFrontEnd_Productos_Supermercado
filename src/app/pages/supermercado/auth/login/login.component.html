@@ -3,7 +3,7 @@
 
     <div *ngIf="isLogged ; else loggedOut">
 
-        <!--INFORMATION ALERT-->
+
         <div class="container mt-5 ms-5 me-5 " #aviso>
             <div class="alert alert-dismissible fade show border-start border-5 mt-5 ms-5 me-5" role="alert" id="aviso">
 
@@ -12,19 +12,18 @@
                     <h1> <strong>Ya se ha Iniciado Sesión Previamente!</strong>.</h1>
 
                     <div class=" d-flex justify-content-end ">
-
                         <button type="button" class="btn btn-lg  border border-2 d-flex justify-content-end  p-2" data-bs-dismiss="alert" aria-label="Close"><strong>De Acuerdo</strong></button>
                     </div>
                 </div>
 
             </div>
         </div>
-        <!--FIN INFORMATION ALERT-->
+
     </div>
 
 
     <!--Template Login-->
-    <ng-template #loggedOut>
+    <ng-template  #loggedOut>
 
         <div class="row justify-content-center mt-5">
 

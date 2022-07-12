@@ -1,9 +1,9 @@
 export class SigninUsuarioDto {
 
-  nombre:string;
-  username:string;
-  password:string;
-  email:string;
+  nombre:string='';
+  username:string='';
+  password:string='';
+  email:string='';
 
   constructor(nombre: string, username: string, password: string, email: string) {
     this.nombre = nombre;
