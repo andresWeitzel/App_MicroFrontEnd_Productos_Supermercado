@@ -19,14 +19,29 @@ export class ProductoService {
   ) { }
 
 
+  //================ METODOS CRUD ====================
+
+
+  //--- GET ALL ---
   public listado(nroPagina:number , nroElementos:number , orderType:string, orderBy:string):Observable<ProductoDto[]>{
     return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
-
+//--- GET ALL FILTER---
   public listadoFilter(nroPagina:number , nroElementos:number , orderType:string, orderBy:string):Observable<ProductoDto[]>{
     return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado-filter?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
+
+
+//--- UPDATE ---
+  public update(producto:ProductoDto):Observable<ProductoDto>{
+    return this.httpClient.put<any>(`${URL_PRODUCTO_BASE}/`,producto);
+
+  }
+
+
+  //================ METODOS DE BUSQUEDA ====================
+
 
 
 }

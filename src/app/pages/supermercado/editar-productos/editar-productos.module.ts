@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { EditarProductosRoutingModule } from './editar-productos-routing.module';
 import { EditarProductosComponent } from './editar-productos.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ProductoDto } from 'src/app/models/ProductoDto';
 
 
 @NgModule({
@@ -16,4 +17,4 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ]
 })
-export class EditarProductosModule { }
+export class EditarProductosModule{}
