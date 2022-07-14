@@ -16,6 +16,8 @@ import { NgToastModule } from 'ng-angular-popup';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
 import { interceptorProvider } from './services/interceptors/productos/interceptors-productos.service';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 
 
@@ -47,6 +49,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CarouselModule,
     HttpClientModule,
     FormsModule,
+    MdbFormsModule,
+    MdbValidationModule,
     NgToastModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot({ showForeground: true })
