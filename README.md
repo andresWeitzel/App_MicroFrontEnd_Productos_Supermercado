@@ -18,3 +18,10 @@ Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap
 
 * https://www.npmjs.com/package/ngx-ui-loader
 * Implements loader: https://tdev.app/ngx-ui-loader
+
+# ------------------------------------------------
+
+
+# Angular Bootstrap Validation
+
+* https://mdbootstrap.com/docs/angular/forms/validation/
