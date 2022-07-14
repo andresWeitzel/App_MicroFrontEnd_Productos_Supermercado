@@ -24,5 +24,6 @@ Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap
 
 # Angular Bootstrap Validation
 
-* Instalación : https://www.npmjs.com/package/angular-bootstrap-md
+* Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
 * Implementación/ejemplos: https://mdbootstrap.com/docs/b5/angular/forms/validation/
+* Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
