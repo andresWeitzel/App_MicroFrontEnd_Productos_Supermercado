@@ -8,6 +8,7 @@ const routes: Routes = [
    { path: 'signin', loadChildren: () => import('./pages/supermercado/auth/signin/signin.module').then(m => m.SigninModule)},
   { path: 'lista-productos', loadChildren: () => import('./pages/supermercado/lista-productos/lista-productos.module').then(m => m.ListaProductosModule) },
   { path: 'editar-productos', loadChildren: () => import('./pages/supermercado/editar-productos/editar-productos.module').then(m => m.EditarProductosModule) },
+  { path: 'agregar-productos', loadChildren: () => import('./pages/supermercado/agregar-productos/agregar-productos.module').then(m => m.AgregarProductosModule) },
 
    { path: '**', loadChildren: () => import('./pages/supermercado/auth/login/login.module').then(m => m.LoginModule) }];
 

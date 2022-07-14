@@ -32,10 +32,14 @@ export class ProductoService {
     return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado-filter?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
+//--- ADD ---
+public add(producto:ProductoDto):Observable<ProductoDto>{
+  return this.httpClient.post<any>(`${URL_PRODUCTO_BASE}`,producto);
+}
 
 //--- UPDATE ---
-  public update(producto:ProductoDto):Observable<ProductoDto>{
-    return this.httpClient.put<any>(`${URL_PRODUCTO_BASE}/`,producto);
+  public update(id:number, producto:ProductoDto):Observable<ProductoDto>{
+    return this.httpClient.put<any>(`${URL_PRODUCTO_BASE}${id}`,producto);
 
   }
 
