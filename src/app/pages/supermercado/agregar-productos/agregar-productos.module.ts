@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     FormsModule,
     ReactiveFormsModule,
     MdbFormsModule,
-    MdbValidationModule
+    MdbValidationModule,
+    MatDialogModule
 
   ]
 })

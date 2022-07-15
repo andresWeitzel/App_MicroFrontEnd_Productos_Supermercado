@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -29,9 +30,10 @@ nombre:string='';
 marca:string='';
 tipo:string='';
 grupo:string='';
-peso:number;
-precioUnidad:number;
-stock:number;
+peso:number=undefined;
+precioUnidad:number=undefined;
+stock:number=undefined;
+
 
 //validaciones
 formGroup: FormGroup;
@@ -44,8 +46,7 @@ formGroup: FormGroup;
     private productoService:ProductoService,
      private tokenService:TokenService,
     private toast: NgToastService,
-    private ngxService: NgxUiLoaderService,
-    private formBuilder:FormBuilder,
+    
 
   ) {
 
@@ -168,8 +169,9 @@ stock:new FormControl(null,
 ])
 }
 //,{updateOn:'submit'});
-  );
+ );
 }
+
 
 
 get codigoForm(){
@@ -200,33 +202,15 @@ get stockForm(){
   return this.formGroup.get('stock');
 }
 
-/*
-checkSubmit():void{
-  if(
-  this.formGroup.controls['codigo'].valid &&
-  this.formGroup.controls['nombre'].valid &&
-  this.formGroup.controls['imagen'].valid &&
-  this.formGroup.controls['marca'].valid &&
-  this.formGroup.controls['tipo'].valid &&
-  this.formGroup.controls['grupo'].valid &&
-  this.formGroup.controls['peso'].valid &&
-  this.formGroup.controls['precioUnidad'].valid &&
-  this.formGroup.controls['stock'].valid
-  ){
-
-    this.addProducto();
-
-  }else{
-    this.toast.error({detail:"Error",summary:"Campos Inválidos!", duration:2000});
-  }
-}
-*/
 
 //=============== UTILS ===============
 
 refresh(){
   window.location.reload();
 }
+
+//============== FORM ================
+
 
  //=========== METODOS CRUD ==============
 
@@ -245,6 +229,8 @@ addProducto():void{
     this.peso,
     this.precioUnidad,
     this.stock
+
+
     );
 
     this.productoService.add(nuevoProducto).subscribe(

@@ -2,18 +2,27 @@
   <div class="row justify-content-center">
 
 
-    <!-- TITULO EDICCION DE PRODUCTOS -->
-    <div class="d-flex flex-row justify-content-center bd-highlight mt-4 mb-2 p-3 ">
-      <h1>
-          <span class="badge  text-decoration-underline mt-5">Editar Producto</span>
-      </h1>
-  </div>
-  <!-- FIN TITULO EDICCION DE PRODUCTOS -->
+  <!-- TITULO EDICCION DE PRODUCTOS -->
+  <div class="d-flex flex-row justify-content-center bd-highlight mt-5 mb-2 p-3 ">
+    <h1 class="mt-3">
+        <span class="badge  text-decoration-underline">Editar Producto</span>
+
+               <!-- BTN MODAL INFO  -->
+               <button type="button" class="btn p-1  " data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                <img src="assets/icons/idea.png" alt="Inicio" title="Inicio" width="50px" height="50px">
+                </button>
+                <!-- FIN BTN MODAL INFO -->
+    </h1>
+</div>
+<!-- FIN TITULO EDICCION DE PRODUCTOS -->
+
+
+
 
       <!--FORMULARIO -->
       <div class="form-group text-center  d-flex justify-content-center " id="formulario">
 
-          <form (ngSubmit)="updateProducto()" [formGroup]="productosForm">
+          <form [formGroup]="productosForm" (ngSubmit)="updateProducto()" >
 
               <div class="text-center text-white ">
                   <!-- PRIMERA FILA -->
@@ -179,6 +188,39 @@
 
       </div>
       <!-- FIN FORMULARIO -->
+
+
+
+
+
+<!--MODAL AYUDA -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" id="modalAyuda">
+      <div class="modal-header">
+        <h4 class="modal-title" id="staticBackdropLabel">Guía para Agregar un Producto</h4>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Acerca del Formulario </h5>
+        <p>Este formulario ayuda al administrador en agregar los productos de una forma fácil y práctica sin necesidad de inserción a través de consola de comandos o desde la base de datos.</p>
+        <h5>Campos del Formulario</h5>
+        <p>Todos los campos del formulario presentan validaciones según la arquitectura de la aplicación. Además se agrega en cada entrada una ejemplificación de valor.</p>
+        <ul>
+          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de nu máximo de 10 digitos.</li>
+          <li><strong>Nombre:</strong></li>
+        </ul>
+        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL SOPORTE TÉCNICO</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--FIN MODAL AYUDA-->
+
 
 
 

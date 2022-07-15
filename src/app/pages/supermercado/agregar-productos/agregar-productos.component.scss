@@ -1,10 +1,16 @@
+.container{
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 h1 {
-  span {
+
       opacity: 0.8;
       color: white;
       background-color: #2C5D33;
       border-color: #1f4a25;
-  }
+      border-radius: 1em;
+
 }
 
 
@@ -15,50 +21,36 @@ h1 {
   border-color: #1f4a25;
 }
 
-#table {
-  background-color: #2C5D33;
-  border: #14411a;
-  opacity: 0.9;
-  color: white;
-  thead {
-      background-color: #1c3d20;
-      border: #254d2a;
-      .btn-sm {
-          background-color: #254728;
-          border: #0c3011;
-          color: white;
-      }
-  }
-  tbody {
-      border: #0c3011;
-  }
-}
+
 
 
 #formulario{
 
   form,div, div.div{
-    border-radius: 5px;
+    border-radius: 1em;
     border-color: #15351a;
     background-color: #2C5D33;
     opacity: 0.9;
     color: white;
-    input{
-      background-color: #0c3011;
-      color: white;
+    mdb-form-control{
+      input{
+        background-color: #0c3011;
+        color: white;
+
+      }
+
+
     }
+
 
   }
  }
 
-#pagination{
-background-color: #2C5D33;
-border: #14411a;
-opacity: 0.9;
-color: white;
-.btn {
-  background-color: none;
-  border: #0c3011;
+
+ #modalAyuda{
+  border-radius: 5px;
+  border-color: #15351a;
+  background-color: #2C5D33;
+  opacity: 0.9;
   color: white;
-}
-}
+ }

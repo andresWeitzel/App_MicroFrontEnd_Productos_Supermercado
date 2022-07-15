@@ -3,12 +3,23 @@
 
 
     <!-- TITULO EDICCION DE PRODUCTOS -->
-    <div class="d-flex flex-row justify-content-center bd-highlight mt-4 mb-2 p-3 ">
-      <h1>
-          <span class="badge  text-decoration-underline mt-5">Agregar Producto</span>
+    <div class="d-flex flex-row justify-content-center bd-highlight mt-5 mb-2 p-3 ">
+      <h1 class="mt-3">
+          <span class="badge  text-decoration-underline">Agregar Producto</span>
+
+                 <!-- BTN MODAL INFO  -->
+                 <button type="button" class="btn p-1  " data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                  <img src="assets/icons/idea.png" alt="Inicio" title="Inicio" width="50px" height="50px">
+                  </button>
+                  <!-- FIN BTN MODAL INFO -->
       </h1>
   </div>
   <!-- FIN TITULO EDICCION DE PRODUCTOS -->
+
+
+
+
+
 
       <!--FORMULARIO -->
       <div class="form-group text-center  d-flex justify-content-center " id="formulario">
@@ -30,7 +41,7 @@
                           [(ngModel)]="codigo" formControlName="codigo"
                           mdbInput mdbValidate required>
 
-                          <mdb-error class="text-danger" *ngIf="codigoForm?.invalid && (codigoForm?.dirty || codigoForm?.touched)"><strong>Código Inválido</strong></mdb-error>
+                          <mdb-error class="text-danger " *ngIf="codigoForm?.invalid && (codigoForm?.dirty || codigoForm?.touched)"><strong>Código Inválido</strong></mdb-error>
                           <mdb-success class="text-success" *ngIf="codigoForm?.valid && (codigoForm?.dirty || codigoForm?.touched)"><strong>Código Válido</strong></mdb-success>
                           </mdb-form-control>
                       </div>
@@ -204,29 +215,20 @@
 
       <!--BTN'S REGRESAR/ACTUALIZAR/ENVIAR-->
 
-                  <div class=" d-flex d-row text-center ms-5 mt-1 p-1 ">
+                  <div class=" d-flex d-row justify-content-center p-2">
 
-                    <!--BTN LISTADO-->
-                    <div class="ms-3">
-                    <a class="" [routerLink]="['/lista-productos']">
-                      <button type="reset" class="btn bg-none mb-2 mr-2">
-                      <img src="assets/icons/list.png" alt="" width="60"
-                        height="60">
-                      </button>
-                    </a>
-                  </div>
-                  <!--FIN BTN LISTADO-->
+
                       <!--BTN REFRESH-->
-                      <div class="ms-5">
-                        <button type="reset" class="btn bg-none mb-2 mr-2" onClick="refresh()" >
+                      <div class="p-2">
+                        <button type="reset" class="btn bg-none " onClick="refresh()" >
                           <img src="assets/icons/forms/refresh.png" alt="" width="60"
                             height="60">
                           </button>
                       </div>
                       <!--FIN BTN REFRESH-->
                       <!--BTN SEND-->
-                      <div class="ms-2">
-                                              <button type="submit" class="btn bg-none ml-4 mb-2" >
+                      <div class="p-2">
+                                              <button type="submit" class="btn bg-none " [disabled]="!formGroup.valid">
                         <img src="assets/icons/forms/send.png" alt="" width="60"
                           height="60" >
 
@@ -244,6 +246,37 @@
       <!-- FIN FORMULARIO -->
 
 
+
+
+
+
+<!--MODAL AYUDA -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" id="modalAyuda">
+      <div class="modal-header">
+        <h4 class="modal-title" id="staticBackdropLabel">Guía para Agregar un Producto</h4>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Acerca del Formulario </h5>
+        <p>Este formulario ayuda al administrador en agregar los productos de una forma fácil y práctica sin necesidad de inserción a través de consola de comandos o desde la base de datos.</p>
+        <h5>Campos del Formulario</h5>
+        <p>Todos los campos del formulario presentan validaciones según la arquitectura de la aplicación. Además se agrega en cada entrada una ejemplificación de valor.</p>
+        <ul>
+          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de nu máximo de 10 digitos.</li>
+          <li><strong>Nombre:</strong></li>
+        </ul>
+        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL SOPORTE TÉCNICO</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--FIN MODAL AYUDA-->
 
 
 

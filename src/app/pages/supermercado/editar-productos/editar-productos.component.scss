@@ -1,10 +1,15 @@
+.container{
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 h1 {
-  span {
-      opacity: 0.8;
-      color: white;
-      background-color: #2C5D33;
-      border-color: #1f4a25;
-  }
+
+  opacity: 0.8;
+  color: white;
+  background-color: #2C5D33;
+  border-color: #1f4a25;
+  border-radius: 1em;
 }
 
 #filtro {
@@ -46,14 +51,12 @@ h1 {
   }
  }
 
-#pagination{
-background-color: #2C5D33;
-border: #14411a;
-opacity: 0.9;
-color: white;
-.btn {
-  background-color: none;
-  border: #0c3011;
+
+
+#modalAyuda{
+  border-radius: 5px;
+  border-color: #15351a;
+  background-color: #2C5D33;
+  opacity: 0.9;
   color: white;
-}
-}
+ }
