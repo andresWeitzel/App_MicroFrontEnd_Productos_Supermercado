@@ -1,10 +1,12 @@
+
 h1 {
-    span {
-        opacity: 0.8;
-        color: white;
-        background-color: #2C5D33;
-        border-color: #1f4a25;
-    }
+
+  opacity: 0.8;
+  color: white;
+  background-color: #2C5D33;
+  border-color: #1f4a25;
+  border-radius: 1em;
+
 }
 
 #filtro {
@@ -17,12 +19,13 @@ h1 {
 #table {
     padding: 5px;
     background-color: #2C5D33;
-    border: #14411a;
+    border-color: #14411a;
     opacity: 0.9;
     color: white;
     thead {
         background-color: #1c3d20;
-        border: #254d2a;
+        border-color: #254d2a;
+        border-radius: 1em;
         .btn-sm {
             background-color: #254728;
             border: #0c3011;
@@ -30,14 +33,17 @@ h1 {
         }
     }
     tbody {
-        border: #0c3011;
+        border-color: #0c3011;
+        border-radius: 1em;
         padding: 1em;
     }
 }
 
 #pagination{
   background-color: #2C5D33;
-  border: #14411a;
+  border-color: #14411a;
+  border-radius: 1em;
+
   opacity: 0.9;
   color: white;
   .btn {
@@ -46,3 +52,13 @@ h1 {
     color: white;
 }
 }
+
+
+
+#modalAyuda{
+  border-radius: 5px;
+  border-color: #15351a;
+  background-color: #2C5D33;
+  opacity: 0.9;
+  color: white;
+ }

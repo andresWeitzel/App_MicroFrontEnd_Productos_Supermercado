@@ -22,16 +22,16 @@
 
 
       <!--FORMULARIO -->
-      <div class="form-group text-center  d-flex justify-content-center " id="formulario">
+      <div class="form-group text-center  d-flex justify-content-center  " id="formulario">
 
           <form [formGroup]="formGroup" (ngSubmit)="addProducto()">
 
-              <div class=" text-center text-white ">
+              <div class=" text-center text-white p-3">
                   <!-- PRIMERA FILA -->
 
-                  <div class="d-flex justify-content-inline">
+                  <div class="d-flex justify-content-inline col-12">
 
-                      <div class=" m-1 p-1">
+                      <div class="form-group m-1 p-1 col-6">
                           <label  for="codigo">
                           <h5>Código</h5>
                           </label>
@@ -47,7 +47,7 @@
                       </div>
 
 
-                    <div class="form-group m-1 p-1 ">
+                    <div class="form-group m-1 p-1 col-6">
                       <label for="nombre">
                         <h5>Nombre</h5>
                         </label>
@@ -93,18 +93,28 @@
 
                   <hr>
                   <!-- TERCERA FILA -->
-                  <div class="d-flex justify-content-inline">
+                  <div class="d-flex justify-content-inline col-12">
 
 
 
-                  <div class="form-group m-1 p-1">
+                  <div class="form-group m-1 p-1 col-6">
                     <label for="marca"><h5>Marca</h5></label>
 
 
               <mdb-form-control>
-                    <input type="text" class="form-control" id="marca" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder=" (Ej: Nestlé)" name="marca"
-                    [(ngModel)]="marca"          formControlName="marca"
-                    mdbInput mdbValidate required>
+                <select type="text" class="form-select" id="marca"  name="marca"
+                [(ngModel)]="marca"
+                formControlName="marca"
+                 mdbInput mdbValidate required >
+                  <option value="Nestlé">- Nestlé</option>
+                  <option value="Swift">- Swift</option>
+                  <option value="Larclas">- Larclas</option>
+                  <option value="Huella Natural">- Huella Natural</option>
+                  <option value="Huella Natural">- Cuesta del Madero</option>
+                  <option value="Sancor">- Sancor</option>
+                  <option value="Sancor">- Paso de los Toros</option>
+                  <option value="Genérica">- Genérica</option>
+                </select>
                     <mdb-error class="text-danger" *ngIf="marcaForm?.invalid && (marcaForm?.dirty || marcaForm?.touched)"><strong>Marca Inválida</strong></mdb-error>
                     <mdb-success class="text-success" *ngIf="marcaForm?.valid && (marcaForm?.dirty || marcaForm?.touched)"><strong>Marca Válida</strong></mdb-success>
               </mdb-form-control>
@@ -113,14 +123,20 @@
 
 
 
-                    <div class="form-group m-1 p-1">
+                    <div class="form-group m-1 p-1 col-6">
                       <label for="tipo"><h5>Tipo</h5></label>
 
                       <mdb-form-control>
-                      <input type="text" class="form-control" id="tipo" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO" placeholder=" (Ej: Bebidas)" name="tipo"
-                      [(ngModel)]="tipo"
-                      formControlName="tipo"
-                       mdbInput mdbValidate required>
+                        <select type="text" class="form-select" id="tipo"  name="tipo"
+                        [(ngModel)]="tipo"
+                        formControlName="tipo"
+                         mdbInput mdbValidate required >
+                          <option value="Bebidas">- Bebidas</option>
+                          <option value="Carnes y Pescados">- Carnes y Pescados</option>
+                          <option value="Lácteos y Productos Frescos">- Lácteos y Frescos</option>
+                          <option value="Frutas y Verduras">- Frutas y Verduras</option>
+                          <option value="Congelados">- Congelados</option>
+                        </select>
                       <mdb-error class="text-danger" *ngIf="tipoForm?.invalid && (tipoForm?.dirty || tipoForm?.touched)"><strong>Tipo Inválido</strong></mdb-error>
                       <mdb-success class="text-success" *ngIf="tipoForm?.valid && (tipoForm?.dirty || tipoForm?.touched)"><strong>Tipo Válido</strong></mdb-success>
                 </mdb-form-control>
@@ -141,9 +157,40 @@
                       <label for="tipo"><h5>Grupo</h5></label>
 
                     <mdb-form-control>
-                      <input type="text" class="form-control" id="tipo" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder=" (Ej: Vinos)" name="grupo"
-                      [(ngModel)]="grupo"   formControlName="grupo"
-                      mdbInput mdbValidate required>
+                      <select type="text" class="form-select" id="grupo"  name="grupo"
+                      [(ngModel)]="grupo"
+                      formControlName="grupo"
+                       mdbInput mdbValidate required >
+                       <option disabled><strong >---BEBIDAS---</strong></option>
+                        <option value="Carne Vacuna">- Gaseosas</option>
+                        <option value="Carne Vacuna">- Agua</option>
+                        <option value="Carne Vacuna">- Vinos</option>
+
+                        <option disabled><strong >---CARNES/PESCADOS---</strong></option>
+                        <option value="Pollo y Granja">- Pollo y Granja</option>
+                        <option value="Carne Vacuna">- Carne Vacuna</option>
+
+                        <option disabled><strong >---LACTEOS Y FRESCOS---</strong></option>
+                        <option value="Leches">- Leches</option>
+                        <option value="Yogures">- Yogures </option>
+
+                        <option disabled><strong >---FRUTAS/VERDURAS---</strong></option>
+                        <option value="Frutas">- Frutas</option>
+                        <option value="Verduras">- Verduras</option>
+
+                        <option disabled><strong >---CONGELADOS---</strong></option>
+                        <option value="Helados">- Helados</option>
+                        <option value="Nuggets/Rebozados">- Nuggets/Rebozados</option>
+                        <option value="Nuggets/Rebozados">- Hamburguesas</option>
+
+
+
+
+
+
+
+                        <option value="Genérica">- Genérica</option>
+                      </select>
                      <mdb-error class="text-danger" *ngIf="grupoForm?.invalid && (grupoForm?.dirty || grupoForm?.touched)"><strong>Grupo Inválido</strong></mdb-error>
                      <mdb-success class="text-success" *ngIf="grupoForm?.valid && (grupoForm?.dirty || grupoForm?.touched)"><strong>Grupo Válido</strong></mdb-success>
                </mdb-form-control>
@@ -277,6 +324,7 @@
   </div>
 </div>
     <!--FIN MODAL AYUDA-->
+
 
 
 

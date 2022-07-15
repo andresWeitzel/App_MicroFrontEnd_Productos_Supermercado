@@ -33,10 +33,13 @@ h1 {
     opacity: 0.9;
     color: white;
     mdb-form-control{
-      input{
+      input, select, option{
         background-color: #0c3011;
         color: white;
 
+      }
+      input:hover, select:hover, option:hover{
+        background-color:  #041d07;
       }
 
 
