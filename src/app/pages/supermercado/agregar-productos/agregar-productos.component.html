@@ -70,7 +70,7 @@
 
 
 
-                    <div class="form-group col-11 ms-3 mb-2">
+                    <div class="form-group col-11 justify-content-center ms-3 mb-2">
                       <label for="imagen"><h5>Imagen</h5></label>
 
                       <mdb-form-control>
@@ -113,7 +113,8 @@
                   <option value="Huella Natural">- Cuesta del Madero</option>
                   <option value="Sancor">- Sancor</option>
                   <option value="Sancor">- Paso de los Toros</option>
-                  <option value="Genérica">- Genérica</option>
+                  <option value="Coca Cola">- Coca Cola</option>
+                  <option value="Genérico">- Genérico</option>
                 </select>
                     <mdb-error class="text-danger" *ngIf="marcaForm?.invalid && (marcaForm?.dirty || marcaForm?.touched)"><strong>Marca Inválida</strong></mdb-error>
                     <mdb-success class="text-success" *ngIf="marcaForm?.valid && (marcaForm?.dirty || marcaForm?.touched)"><strong>Marca Válida</strong></mdb-success>
@@ -315,7 +316,7 @@
           <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de nu máximo de 10 digitos.</li>
           <li><strong>Nombre:</strong></li>
         </ul>
-        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL SOPORTE TÉCNICO</strong>
+        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL DESARROLLADOR!!</strong>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>

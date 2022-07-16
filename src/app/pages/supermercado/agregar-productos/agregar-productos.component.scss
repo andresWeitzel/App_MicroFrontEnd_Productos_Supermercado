@@ -36,7 +36,11 @@ h1 {
       input, select, option{
         background-color: #0c3011;
         color: white;
+        max-width: 12em;
+      }
 
+      #imagen{
+        max-width: 25em;
       }
       input:hover, select:hover, option:hover{
         background-color:  #041d07;

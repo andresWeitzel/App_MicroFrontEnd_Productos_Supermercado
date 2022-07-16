@@ -46,7 +46,7 @@ formGroup: FormGroup;
     private productoService:ProductoService,
      private tokenService:TokenService,
     private toast: NgToastService,
-    
+
 
   ) {
 
@@ -122,25 +122,24 @@ checkInputs(){
     [Validators.required
    , Validators.minLength(20)
    , Validators.maxLength(500)
-
    , Validators.pattern(/^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$/)
  ]),
  marca:new FormControl(null,
   [Validators.required
  , Validators.minLength(5)
- , Validators.maxLength(50)
+ , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 tipo:new FormControl(null,
   [Validators.required
  , Validators.minLength(5)
- , Validators.maxLength(50)
+ , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 grupo:new FormControl(null,
   [Validators.required
  , Validators.minLength(5)
- , Validators.maxLength(50)
+ , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 peso:new FormControl(null,
@@ -209,9 +208,6 @@ refresh(){
   window.location.reload();
 }
 
-//============== FORM ================
-
-
  //=========== METODOS CRUD ==============
 
 //----------ADD PRODUCTOS ---------------
@@ -221,8 +217,8 @@ addProducto():void{
 
   const nuevoProducto=new ProductoDto(
     this.codigo,
-    this.nombre,
     this.imagen,
+    this.nombre,
     this.marca,
     this.tipo,
     this.grupo,

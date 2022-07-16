@@ -5,12 +5,14 @@
 
 h1 {
 
-  opacity: 0.8;
-  color: white;
-  background-color: #2C5D33;
-  border-color: #1f4a25;
-  border-radius: 1em;
+      opacity: 0.8;
+      color: white;
+      background-color: #2C5D33;
+      border-color: #1f4a25;
+      border-radius: 1em;
+
 }
+
 
 #filtro {
   opacity: 0.7;
@@ -19,41 +21,40 @@ h1 {
   border-color: #1f4a25;
 }
 
-#table {
-  background-color: #2C5D33;
-  border: #14411a;
-  opacity: 0.9;
-  color: white;
-  thead {
-      background-color: #1c3d20;
-      border: #254d2a;
-      .btn-sm {
-          background-color: #254728;
-          border: #0c3011;
-          color: white;
-      }
-  }
-  tbody {
-      border: #0c3011;
-  }
-}
+
 
 
 #formulario{
 
   form,div, div.div{
-    border-radius: 5px;
+    border-radius: 1em;
     border-color: #15351a;
     background-color: #2C5D33;
     opacity: 0.9;
     color: white;
+    mdb-form-control{
+      input, select, option{
+        background-color: #0c3011;
+        color: white;
+        max-width: 12em;
+      }
+
+      #imagen{
+        max-width: 25em;
+      }
+      input:hover, select:hover, option:hover{
+        background-color:  #041d07;
+      }
+
+
+    }
+
 
   }
  }
 
 
-
-#modalAyuda{
+ #modalAyuda{
   border-radius: 5px;
   border-color: #15351a;
   background-color: #2C5D33;

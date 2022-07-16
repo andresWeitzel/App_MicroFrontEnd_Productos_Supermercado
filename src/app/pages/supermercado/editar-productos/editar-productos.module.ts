@@ -5,6 +5,10 @@ import { EditarProductosRoutingModule } from './editar-productos-routing.module'
 import { EditarProductosComponent } from './editar-productos.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoDto } from 'src/app/models/ProductoDto';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +19,11 @@ import { ProductoDto } from 'src/app/models/ProductoDto';
     CommonModule,
     EditarProductosRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MdbFormsModule,
+    MdbValidationModule,
+    MatDialogModule
   ]
 })
 export class EditarProductosModule{}
