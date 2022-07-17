@@ -28,8 +28,8 @@ export class ProductoService {
   }
 
 //--- GET ALL FILTER---
-  public listadoFilter(nroPagina:number , nroElementos:number , orderType:string, orderBy:string):Observable<ProductoDto[]>{
-    return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado-filter?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
+  public listadoFilter(filtro:string, nroPagina:number , nroElementos:number , orderType:string, orderBy:string ):Observable<ProductoDto[]>{
+    return this.httpClient.get<any>(`${URL_PRODUCTO_BASE}listado-filter/${filtro}?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
 //--- ADD ---

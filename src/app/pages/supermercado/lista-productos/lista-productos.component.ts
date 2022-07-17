@@ -117,8 +117,8 @@ listarProductos(){
 }
 
 //----------LISTADO PRODUCTOS FILTER ---------------
-listarProductosFilter(){
-  this.productoService.listadoFilter(this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
+listarProductosFilter(filtro:string){
+  this.productoService.listadoFilter(filtro,this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
     (data:any)=>{
       this.productos = data.content;
       this.firstPage = data.first;
