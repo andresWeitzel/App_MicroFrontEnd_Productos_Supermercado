@@ -43,6 +43,12 @@ public add(producto:ProductoDto):Observable<ProductoDto>{
 
   }
 
+  //--- DELETE ---
+  public delete(id:number):Observable<ProductoDto>{
+    return this.httpClient.delete<any>(`${URL_PRODUCTO_BASE}${id}`);
+
+  }
+
 
   //================ METODOS DE BUSQUEDA ====================
 

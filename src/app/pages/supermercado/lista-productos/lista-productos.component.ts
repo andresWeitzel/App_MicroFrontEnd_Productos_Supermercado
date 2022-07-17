@@ -22,6 +22,11 @@ export class ListaProductosComponent implements OnInit {
 
   productos: ProductoDto[] = [];
 
+  productoSelect:ProductoDto[] = [];
+  idProdSelect:number=0;
+  codProdSelect:string='';
+  nombrProdSelect:string='';
+
   roles: string[]=[];
   isAdmin = false;
   isUser = false;
@@ -141,12 +146,60 @@ listarProductosFilter(){
     this.router.navigate(['editar-productos'] , this.navigationExtras);
   }
 
-//----------ELIMINAR PRODUCTOS ---------------
-  eliminarProducto(producto : any): void{
 
-    this.listarProductos();
-       this.toast.success({detail:"Operación Exitosa",summary:'Se ha Eliminado el Producto!!', duration:2000});
+
+//----------ELIMINAR PRODUCTOS ---------------
+  eliminarProducto(id : number): void{
+
+    //SPIN LOADING
+    this.ngxService.start();
+    setTimeout(() => {
+      this.ngxService.stop();
+    }, 100);
+    //FIN SPIN LOADING
+
+
+    this.productoService.delete(id).subscribe(
+      (data:any)=>{
+
+        this.toast.success({detail:"Operación Exitosa",summary:'Se ha Eliminado el Producto!!', duration:2000});
+
+        console.log("Producto Eliminado");
+
+        setTimeout(() => {
+          this.refresh();
+         }, 2100)
+      },
+      err => {
+        this.errMsj = err.error.message;
+
+        //TOAST ERROR
+        setTimeout(() => {
+         this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
+       }, 600);
+       //FIN TOAST ERROR
+     console.log(err);
+      }
+    );
+
   }
+
+  //=============== UTILS ===============
+
+refresh(){
+  window.location.reload();
+}
+
+//-----------  ID PRODUCTO SELECT-------------
+
+setProductoSelect(producto:ProductoDto){
+
+  this.idProdSelect = producto.id;
+  this.codProdSelect=producto.codigo;
+  this.nombrProdSelect=producto.nombre;
+
+  console.log('Producto Seleccionado: ',producto);
+}
 
 
 
