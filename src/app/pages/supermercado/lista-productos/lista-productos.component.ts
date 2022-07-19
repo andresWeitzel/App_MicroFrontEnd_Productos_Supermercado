@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ProductoDto } from 'src/app/models/ProductoDto';
 import { ProductoService } from 'src/app/services/producto/producto.service';
 import { TokenService } from 'src/app/services/token/token.service';
+
+//Excell
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-lista-productos',
@@ -56,7 +60,6 @@ export class ListaProductosComponent implements OnInit {
 
   //ERRORES
    errMsj: string;
-
 
 
 
@@ -277,6 +280,19 @@ this.listarProductos();
   cambiarPagina(pagina:number):void{
     this.nroPage=pagina;
     this.listarProductos();
+  }
+
+  //============= GENERATE EXCEL ====================
+  name = 'ExcelSheet.xlsx';
+
+  generateExcel(): void {
+    let element = document.getElementById('table');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
 
 
