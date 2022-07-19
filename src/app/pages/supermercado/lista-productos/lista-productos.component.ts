@@ -20,30 +20,36 @@ export class ListaProductosComponent implements OnInit {
     }
 };
 
+  //PRODUCTOS LISTADO
   productos: ProductoDto[] = [];
 
+  //PRODUCTO SELECCIONADO
   productoSelect:ProductoDto[] = [];
   idProdSelect:number=0;
   codProdSelect:string='';
   nombrProdSelect:string='';
 
+  //FILTRO BUSQUEDA PRODUCTOS
+  filtroProdBusqueda:string='Gaseosas';
+
+  //SEGURIDAD
   roles: string[]=[];
   isAdmin = false;
   isUser = false;
 
-   //Paginado
+   //PAGINADO
    nroPagina=0;
    nroElementos=10;
    orderBy='id';
    direction='asc';
-
    firstPage=false;
    lastPage=false;
 
-
+  //ERRORES
    errMsj: string;
 
-   //filtro:string=null;
+
+
 
   constructor(
     private router: Router,
@@ -84,7 +90,8 @@ export class ListaProductosComponent implements OnInit {
     if(!(this.isAdmin) || !(this.isUser)){
       this.router.navigate(['login']);
     }else{
-      this.listarProductos();
+      //this.listarProductos();
+      //this.listarProductosFilter();
     }
   }
 
@@ -117,8 +124,8 @@ listarProductos(){
 }
 
 //----------LISTADO PRODUCTOS FILTER ---------------
-listarProductosFilter(filtro:string){
-  this.productoService.listadoFilter(filtro,this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
+listarProductosFilter(){
+  this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
     (data:any)=>{
       this.productos = data.content;
       this.firstPage = data.first;
@@ -127,10 +134,31 @@ listarProductosFilter(filtro:string){
       console.log(this.productos);
     },
     err => {
-      console.log(err);
+      this.errMsj = err.error.message;
+
+      //TOAST ERROR
+      setTimeout(() => {
+       this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
+     }, 600);
+     //FIN TOAST ERROR
+   console.log(err);
+
     }
   );
 }
+
+
+setFilter(filtro:string){
+
+  this.filtroProdBusqueda=filtro;
+
+  console.log(this.filtroProdBusqueda);
+
+  //this.listarProductosFilter();
+}
+
+
+
 
 //----------EDITAR PRODUCTOS ---------------
   editarProducto(producto : any): void{

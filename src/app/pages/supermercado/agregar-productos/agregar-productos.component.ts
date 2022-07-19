@@ -108,13 +108,13 @@ checkInputs(){
   this.formGroup=new FormGroup({
    codigo:new FormControl(null,
        [Validators.required
-      , Validators.minLength(5)
+      , Validators.minLength(3)
       , Validators.maxLength(10)
       , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
     ]),
     nombre:new FormControl(null,
       [Validators.required
-     , Validators.minLength(5)
+     , Validators.minLength(3)
      , Validators.maxLength(50)
      , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
    ]),
@@ -126,19 +126,19 @@ checkInputs(){
  ]),
  marca:new FormControl(null,
   [Validators.required
- , Validators.minLength(5)
+ , Validators.minLength(3)
  , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 tipo:new FormControl(null,
   [Validators.required
- , Validators.minLength(5)
+ , Validators.minLength(3)
  , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 grupo:new FormControl(null,
   [Validators.required
- , Validators.minLength(5)
+ , Validators.minLength(3)
  , Validators.maxLength(30)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),

@@ -131,7 +131,7 @@ checkSecurity(){
     this.formGroup=this.formBuilder.group({
       codigo:['',
           [Validators.required
-         , Validators.minLength(5)
+         , Validators.minLength(3)
          , Validators.maxLength(10)
          , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
        ]],
@@ -143,25 +143,25 @@ checkSecurity(){
     ]],
        nombre:['',
         [Validators.required
-       , Validators.minLength(5)
+       , Validators.minLength(3)
        , Validators.maxLength(50)
        , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
      ]],
     marca:['',
     [Validators.required
-      , Validators.minLength(5)
+      , Validators.minLength(3)
       , Validators.maxLength(30)
       , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
    ]],
    tipo:['',
    [Validators.required
-    , Validators.minLength(5)
+    , Validators.minLength(3)
     , Validators.maxLength(30)
     , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
   ]],
   grupo:['',
    [Validators.required
-    , Validators.minLength(5)
+    , Validators.minLength(3)
     , Validators.maxLength(30)
     , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
   ]],

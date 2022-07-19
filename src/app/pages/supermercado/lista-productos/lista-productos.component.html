@@ -18,10 +18,12 @@
 
 
 
-    <!--FILTRO Y UTILIDADES-->
+    <!--BUSCADOR Y UTILIDADES-->
     <div class="d-flex flex-row justify-content-center mt-3 ms-2">
-        <!-- FILTER COMPONENTE -->
-        <div class="text-left me-5 ms-0">
+
+
+      <!-- BUSCADOR -->
+        <div class="text-left me-5 ms-0" id="buscador">
             <div class="d-flex flex-row justify-content-center mt-3">
                 <!-- VALOR BUSQUEDA -->
                 <div class="text-left ms-0">
@@ -33,11 +35,11 @@
                 <!-- FIN  VALOR BUSQUEDA -->
                 <!-- FORM FILTRO -->
                 <div class="text-left ms-0 me-5 col-12">
-                    <form class="d-flex flex-row text-left col-12">
-                        <input  type="text" name="filtro" class="form-control bg-white" placeholder="Ingresar valor Búsqueda" aria-label="valor" id="filtro">
+                    <form class="d-flex flex-row text-left col-12 me-5"  (ngSubmit)="setFilter(filtroInput.value)" >
+                        <input  type="text" name="filtro" class="form-control bg-white" placeholder="Ingresar valor Búsqueda" aria-label="valor" id="filtro"  #filtroInput>
 
                         <!--BTN BUSQUEDA-->
-                        <button type="submit" class="btn bg-none p-1 " (click)="listarProductosFilter('FF')">
+                        <button type="submit" class="btn bg-none p-1 " >
               <img src="./assets/icons/search02.png" alt="" width="45"
                 height="45" class="">
             </button>
@@ -45,7 +47,7 @@
 
 
                         <!--BTN LIMPIAR-->
-                        <button class="btn bg-none p-1 me-5" onclick="limpiarFiltro()">
+                        <button class="btn bg-none p-1" onclick="limpiarFiltro()">
               <img src="./assets/icons/recycle.png" alt="" width="45"
                 height="45" class="">
             </button>
@@ -56,11 +58,14 @@
                 <!-- FIN FORM FILTRO -->
             </div>
         </div>
-        <!-- FIN FILTER COMPONENTE-->
+        <!-- FIN BUSCADOR-->
+
+
+
 
 
         <!--BTN PDF-->
-        <div class="p-1 ms-4">
+        <div class="p-1 ms-5">
             <a target="_blanck">
                 <button type="button" class="btn bg-none p-1 m-2">
           <img src="assets/icons/pdf.png" alt="" width="45"
@@ -84,7 +89,7 @@
 
 
     </div>
-    <!--FIN FILTRO Y UTILIDADES-->
+    <!--FIN BUSCADOR Y UTILIDADES-->
 
 
 
@@ -416,19 +421,23 @@ width="15" height="15">
   <div class="modal-dialog" >
     <div class="modal-content" id="modalAyuda">
       <div class="modal-header">
-        <h4 class="modal-title" id="staticBackdropLabel">Guía para Agregar un Producto</h4>
+        <h4 class="modal-title" id="staticBackdropLabel">Guía para el Listado de Productos</h4>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h5>Acerca del Formulario </h5>
-        <p>Este formulario ayuda al administrador en agregar los productos de una forma fácil y práctica sin necesidad de inserción a través de consola de comandos o desde la base de datos.</p>
-        <h5>Campos del Formulario</h5>
-        <p>Todos los campos del formulario presentan validaciones según la arquitectura de la aplicación. Además se agrega en cada entrada una ejemplificación de valor.</p>
+        <h5>Acerca de la Gestión de Productos </h5>
+        <p>En esta sección podemos visualizar los Productos según los requerimientos deseados, exite paginacionde productos, podemos aplicar filtros de búsqueda y las operaciones CRUD requeridas según el rol que se tenga. Los admins podrásn realizar todas las Operaciones, los usuarios solamente la visualización y búsquedas.</p>
+        <h5>Campos del Listado</h5>
+        <p>Cada campo describe una característica del producto específico por fila. El campo acción nos permite editar y eliminar el producto seleccionado.
+        Podemos agregar un producto desde la barra de navegación.</p>
         <ul>
-          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de nu máximo de 10 digitos.</li>
+          <li><strong>ID:</strong> El ID es el identificador del Producto en el Sistema. De forma característica aplicamos un código de Producto.</li>
+          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de un máximo de 10 digitos.</li>
           <li><strong>Nombre:</strong></li>
         </ul>
-        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL SOPORTE TÉCNICO</strong>
+        <div class="mt-5 ">
+        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL DESARROLLADOR</strong>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>

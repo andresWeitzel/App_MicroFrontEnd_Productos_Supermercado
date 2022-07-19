@@ -1,8 +1,9 @@
 <!-- INICIO APP -->
-<div class="container text-center mt-5 p-1">
+<div class="container  text-center mt-5  ms-5 p-1 ">
 
   <!-- TITULO GESTION DE PRODUCTOS -->
-  <div class="d-flex flex-row justify-content-center bd-highlight mt-5 mb-2 p-3 ">
+  <div class="d-flex flex-row justify-content-center mt-5 mb-2 ms-3 p-3 col-lg-12">
+
     <h1 class="mt-3">
         <span class="badge  text-decoration-underline">Gestión de Productos</span>
 
@@ -16,25 +17,36 @@
 <!-- FIN TITULO GESTION DE PRODUCTOS -->
 
 
+
+
+
+<!--CARDS-->
+<div class="row mb-2 ms-5">
+
+
   <!-- CARD LISTADO PRODUCTOS -->
-  <div class="d-flex col-12">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
   <div class="card mt-0">
     <div class="row g-0">
-      <div class="col-md-7">
-        <img src="assets/background/back-supermercado02.jpg" class="img-fluid rounded-start"
-            alt="...">
+      <div class="col-md-3 col-lg-12">
+        <a class="text-white" [routerLink]="['/lista-productos']"><img src="assets/background/back-supermercado02.jpg" class="img-fluid rounded-start"
+            alt="..."></a>
       </div>
-      <div class="col-md-5 d-flex text-center">
+      <div class="col-md-3 col-lg-12 d-flex text-center">
         <div class="card-body text-center">
-          <h3 class="card-title">Listado</h3>
+          <div class="d-flex flex-row justify-content-center">
+            <h3 class="card-title">Listado de Productos</h3>
+            <a class="text-white ms-2" [routerLink]="['/lista-productos']"><img src="assets/icons/list.png" alt="listado" title="listado" width="40px" height="40px"></a>
+        </div>
           <hr>
 
-          <p>Listado para la gestión de productos alimenticios. Entre las operaciones disponibles se encuentran las CRUD, paginaciones, filtros, agregado, eliminado, etc de Productos.</p>
+          <p>Listado para la gestión de productos alimenticios. Entre las operaciones disponibles se encuentran las CRUD, paginaciones, filtros, agregado, edicción, etc de Productos. Para más información consultar la ventana de ayuda desde el listado.</p>
 
 
           <!--LISTADOS CAMPOS-->
           <div class="d-flex d-row">
-          <div class=" justify-content-left">
+          <div class=" justify-content-center">
             <ul>
               <!-- PRIMERA FILA -->
               <div class="d-flex flex-row m-1">
@@ -56,20 +68,20 @@
           </div>
 
 
-          <div class=" justify-content-left">
+          <div class=" justify-content-center">
             <ul>
               <!-- PRIMERA FILA -->
               <div class="d-flex flex-row m-1">
                 <div class="d-flex flex-column">
                   <div class="d-flex justify-content-center">
-                    <li ><strong>Tipos de Productos</strong></li>
+                    <li ><strong>Grupos de Productos</strong></li>
                   </div>
                   <ul>
-                    <li class="d-flex justify-content-left" >-Bebidas </li>
-                    <li class="d-flex justify-content-left">-Carnes y Pescados</li>
-                    <li class="d-flex justify-content-left">-Congelados</li>
-                    <li class="d-flex justify-content-left">-Frutas y Verduras</li>
-                    <li class="d-flex justify-content-left">-Lácteos y Frescos</li>
+                    <li class="d-flex justify-content-left" >-Agua, Vinos, Gaseosas </li>
+                    <li class="d-flex justify-content-left">- Carne Vacuna,  Pollo y Granja.</li>
+                    <li class="d-flex justify-content-left">- Nuggets y Rebozados,  Etc.</li>
+                    <li class="d-flex justify-content-left">- Frutas, Verduras </li>
+                    <li class="d-flex justify-content-left">- Leches, Yogures, Etc. </li>
                   </ul>
                 </div>
               </div>
@@ -81,23 +93,119 @@
           </div>
 
           <!--FIN LISTADOS CAMPOS-->
-
-
-
         </div>
       </div>
     </div>
   </div>
-  <!-- FIN CARD LISTADO PRODUCTOS -->
+</div>
+  </div>
+
+<!-- FIN CARD LISTADO PRODUCTOS -->
+
+
+
+
+
+  <!-- CARD AGREGADO PRODUCTOS -->
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+  <div class="card mt-0">
+    <div class="row g-0">
+      <div class="col-md-3 col-lg-12">
+        <a class="text-white" [routerLink]="['/agregar-productos']"><img src="assets/background/back-supermercado03.jpg" class="img-fluid rounded-start"
+            alt="..."></a>
+      </div>
+      <div class="col-md-3 col-lg-12 d-flex text-center">
+        <div class="card-body text-center">
+          <div class="d-flex flex-row justify-content-center">
+            <h3 class="card-title">Agregar un Producto</h3>
+            <a class="text-white ms-2" [routerLink]="['/agregar-producto']"><img src="assets/icons/add.png" alt="listado" title="listado" width="40px" height="40px"></a>
+        </div>
+          <hr>
+
+          <p>Formulario para el agregado de productos alimenticios. Los mismos cuantan con todas las comprobaciones necesarios para la transacción del producto en la base de datos. Para más información consultar la ventana de ayuda desde el formulario. </p>
+
+
+          <!--AGREGAR PRODUCTO CAMPOS-->
+          <div class="d-flex d-row">
+          <div class=" justify-content-left">
+            <ul>
+              <!-- PRIMERA FILA -->
+              <div class="d-flex flex-row m-1">
+                <div class="d-flex flex-column">
+                  <div class="d-flex justify-content-center">
+                    <li ><strong>Campos del Producto</strong></li>
+                  </div>
+                  <ul>
+                    <li class="d-flex justify-content-left" >-Id </li>
+                    <li class="d-flex justify-content-left">-Código</li>
+                    <li class="d-flex justify-content-left">-Nombre</li>
+                    <li class="d-flex justify-content-left">-Imagen</li>
+                    <li class="d-flex justify-content-left">-Etc.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- FIN PRIMERA FILA -->
+            </ul>
+          </div>
+
+
+          <div class=" justify-content-left">
+            <ul>
+              <!-- PRIMERA FILA -->
+              <div class="d-flex flex-row m-1">
+                <div class="d-flex flex-column">
+                  <div class="d-flex justify-content-center">
+                    <li ><strong>Tipos de Validaciones</strong></li>
+                  </div>
+                  <ul>
+                    <li class="d-flex justify-content-left" >-Tipos de Carácteres </li>
+                    <li class="d-flex justify-content-left">-Longitud de Nombres y Números</li>
+                    <li class="d-flex justify-content-left">-Url de Imagen</li>
+                    <li class="d-flex justify-content-left">-Valores de Campos</li>
+                    <li class="d-flex justify-content-left">-Etc.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- FIN PRIMERA FILA -->
+            </ul>
+          </div>
+
+
+          </div>
+
+          <!--FIN AGREGAR PRODUCTO CAMPOS-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+<!-- FIN CARD AGREGADO PRODUCTOS -->
+
+
+  </div>
+  <!--FIN CARDS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 </div>
 
-
-
-
-</div>
 <!-- FIN INICIO APP -->
 
 
@@ -116,19 +224,16 @@
   <div class="modal-dialog" >
     <div class="modal-content" id="modalAyuda">
       <div class="modal-header">
-        <h4 class="modal-title" id="staticBackdropLabel">Guía para Editar un Producto</h4>
+        <h4 class="modal-title" id="staticBackdropLabel">Guía para la Gestión de Productos</h4>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h5>Acerca del Formulario </h5>
-        <p>Este formulario ayuda al administrador en agregar los productos de una forma fácil y práctica sin necesidad de inserción a través de consola de comandos o desde la base de datos.</p>
-        <h5>Campos del Formulario</h5>
-        <p>Todos los campos del formulario presentan validaciones según la arquitectura de la aplicación. Además se agrega en cada entrada una ejemplificación de valor.</p>
-        <ul>
-          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de nu máximo de 10 digitos.</li>
-          <li><strong>Nombre:</strong></li>
-        </ul>
-        <strong>CONTENIDO NO DISPONIBLE, CONTACTAR AL DESARROLLADOR!!</strong>
+        <h5><strong> Acerca de esta Sección</strong></h5>
+        <p>A través de la entrada de la aplicación de Gestión podemos realizar las Operaciones de Gestión(Agregar, Editar, Eliminar, Buscar, etc) desde el Listado de Productos o desde la Barra de Navegación. Podemos agregar un producto según la tarea y rol asignado.</p>
+        <h5>Administradores y Usuarios</h5>
+        <p>Los administradores pueden realizar todas las Operaciones Disponibles para la Gestión de Productos de la aplicación. Los Usuarios solamente podrán visualizar el Listado y realizar otras Tareas que no requieran transacciones en la Base de Datos.</p>
+
+        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL DESARROLLADOR!!</strong>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
