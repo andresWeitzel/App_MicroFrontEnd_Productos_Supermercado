@@ -38,12 +38,21 @@ export class ListaProductosComponent implements OnInit {
   isUser = false;
 
    //PAGINADO
-   nroPagina=0;
-   nroElementos=10;
+
+   //Pages
+   nroPage=0;
+   isFirstPage=false;
+   isLastPage=false;
+   totalPages=0;
+
+   //Elements
+   nroElements=10;
+   currentElements=0;
+   totalElements=0;
+
+  //Caracteristicas
    orderBy='id';
    direction='asc';
-   firstPage=false;
-   lastPage=false;
 
   //ERRORES
    errMsj: string;
@@ -90,8 +99,7 @@ export class ListaProductosComponent implements OnInit {
     if(!(this.isAdmin) || !(this.isUser)){
       this.router.navigate(['login']);
     }else{
-      //this.listarProductos();
-      //this.listarProductosFilter();
+      this.listarProductos();
     }
   }
 
@@ -100,13 +108,17 @@ export class ListaProductosComponent implements OnInit {
 
 //----------LISTADO PRODUCTOS ---------------
 listarProductos(){
-  this.productoService.listado(this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
+  this.productoService.listado(this.nroPage,this.nroElements,this.orderBy,this.direction).subscribe(
     (data:any)=>{
       this.productos = data.content;
-      this.firstPage = data.first;
-      this.lastPage = data.last;
+      this.isFirstPage = data.first;
+      this.isLastPage = data.last;
+      this.totalPages = data.totalPages;
+      this.currentElements = data.numberOfElements;
+      this.totalElements = this.nroElements * this.totalPages;
 
-      console.log(this.productos);
+
+      //console.log(this.productos);
     },
     err => {
 
@@ -125,13 +137,17 @@ listarProductos(){
 
 //----------LISTADO PRODUCTOS FILTER ---------------
 listarProductosFilter(){
-  this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPagina,this.nroElementos,this.orderBy,this.direction).subscribe(
+  this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPage,this.nroElements,this.orderBy,this.direction).subscribe(
     (data:any)=>{
       this.productos = data.content;
-      this.firstPage = data.first;
-      this.lastPage = data.last;
+      this.isFirstPage = data.first;
+      this.isLastPage = data.last;
+      this.totalPages = data.totalPages;
+      this.currentElements = data.numberOfElements;
+      this.totalElements = this.nroElements * this.totalPages;
 
-      console.log(this.productos);
+
+      //console.log(this.productos);
     },
     err => {
       this.errMsj = err.error.message;
@@ -154,8 +170,9 @@ setFilter(filtro:string){
 
   console.log(this.filtroProdBusqueda);
 
-  //this.listarProductosFilter();
+  this.listarProductosFilter();
 }
+
 
 
 
@@ -243,22 +260,22 @@ orderByDirection(type:string,direct:string):void{
 
 //Pagina Anterior
 paginaAnterior():void{
-  if(!this.firstPage){
-this.nroPagina--;
+  if(!this.isFirstPage){
+this.nroPage--;
 this.listarProductos();
   }
 }
 
   //Pagina Anterior
   paginaSiguiente():void{
-    if(!this.lastPage){
-      this.nroPagina++;
+    if(!this.isLastPage){
+      this.nroPage++;
       this.listarProductos();
     }
   }
 
   cambiarPagina(pagina:number):void{
-    this.nroPagina=pagina;
+    this.nroPage=pagina;
     this.listarProductos();
   }
 

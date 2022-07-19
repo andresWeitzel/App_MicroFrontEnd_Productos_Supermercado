@@ -35,25 +35,26 @@
                 <!-- FIN  VALOR BUSQUEDA -->
                 <!-- FORM FILTRO -->
                 <div class="text-left ms-0 me-5 col-12">
-                    <form class="d-flex flex-row text-left col-12 me-5"  (ngSubmit)="setFilter(filtroInput.value)" >
+                    <div class="d-flex flex-row text-left col-12 me-5"  (ngSubmit)="setFilter(filtroInput.value)" >
                         <input  type="text" name="filtro" class="form-control bg-white" placeholder="Ingresar valor Búsqueda" aria-label="valor" id="filtro"  #filtroInput>
-
                         <!--BTN BUSQUEDA-->
-                        <button type="submit" class="btn bg-none p-1 " >
-              <img src="./assets/icons/search02.png" alt="" width="45"
-                height="45" class="">
-            </button>
-                        <!--FIN BTN BUSQUEDA-->
+                        <a >
+                          <button class="btn border-none p-1" type="button" (click)="setFilter(filtroInput.value)">
+                            <img src="./assets/icons/search02.png" alt="" width="45"
+                                height="45" class="">
+                          </button>
+                      </a>
+                      <!--FIN BTN BUSQUEDA-->
 
 
                         <!--BTN LIMPIAR-->
-                        <button class="btn bg-none p-1" onclick="limpiarFiltro()">
+                        <button class="btn bg-none p-1" (click)="filtroInput.value=''">
               <img src="./assets/icons/recycle.png" alt="" width="45"
                 height="45" class="">
             </button>
                         <!--FIN BTN LIMPIAR-->
 
-                    </form>
+                    </div>
                 </div>
                 <!-- FIN FORM FILTRO -->
             </div>
@@ -392,7 +393,7 @@ width="15" height="15">
         <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
         <div class="bg-none text-white d-inline-block align-text-center ms-5 mt-3">
             <h5 class="ms-5">
-                | Página: <span class="bg-none " ></span> de <span class="bg-none "></span> |
+                | Página: {{nroPage + 1}} <span class="bg-none" ></span> de <span class="bg-none ">{{totalPages}}</span> |
             </h5>
         </div>
 
@@ -400,7 +401,7 @@ width="15" height="15">
         <div class="bg-none text-white d-inline-block align-text-center ms-3 mt-3">
 
             <h5 class="" >
-                | Elementos:<span class="bg-none " ></span> de <span class="bg-none " ></span> |
+                | Elementos: {{currentElements}} <span class="bg-none " ></span> de <span class="bg-none " > {{totalElements}} </span> |
             </h5>
         </div>
         <!-- FIN ELEMENTOS SIN FILTRO -->
