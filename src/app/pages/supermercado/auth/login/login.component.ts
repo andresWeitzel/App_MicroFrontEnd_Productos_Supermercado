@@ -72,6 +72,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuarioDto).subscribe(
       data => {
 
+
+
         this.router.navigate(['/inicio']);
 
 
@@ -97,6 +99,8 @@ export class LoginComponent implements OnInit {
 
 
          }, 600);
+
+
 
 
       },
