@@ -10,6 +10,18 @@ import { TokenService } from 'src/app/services/token/token.service';
 import * as XLSX from 'xlsx';
 
 
+//Highchart and Treemap chart
+import * as  Highcharts from 'highcharts';
+import More from 'highcharts/highcharts-more';
+import Tree from 'highcharts/modules/treemap';
+import Heatmap from 'highcharts/modules/heatmap';
+More(Highcharts);
+Tree(Highcharts);
+Heatmap(Highcharts);
+
+
+
+
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
@@ -22,6 +34,9 @@ export class ListaProductosComponent implements OnInit {
     state : {
       value :null
     }
+
+
+
 };
 
   //PRODUCTOS LISTADO
@@ -297,6 +312,148 @@ this.listarProductos();
 
 
 
+  //=============== PRODUCTOS POR GRUPO =============
+  countProdByAgua():void{
+
+//this.productos.
+
+  }
+
+  //============== HIGHCHART =================
+
+
+  Highcharts03: typeof Highcharts = Highcharts;
+
+      chartOptions03: Highcharts.Options = {
+        credits: {
+          enabled: false
+
+        },
+
+        chart: {
+          height: 200,
+          width: 800,
+          inverted: true
+      },
+
+      title: {
+          text: ''
+      },
+
+      series: [{
+        type: 'treemap',
+        layoutAlgorithm: 'stripes',
+        alternateStartingDirection: true,
+        levels: [{
+          level: 1,
+          layoutAlgorithm: 'stripes',
+          dataLabels: {
+              enabled: true,
+              align: 'left',
+              verticalAlign: 'top',
+              style: {
+                  fontSize: '10px',
+                  fontWeight: 'bold'
+              }
+          }
+      }],
+      data: [{
+        //-----------------BEBIDAS-------------------
+        id: 'Beb',
+        name: 'Bebidas',
+        color: "rgb(18, 92, 19)"
+      }, {
+        name: 'Agua',
+        parent: 'Beb',
+        value: 2
+    }, {
+        name: 'Vinos',
+        parent: 'Beb',
+        value: 2
+      }, {
+        name: 'Gaseosas',
+        parent: 'Beb',
+        value: 2
+    },
+      //-----------------CARNES/PESCADOS-------------------
+    {
+        id: 'Car/Pes',
+        name: 'Carnes/Pescados',
+        color: "rgb(35, 112, 20)"
+    }, {
+      name: 'Carne Vacuna',
+      parent: 'Car/Pes',
+      value: 2
+  }, {
+      name: 'Pollo/Granja',
+      parent: 'Car/Pes',
+      value: 2
+  },
+      //-----------------CONGELADOS-------------------
+    {
+      id: 'Cong',
+        name: 'Congelados',
+        color: "rgb(55, 124, 25)"
+    },
+    {
+      name: 'Nugg/Rebozados',
+      parent: 'Cong',
+      value: 3
+  }, {
+      name: 'Hamburguesas',
+      parent: 'Cong',
+      value: 3
+  }, {
+      name: 'Helados',
+      parent: 'Cong',
+      value: 3
+  },
+     //-----------------LACTEOS/FRESCOS-------------------
+
+    {
+      id: 'Lact',
+      name: 'Lácteos/Frescos',
+      color: "rgb(75, 134, 30)"
+  },
+   {
+        name: 'Leches',
+        parent: 'Lact',
+        value: 2
+    }, {
+        name: 'Yogures',
+        parent: 'Lact',
+        value: 2
+    },
+
+  //-----------------FRUTAS/VERDURAS-------------------
+    {
+      id: 'Frut/Ver',
+      name: 'Frutas/Verduras',
+      color: "rgb(100, 144, 35)"
+  },
+   {
+        name: 'Verduras',
+        parent: 'Frut/Ver',
+        value: 2
+    }, {
+        name: 'Frutas',
+        parent: 'Frut/Ver',
+        value: 2
+    }
+
+    ],
+  }]
+
+};
+
+
+
+
+
 
 
 }
+
+
+
+

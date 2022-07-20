@@ -19,6 +19,7 @@ import { interceptorProvider } from './services/interceptors/productos/intercept
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import {MatDialogModule} from '@angular/material/dialog'
+import { HighchartsChartComponent, HighchartsChartModule } from 'highcharts-angular';
 
 
 //--CONFIG SPINNER--
@@ -55,7 +56,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HighchartsChartModule
 
 
   ],

@@ -2,7 +2,10 @@
 <div class="container text-center mt-5  p-1">
 
 <!-- TITULO EDICCION DE PRODUCTOS -->
-<div class="d-flex flex-row justify-content-center bd-highlight mt-5  p-3 ">
+<div class="d-flex flex-row justify-content-center bd-highlight mt-5 ">
+
+
+  <div class="d-flex d-row">
   <h1 class="mt-3">
       <span class="badge  text-decoration-underline">Listado de Productos</span>
 
@@ -12,6 +15,22 @@
               </button>
               <!-- FIN BTN MODAL INFO -->
   </h1>
+
+          <!--BTN EXCEL-->
+          <div class="">
+            <a target="_blanck">
+                <button type="button" class="btn bg-none p-1 m-2" (click)="generateExcel()">
+        <img src="assets/icons/excel.png" alt="" width="55"
+          height="55">
+      </button>
+            </a>
+        </div>
+        <!--BTN EXCEL-->
+
+</div>
+
+
+
 </div>
 <!-- FIN TITULO EDICCION DE PRODUCTOS -->
 
@@ -19,24 +38,24 @@
 
 
     <!--BUSCADOR Y UTILIDADES-->
-    <div class="d-flex flex-row justify-content-center mt-3 ms-2">
+    <div class="d-flex flex-row justify-content-center mt-5 ">
+
+
 
 
       <!-- BUSCADOR -->
-        <div class="text-left me-5 ms-0" id="buscador">
-            <div class="d-flex flex-row justify-content-center mt-3">
-                <!-- VALOR BUSQUEDA -->
-                <div class="text-left ms-0">
-                    <h2>
-                        <span class="badge bg-none ms-0"><img src="./assets/icons/products-storage.png" alt="" width="45"
-                          height="45" class=""></span>
-                    </h2>
-                </div>
-                <!-- FIN  VALOR BUSQUEDA -->
+        <div class="text-left  mt-5 me-1" id="buscador">
+
+            <div class="d-flex flex-row justify-content-center mt-5">
+
                 <!-- FORM FILTRO -->
                 <div class="text-left ms-0 me-5 col-12">
+
                     <div class="d-flex flex-row text-left col-12 me-5"  (ngSubmit)="setFilter(filtroInput.value)" >
-                        <input  type="text" name="filtro" class="form-control bg-white" placeholder="Ingresar valor Búsqueda" aria-label="valor" id="filtro"  #filtroInput>
+
+                      <img src="./assets/icons/products-storage.png" alt="" width="45"height="45" class="p-1 m-1">
+
+                        <input  type="text" name="filtro" class="form-control bg-white" placeholder="Buscador de Productos" aria-label="valor" id="filtro"  #filtroInput>
                         <!--BTN BUSQUEDA-->
                         <a >
                           <button class="btn border-none p-1" type="button" (click)="setFilter(filtroInput.value)">
@@ -48,7 +67,7 @@
 
 
                         <!--BTN LIMPIAR-->
-                        <button class="btn bg-none p-1" (click)="filtroInput.value=''">
+                        <button class="btn bg-none p-1 " (click)="filtroInput.value=''">
               <img src="./assets/icons/recycle.png" alt="" width="45"
                 height="45" class="">
             </button>
@@ -63,18 +82,17 @@
 
 
 
+      <!--TREEMAP HIGHCHART-->
+      <div class=" me-0 mb-0 justify-content-end">
+        <highcharts-chart [Highcharts]="Highcharts03" [options]="chartOptions03"></highcharts-chart>
+      </div>
+      <!--FIN TREEMAP HIGHCHART-->
 
 
-        <!--BTN EXCEL-->
-        <div class="p-1 ms-5">
-            <a target="_blanck">
-                <button type="button" class="btn bg-none p-1 m-2" (click)="generateExcel()">
-        <img src="assets/icons/excel.png" alt="" width="45"
-          height="45">
-      </button>
-            </a>
-        </div>
-        <!--BTN EXCEL-->
+
+
+
+
 
 
 
