@@ -298,7 +298,7 @@ this.listarProductos();
   }
 
   //============= GENERATE EXCEL ====================
-  name = 'ExcelSheet.xlsx';
+  name = 'listaProductos.xlsx';
 
   generateExcel(): void {
     let element = document.getElementById('table');

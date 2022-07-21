@@ -1,4 +1,5 @@
-import { NgStyle } from '@angular/common';
+import { DatePipe, NgStyle } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,7 +47,6 @@ formGroup: FormGroup;
     private productoService:ProductoService,
      private tokenService:TokenService,
     private toast: NgToastService,
-
 
   ) {
 
@@ -241,7 +241,7 @@ addProducto():void{
        }, 2200);
     },
     err => {
-      this.errMsj = err.error.message;
+      this.errMsj = err.error;
 
       console.log(this.errMsj);
 
