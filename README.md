@@ -49,3 +49,7 @@ Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap
 * Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
 * Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
 
+### Treemap Graphic
+* Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
+* Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
+
