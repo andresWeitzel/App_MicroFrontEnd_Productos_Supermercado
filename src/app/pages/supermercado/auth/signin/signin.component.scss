@@ -8,24 +8,30 @@ table {
 }
 
 #aviso {
-    font: 50 0.8em 'Metrophobic', sans-serif;
-    display: inline-block;
-    padding: 0.5em;
-    margin: 0.5em;
-    margin-top: 0.5em;
+
+
+  margin-top: 10em;
+  margin-bottom: 40em;
+  text-align: center;
+
+  .alert{
+
+    border-radius: 0.6em;
+    color: #2C5D33;
+    background-color: #D2EED6;
     text-align: center;
-    max-width: 100em;
-    opacity: 0.8;
-    color: white;
-    background-color: #2C5D33;
-    border-color: #1f4a25;
-    //animation: backInDown 1.3s;
-    button {
-        font: 50 0.8em 'Metrophobic', sans-serif;
-        background-color: #2C5D33;
-        border-color: #1f4a25;
-        color: white;
-    }
+
+      button{
+        border-radius: 0.6em;
+        color: #1e4423;
+        background-color: #7ab382;
+        padding: 0.5em;
+        text-align: center
+
+      }
+  }
+
+
 }
 
 

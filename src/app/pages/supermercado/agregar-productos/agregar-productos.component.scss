@@ -22,18 +22,15 @@ h1 {
 }
 
 #msjUser {
-
-
-    margin-top: 10em;
-    margin-bottom: 40em;
-    text-align: center;
-
     .alert{
 
       border-radius: 0.6em;
       color: #2C5D33;
       background-color: #D2EED6;
+      margin-top: 40px;
+      margin-bottom: 200px;
       text-align: center;
+
 
         button{
           border-radius: 0.6em;
@@ -92,3 +89,12 @@ h1 {
     text-decoration: underline;
   }
  }
+
+
+
+ footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}

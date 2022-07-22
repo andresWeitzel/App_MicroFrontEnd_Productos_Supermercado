@@ -6,8 +6,11 @@ body {
     background-position: center;
     background-attachment: fixed;
     min-height: 500px;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
-
+}

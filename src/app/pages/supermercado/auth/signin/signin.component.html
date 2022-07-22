@@ -1,26 +1,24 @@
 <div class="container mt-5">
 
 
-    <div *ngIf="isLogged ; else loggedOut">
+  <div class="mt-5 mb-5" *ngIf="isLogged ; else loggedOut">
 
-        <!--INFORMATION ALERT-->
-        <div class="container mt-5 ms-5 me-5 " #aviso>
-            <div class="alert alert-dismissible fade show border-start border-5 mt-5 ms-5 me-5" role="alert" id="aviso">
 
-                <div class=" d-flex flex-column justify-content-center">
+    <div class=" d-flex flex-column justify-content-center mt-5 mb-5" id="aviso">
 
-                    <h1> <strong>Ya se ha Iniciado Sesión Previamente!</strong>.</h1>
-
-                    <div class=" d-flex justify-content-end ">
-
-                        <button type="button" class="btn btn-lg  border border-2 d-flex justify-content-end  p-2" data-bs-dismiss="alert" aria-label="Close"><strong>De Acuerdo</strong></button>
-                    </div>
-                </div>
-
-            </div>
+      <div class="text-center d-flex justify-content-center  mt-5 ms-1 me-1 mb-5" role="alert" >
+        <div class="alert d-flex d-row  mt-5 mb-5">
+            <h2 class=""><strong> Ya se ha Iniciado Sesión Previamente </strong>
+            </h2>
+            <a  [routerLink]="['/inicio']"><button type="button" class="btn btn-sm p-2 ms-2" data-bs-dismiss="alert" aria-label="Close"><strong>De Acuerdo</strong></button></a>
         </div>
-        <!--FIN INFORMATION ALERT-->
     </div>
+
+    <div class="mt-5 mb-5"></div>
+
+  </div>
+</div>
+
 
     <ng-template #loggedOut>
 

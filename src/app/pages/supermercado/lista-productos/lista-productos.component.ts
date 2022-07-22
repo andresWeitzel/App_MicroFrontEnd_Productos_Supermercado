@@ -247,6 +247,32 @@ setFilter(filtro:string){
 
   }
 
+
+
+  //----------ELIMINAR PRODUCTOS ---------------
+  eliminarProductoNoAuth(id : number): void{
+
+    //SPIN LOADING
+    this.ngxService.start();
+    setTimeout(() => {
+      this.ngxService.stop();
+    }, 100);
+    //FIN SPIN LOADING
+
+
+
+    this.toast.error({detail:"Operación No Autorizada",summary:'Servicio Habilitado para administradores!!', duration:2000});
+
+
+        setTimeout(() => {
+          this.refresh();
+         }, 2100)
+
+
+  }
+
+
+
   //=============== UTILS ===============
 
 refresh(){
