@@ -48,6 +48,9 @@ export class ListaProductosComponent implements OnInit {
   codProdSelect:string='';
   nombrProdSelect:string='';
 
+  //Cantidad de Productos por Grupos
+  nroProdAgua=3;
+
   //FILTRO BUSQUEDA PRODUCTOS
   filtroProdBusqueda:string='Gaseosas';
 
@@ -339,9 +342,9 @@ this.listarProductos();
 
 
   //=============== PRODUCTOS POR GRUPO =============
-  countProdByAgua():void{
+  countProdByGroup():void{
 
-//this.productos.
+    //this.nroProdAgua = this.productos.find.g
 
   }
 
@@ -365,7 +368,9 @@ this.listarProductos();
       title: {
           text: ''
       },
-
+      tooltip:{
+        pointFormat : '<b><strong>{point.name}</strong></b>'
+      },
       series: [{
         type: 'treemap',
         layoutAlgorithm: 'stripes',
@@ -375,10 +380,11 @@ this.listarProductos();
           layoutAlgorithm: 'stripes',
           dataLabels: {
               enabled: true,
+
               align: 'left',
               verticalAlign: 'top',
               style: {
-                  fontSize: '10px',
+                  fontSize: '13px',
                   fontWeight: 'bold'
               }
           }
@@ -386,85 +392,85 @@ this.listarProductos();
       data: [{
         //-----------------BEBIDAS-------------------
         id: 'Beb',
-        name: 'Bebidas',
+        name: 'BEBIDAS',
         color: "rgb(18, 92, 19)"
       }, {
         name: 'Agua',
         parent: 'Beb',
-        value: 2
+        value: 1
     }, {
         name: 'Vinos',
         parent: 'Beb',
-        value: 2
+        value: 1
       }, {
         name: 'Gaseosas',
         parent: 'Beb',
-        value: 2
+        value: 1
     },
       //-----------------CARNES/PESCADOS-------------------
     {
         id: 'Car/Pes',
-        name: 'Carnes/Pescados',
+        name: 'CARNES Y PESCADOS',
         color: "rgb(35, 112, 20)"
     }, {
       name: 'Carne Vacuna',
       parent: 'Car/Pes',
-      value: 2
+      value: 1
   }, {
       name: 'Pollo/Granja',
       parent: 'Car/Pes',
-      value: 2
+      value: 1
   },
       //-----------------CONGELADOS-------------------
     {
       id: 'Cong',
-        name: 'Congelados',
+        name: 'CONGELADOS',
         color: "rgb(55, 124, 25)"
     },
     {
       name: 'Nugg/Rebozados',
       parent: 'Cong',
-      value: 3
+      value: 1
   }, {
       name: 'Hamburguesas',
       parent: 'Cong',
-      value: 3
+      value: 1
   }, {
       name: 'Helados',
       parent: 'Cong',
-      value: 3
+      value: 1
   },
      //-----------------LACTEOS/FRESCOS-------------------
 
     {
       id: 'Lact',
-      name: 'Lácteos/Frescos',
+      name: 'LÁCTEOS Y FRESCOS',
       color: "rgb(75, 134, 30)"
   },
    {
         name: 'Leches',
         parent: 'Lact',
-        value: 2
+        value: 1
     }, {
         name: 'Yogures',
         parent: 'Lact',
-        value: 2
+        value: 1
     },
 
   //-----------------FRUTAS/VERDURAS-------------------
     {
       id: 'Frut/Ver',
-      name: 'Frutas/Verduras',
+      name: 'FRUTAS Y VERDURAS',
       color: "rgb(100, 144, 35)"
   },
    {
         name: 'Verduras',
         parent: 'Frut/Ver',
-        value: 2
+        value: 1
     }, {
         name: 'Frutas',
         parent: 'Frut/Ver',
-        value: 2
+        value: 1
     }
 
     ],
