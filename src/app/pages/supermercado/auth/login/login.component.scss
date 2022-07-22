@@ -10,10 +10,6 @@ table {
 #aviso {
 
 
-    margin-top: 10em;
-    margin-bottom: 40em;
-    text-align: center;
-
     .alert{
 
       border-radius: 0.6em;
@@ -44,7 +40,7 @@ table {
     height: 100%
 }
 
-.loginBox {
+.formulario {
     position: relative;
     width: 350px;
     min-height: 200px;
@@ -68,13 +64,13 @@ h3 {
     text-align: center
 }
 
-.loginBox input {
+.formulario input {
     width: 100%;
     margin-bottom: 20px
 }
 
-.loginBox input[type="text"],
-.loginBox input[type="password"] {
+.formulario input[type="text"],
+.formulario input[type="password"] {
     border: none;
     border-bottom: 2px solid #2C5D33;
     outline: none;
@@ -86,15 +82,15 @@ h3 {
     box-sizing: border-box
 }
 
-.loginBox input[type="text"]:hover,
-.loginBox input[type="password"]:hover {
+.formulario input[type="text"]:hover,
+.formulario input[type="password"]:hover {
     color: #1f5026;
     border: 1px solid #28572f;
     box-shadow: 0 0 5px rgba(3, 54, 3, 0.3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 #2C5D33
 }
 
-.loginBox input[type="text"]:focus,
-.loginBox input[type="password"]:focus {
+.formulario input[type="text"]:focus,
+.formulario input[type="password"]:focus {
     border-bottom: 2px solid #2C5D33
 }
 
@@ -108,7 +104,7 @@ h3 {
     color: #2C5D33
 }
 
-.loginBox input[type="submit"] {
+.formulario input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -119,7 +115,7 @@ h3 {
     cursor: pointer
 }
 
-.loginBox a {
+.formulario a {
     color: #2C5D33;
     font-size: 14px;
     font-weight: bold;
