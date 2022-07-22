@@ -114,7 +114,7 @@ export class ListaProductosComponent implements OnInit {
   }
 
   checkSecurity(){
-    if(!(this.isAdmin) || !(this.isUser)){
+    if(!(this.isAdmin) && !(this.isUser)){
       this.router.navigate(['login']);
     }else{
       this.listarProductos();

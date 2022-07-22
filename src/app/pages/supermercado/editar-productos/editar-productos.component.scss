@@ -24,6 +24,34 @@ h1 {
 
 
 
+#msjUser {
+
+
+  margin-top: 10em;
+  margin-bottom: 40em;
+  text-align: center;
+
+  .alert{
+
+    border-radius: 0.6em;
+    color: #2C5D33;
+    background-color: #D2EED6;
+    text-align: center;
+
+      button{
+        border-radius: 0.6em;
+        color: #1e4423;
+        background-color: #7ab382;
+        padding: 0.5em;
+        text-align: center
+
+      }
+  }
+
+
+}
+
+
 #formulario{
 
   form,div, div.div{

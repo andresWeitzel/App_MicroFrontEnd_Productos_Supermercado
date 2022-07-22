@@ -83,8 +83,20 @@ formGroup: FormGroup;
 }
 
 checkSecurity(){
-  if(!(this.isAdmin) || !(this.isUser)){
+  if(!(this.isAdmin) && !(this.isUser)){
+
     this.router.navigate(['login']);
+
+  }else if(!(this.isAdmin)){
+
+    this.toast.error({detail:"Operación No Autorizada",summary:'Servicio Habilitado para administradores!!', duration:2000});
+
+      setTimeout(() => {
+        this.router.navigate(['lista-productos']);
+       }, 3000);
+
+
+
   }
 
 }
