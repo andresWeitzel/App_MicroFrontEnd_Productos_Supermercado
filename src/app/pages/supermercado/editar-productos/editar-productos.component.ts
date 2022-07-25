@@ -1,3 +1,4 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -23,6 +24,7 @@ export class EditarProductosComponent implements OnInit {
   errMsj: string;
 
 //Campos Producto
+//id:number=null;
 codigo:string='';
 imagen:string='';
 nombre:string='';
@@ -155,25 +157,25 @@ checkSecurity(){
        nombre:['',
         [Validators.required
        , Validators.minLength(3)
-       , Validators.maxLength(50)
+       , Validators.maxLength(70)
        , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
      ]],
     marca:['',
     [Validators.required
       , Validators.minLength(3)
-      , Validators.maxLength(30)
+      , Validators.maxLength(40)
       , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
    ]],
    tipo:['',
    [Validators.required
     , Validators.minLength(3)
-    , Validators.maxLength(30)
+    , Validators.maxLength(40)
     , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
   ]],
   grupo:['',
    [Validators.required
     , Validators.minLength(3)
-    , Validators.maxLength(30)
+    , Validators.maxLength(40)
     , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
   ]],
   peso:['',
@@ -248,9 +250,15 @@ refresh(){
 
   updateProducto():void{
 
-    const id=this.activatedRoute.snapshot.params['id'];
+    //const navegacionActual = this.router.getCurrentNavigation();
+
+    //this.producto = navegacionActual?.extras?.state?.['value'];
+
+    //const id=this.activatedRoute.snapshot.params['id'];
+    const id=this.producto.id;
 
     const nuevoProducto=new ProductoDto(
+
       this.codigo,
       this.imagen,
       this.nombre,

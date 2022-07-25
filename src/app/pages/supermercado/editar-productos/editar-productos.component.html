@@ -142,6 +142,8 @@
                 <option value="Sancor">- Sancor</option>
                 <option value="Sancor">- Paso de los Toros</option>
                 <option value="Coca Cola">- Coca Cola</option>
+                <option disabled><strong >---OTROS---</strong></option>
+                <option value="{{marca}}">- {{marca}}</option>
                 <option value="Genérico">- Genérico</option>
               </select>
                   <mdb-error class="text-danger" *ngIf="marcaForm?.invalid && (marcaForm?.dirty || marcaForm?.touched)"><strong>Marca Inválida</strong></mdb-error>
@@ -165,6 +167,9 @@
                         <option value="Lácteos y Productos Frescos">- Lácteos y Frescos</option>
                         <option value="Frutas y Verduras">- Frutas y Verduras</option>
                         <option value="Congelados">- Congelados</option>
+                        <option disabled><strong >---OTROS---</strong></option>
+                        <option value="{{tipo}}">- {{tipo}}</option>
+
                       </select>
                     <mdb-error class="text-danger" *ngIf="tipoForm?.invalid && (tipoForm?.dirty || tipoForm?.touched)"><strong>Tipo Inválido</strong></mdb-error>
                     <mdb-success class="text-success" *ngIf="tipoForm?.valid && (tipoForm?.dirty || tipoForm?.touched)"><strong>Tipo Válido</strong></mdb-success>
@@ -212,11 +217,8 @@
                      <option value="Nuggets/Rebozados">- Nuggets/Rebozados</option>
                      <option value="Hamburguesas">- Hamburguesas</option>
 
-
-
-
-
-
+                     <option disabled><strong >---OTROS---</strong></option>
+                     <option value="{{grupo}}">- {{grupo}}</option>
 
                       <option value="Genérica">- Genérica</option>
                     </select>

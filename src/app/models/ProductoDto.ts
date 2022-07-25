@@ -1,6 +1,6 @@
 export class ProductoDto {
 
-  id?:number;
+  id:number;
   codigo:string;
   imagen:string;
   nombre:string;
@@ -13,6 +13,7 @@ export class ProductoDto {
 
   constructor(codigo:string,imagen:string,nombre:string,marca:string,tipo:string,grupo:string,peso:number,precioUnidad:number,stock:number){
 
+      //this.id=id;
       this.codigo=codigo;
       this.imagen=imagen;
       this.nombre=nombre;

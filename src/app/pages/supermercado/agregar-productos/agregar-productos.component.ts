@@ -127,7 +127,7 @@ checkInputs(){
     nombre:new FormControl(null,
       [Validators.required
      , Validators.minLength(3)
-     , Validators.maxLength(50)
+     , Validators.maxLength(70)
      , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
    ]),
    imagen:new FormControl(null,
@@ -139,19 +139,19 @@ checkInputs(){
  marca:new FormControl(null,
   [Validators.required
  , Validators.minLength(3)
- , Validators.maxLength(30)
+ , Validators.maxLength(40)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 tipo:new FormControl(null,
   [Validators.required
  , Validators.minLength(3)
- , Validators.maxLength(30)
+ , Validators.maxLength(40)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 grupo:new FormControl(null,
   [Validators.required
  , Validators.minLength(3)
- , Validators.maxLength(30)
+ , Validators.maxLength(40)
  , Validators.pattern(/[a-zA-Z0-9.-\s]+/)
 ]),
 peso:new FormControl(null,
