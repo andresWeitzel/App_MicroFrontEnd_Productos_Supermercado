@@ -6,7 +6,10 @@
 * Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
 * Se implementa Paginación Completa.
 * Se aplica un filtro para la búsqueda de productos menos estricto, permitiendo las mismas según coincidencias de carácteres y palabras para todos los campos.
-* Entre Otros Recursos.
+* Para la experiencia de usuario se utiliza Popupts, Loaders, Angular Material, Etc.
+* Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
+* Todas las Páginas de la Aplicación poseen modals de Ayuda.
+* Entre Otros Recursos Disponibles.
 
 
 # -----------------------------------------------
