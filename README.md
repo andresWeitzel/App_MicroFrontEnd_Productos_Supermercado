@@ -14,6 +14,17 @@
 * Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
 
 
+</br>
+
+### Seguidamente se Representa Gráficamente de forma sucinta algunos Servicios y Recursos de la Aplicación
+
+</br>
+
+#### Inicio Componentes
+
+![Index app](https://github.com/andresWeitzel/AppGestionMicroelectronica_SpringBoot/blob/master/documentation/inicio/inicioComponentes.png)
+
+
 # -----------------------------------------------
 ### Angular Popup
 
