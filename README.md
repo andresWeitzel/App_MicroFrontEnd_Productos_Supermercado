@@ -1,5 +1,28 @@
-# App_MicroFrontEnd_Productos_SpringBoot_Docker_Kubernate_PostgreSQL
-Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, Docker, Kubernate, Spring Security, Spring Boot, Spring MVC, Microservicios, Bootstrap, Open-Api, Git, DBeaver, PostgreSQL y Otras Tecnologías
+# App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL
+
+* Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, Open-Api, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* La aplicación esta basada para la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
+* Como sistema de seguridad para manejo de recursos de la app se aplica Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de los productos requeridos.
+* Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
+* Se implementa Paginación Completa.
+* Se aplica un filtro para la búsqueda de productos menos estricto, permitiendo las mismas según coincidencias de carácteres y palabras para todos los campos.
+* Para la experiencia de usuario se utiliza Popupts, Loaders, Angular Material, Etc.
+* Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
+* Todas las Páginas de la Aplicación poseen modals de Ayuda.
+* Entre Otros Recursos Disponibles.
+
+* Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
+
+
+</br>
+
+### Seguidamente se Representa Gráficamente de forma sucinta algunos Servicios y Recursos de la Aplicación
+
+</br>
+
+#### Inicio Componentes
+
+![Index app](https://github.com/andresWeitzel/AppGestionMicroelectronica_SpringBoot/blob/master/documentation/inicio/inicioComponentes.png)
 
 
 # -----------------------------------------------
