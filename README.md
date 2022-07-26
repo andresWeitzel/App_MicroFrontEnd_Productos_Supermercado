@@ -1,5 +1,12 @@
-# App_MicroFrontEnd_Productos_SpringBoot_Docker_Kubernate_PostgreSQL
-Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, Docker, Kubernate, Spring Security, Spring Boot, Spring MVC, Microservicios, Bootstrap, Open-Api, Git, DBeaver, PostgreSQL y Otras Tecnologías
+# App_MicroFrontEnd_Productos_SpringBoot_Spring_Security_PostgreSQL
+
+* Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, Open-Api, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* La aplicación esta basada para la gestión de productos, si bien se ha desarrollado el back también para la gestión de usuarios, esta aplica solo desde el back, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
+* Como sistema de seguridad para manejo de recursos de la app se aplica Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar busquedas acerca de los requeridos.
+* Todos los formularios aplican validaciones de caracteres, longitudes, tamaños, valores numericos, valores mal formados, email, contraseña, url de imágenes, etc.
+* Se implementa Paginación Completa.
+* Se aplica un filtro para la búsqueda de productos menos estricto, permitiendo las mismas según coincidencias de carácteres y palabras para todos los campos.
+* 
 
 
 # -----------------------------------------------
