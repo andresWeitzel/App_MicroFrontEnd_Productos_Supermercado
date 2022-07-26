@@ -16,13 +16,76 @@
 
 </br>
 
-### Seguidamente se Representa Gráficamente de forma sucinta algunos Servicios y Recursos de la Aplicación
+### Seguidamente se Representa Gráficamente de Forma Sucinta algunos Servicios y Recursos de la Aplicación.
 
 </br>
 
-#### Inicio Componentes
+#### Login 
 
-![Index app](https://github.com/andresWeitzel/AppGestionMicroelectronica_SpringBoot/blob/master/documentation/inicio/inicioComponentes.png)
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/login-logout/login-view.png)
+
+
+
+#### Inicio Post Login 
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/inicio/postLogin.png)
+
+
+#### Listado de Productos Filtrado según Frutas 
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/filterByFrutas.png)
+
+
+#### Listado de Productos Formato xlsx 
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsExcel.png)
+
+
+#### Listado de Productos sección Paginado 
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/paginado.png)
+
+
+
+#### Checks Form Editar Producto 
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/edit-products/editSelectCheckDisabled.png)
+
+
+#### Checks Form Agregar Producto Insertado
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/add-products/addFormCheckValidated.png)
+
+#### Producto Insertado Filtrado en Lista
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/add-products/viewProductAdd.png)
+
+
+#### Check Eliminar Producto
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheck.png)
+
+
+#### Producto Eliminado
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheckOK.png)
+
+
+
+#### Check Lista Producto Eliminado
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheckList.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 # -----------------------------------------------
