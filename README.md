@@ -97,6 +97,17 @@
 
 
 
+</br>
+
+| Área | Stack |
+| ------------- | ------------- |
+| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Highchart y Otros | 
+| Back End | Spring Boot, Spring Security, Lombok, Maven, Swagger UI, Open-API y Otros | 
+| Database | pgAdmin, PostgreSQL, DBeaver , CMD y Otros | 
+
+<hr>
+
+
 
 
 
