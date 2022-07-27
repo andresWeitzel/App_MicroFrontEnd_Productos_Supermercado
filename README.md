@@ -133,8 +133,12 @@
 | Spring Tool Suite 4 | 4.9.0  | IDE |
 | Spring Boot |   2.6.4  | Framework |
 | Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| Spring Security | 2.6.7 | Servicios de Seguridad |
+| JSON Web Token | 0.9.1 | Creación de tokens de acceso | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| PostMan | 9.4.1 | Test de Apis |
 | Lombok | 1.18.22 | Automatización de Código | 
-| Open-Api y UI Swagger | 1.6.4 | Documentación de la Api | 
+| Open-Api | 1.6.4 | Documentación de la Api | 
 | UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
 | Maven |  4.0.0 | Gestor de Proyectos |
 | GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
@@ -150,58 +154,54 @@
 
 | Tecnologías DATABASE | Versión | Finalidad
 | ------------- | ------------- | ------------- |
-| MongoDB | 5.0 | Base de Datos |
-| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
+| PostgreSQL | 14 | SGDB |
+| pgAdmin	| 4.0 |	Gestor SGDB |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Otros | - | - |
 
 
+
 </br>
 
+### Documentación Oficial Tecnologías
+
+* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
+* Spring Security:  https://spring.io/projects/spring-security  
+* JSON Web Security:  https://jwt.io/introduction/ 
+* Boostrap:         https://getbootstrap.com/
+* Angular CLI:      https://github.com/angular/angular-cli
+* XAMPP :       https://www.apachefriends.org/download.html 
+* Maven Repository: https://mvnrepository.com/ 
+* PostMan:        https://www.postman.com/downloads/ 
+* Bootstrap:   https://getbootstrap.com/
+* Angular:     https://angular.io/tutorial/toh-pt0
+* Visual Studio Code:         https://code.visualstudio.com/download
+* Spring Tool Suite 4 : https://spring.io/tools 
+* Git:         https://git-scm.com/docs
+* Otros
+
+</br>
+
+### Documentación Oficial/No Oficial Librerías Frontend
+* --------------------------------------------------
+* Angular Popup : https://www.npmjs.com/package/ng-angular-popup
+* --------------------------------------------------
+* Angular Material : https://material.angular.io/guide/getting-started
+* --------------------------------------------------
+* Angular Bootstrap Validation 
+    * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Implementación/ejemplos : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
+* --------------------------------------------------
+* ngx ui loader 
+    * Instalación :  https://www.npmjs.com/package/ngx-ui-loader
+    * Implementación : https://tdev.app/ngx-ui-loader
+* --------------------------------------------------
+* Excel Sheets
+    * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
 
 
 
-
-
-
-
-
-
-# -----------------------------------------------
-### Angular Popup
-
-* Doc e instalación : https://www.npmjs.com/package/ng-angular-popup
-
-
-
-# -----------------------------------------------
-### Angular Material
-
-* Doc e instalación : https://material.angular.io/guide/getting-started
-
-#### ngx ui loader
-
-* Instalacion: https://www.npmjs.com/package/ngx-ui-loader
-* Implements loader: https://tdev.app/ngx-ui-loader
-
-# ------------------------------------------------
-
-
-# Angular Bootstrap Validation
-
-* Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
-* Implementación/ejemplos: https://mdbootstrap.com/docs/b5/angular/forms/validation/
-* Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
-
-# --------------------------------------------------
-
-# Excel Sheets
-
-* Ejemplo base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
-
-
-
-# -----------------------------------------------
 
 
 ### Documentación Creación de Gráficos con Highchart en Angular 12
