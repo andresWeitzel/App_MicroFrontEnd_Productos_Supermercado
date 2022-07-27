@@ -200,21 +200,17 @@
 * Excel Sheets
     * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
 
+* Gráficos con Highchart
+    * Npm, config, detalles, etc : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
+    * Doc Oficial : https://api.highcharts.com/highcharts/
+    * Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
+    
+* Tipos de Gráficos Highchart
+    * Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
+    * Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
+    * Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
 
-
-
-
-### Documentación Creación de Gráficos con Highchart en Angular 12
-* Npm, config, detalles,  etc (RECOMIENDO) : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
-* Doc Oficial : https://api.highcharts.com/highcharts/
-* Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
-
-### Doc Tipos de Graficos
-* Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
-* Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
-* Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
-
-### Treemap Graphic
-* Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
-* Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
+* Treemap Graphic
+    * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
+    * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
 
