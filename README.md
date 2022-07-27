@@ -10,7 +10,6 @@
 * Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
 * Todas las Páginas de la Aplicación poseen modals de Ayuda.
 * Entre Otros Recursos Disponibles.
-
 * Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
 
 </br>
