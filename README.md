@@ -183,20 +183,20 @@
 </br>
 
 ### Documentación Oficial/No Oficial Librerías Frontend
-* --------------------------------------------------
+
 * Angular Popup : https://www.npmjs.com/package/ng-angular-popup
-* --------------------------------------------------
+
 * Angular Material : https://material.angular.io/guide/getting-started
-* --------------------------------------------------
+
 * Angular Bootstrap Validation 
     * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
     * Implementación/ejemplos : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
     * Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
-* --------------------------------------------------
+
 * ngx ui loader 
     * Instalación :  https://www.npmjs.com/package/ngx-ui-loader
     * Implementación : https://tdev.app/ngx-ui-loader
-* --------------------------------------------------
+
 * Excel Sheets
     * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
 
