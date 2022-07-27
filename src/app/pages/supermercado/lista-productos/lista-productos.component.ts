@@ -52,7 +52,7 @@ export class ListaProductosComponent implements OnInit {
   nroProdAgua=3;
 
   //FILTRO BUSQUEDA PRODUCTOS
-  filtroProdBusqueda:string='Gaseosas';
+  filtroProdBusqueda:string='';
 
   //SEGURIDAD
   roles: string[]=[];
@@ -69,8 +69,8 @@ export class ListaProductosComponent implements OnInit {
 
    //Elements
    nroElements=10;
-   currentElements=0;
-   totalElements=0;
+   nroCurrentElements=0;
+   nroTotalElements=0;
 
   //Caracteristicas
    orderBy='id';
@@ -135,11 +135,11 @@ listarProductos(){
       this.isFirstPage = data.first;
       this.isLastPage = data.last;
       this.totalPages = data.totalPages;
-      this.currentElements = data.numberOfElements;
-      this.totalElements = this.nroElements * this.totalPages;
+      this.nroCurrentElements = data.numberOfElements;
+      this.nroTotalElements = data.totalElements;
 
 
-      //console.log(this.productos);
+      console.log(data);
     },
     err => {
 
@@ -164,8 +164,8 @@ listarProductosFilter(){
       this.isFirstPage = data.first;
       this.isLastPage = data.last;
       this.totalPages = data.totalPages;
-      this.currentElements = data.numberOfElements;
-      this.totalElements = this.nroElements * this.totalPages;
+      this.nroCurrentElements = data.numberOfElements;
+      this.nroTotalElements = this.nroElements * this.totalPages;
 
 
       //console.log(this.productos);
@@ -186,12 +186,19 @@ listarProductosFilter(){
 
 
 setFilter(filtro:string){
+if(filtro === '' || filtro === null){
+
+  this.listarProductos();
+}else{
 
   this.filtroProdBusqueda=filtro;
 
-  console.log(this.filtroProdBusqueda);
+  //console.log(this.filtroProdBusqueda);
 
   this.listarProductosFilter();
+
+
+}
 }
 
 
@@ -295,35 +302,72 @@ setProductoSelect(producto:ProductoDto){
 
 
 
+
 //=========== METODOS PAGINACION ==============
 
 //Ordenar los registros por type
 orderByDirection(type:string,direct:string):void{
   this.orderBy = type;
   this.direction = direct;
-  this.listarProductos();
+
+  if(this.filtroProdBusqueda === ''
+  || this.filtroProdBusqueda === null){
+
+    this.listarProductos();
+  }else{
+
+    this.listarProductosFilter();
+
+}
 }
 
 
 //Pagina Anterior
 paginaAnterior():void{
+
+  if(this.filtroProdBusqueda === ''
+  || this.filtroProdBusqueda === null){
+
   if(!this.isFirstPage){
-this.nroPage--;
-this.listarProductos();
+    this.nroPage--;
+    this.listarProductos();
+
+  }else{
+
+    this.listarProductosFilter();
+  }
   }
 }
 
   //Pagina Anterior
   paginaSiguiente():void{
+    if(this.filtroProdBusqueda === ''
+    || this.filtroProdBusqueda === null){
+
     if(!this.isLastPage){
       this.nroPage++;
       this.listarProductos();
+
+    }else{
+
+      this.listarProductosFilter();
+    }
     }
   }
 
+
   cambiarPagina(pagina:number):void{
     this.nroPage=pagina;
-    this.listarProductos();
+
+    if(this.filtroProdBusqueda === ''
+    || this.filtroProdBusqueda === null){
+
+      this.listarProductos();
+    }else{
+
+      this.listarProductosFilter();
+    }
+
   }
 
   //============= GENERATE EXCEL ====================

@@ -58,7 +58,7 @@
                         <input  type="text" name="filtro" class="form-control bg-white" placeholder="Buscador de Productos" aria-label="valor" id="filtro"  #filtroInput>
                         <!--BTN BUSQUEDA-->
                         <a >
-                          <button class="btn border-none p-1" type="button" (click)="setFilter(filtroInput.value)">
+                          <button class="btn border-none p-1" type="button" (click)="setFilter(filtroInput.value)" required>
                             <img src="./assets/icons/search02.png" alt="" width="45"
                                 height="45" class="">
                           </button>
@@ -393,22 +393,25 @@ width="15" height="15">
 
         <!-- ÚLTIMA PÁGINA -->
         <a >
-          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="paginaSiguiente()"> <img src="assets/icons/lastPageNext.png" alt="" width="25" height="25"></button>
+          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="cambiarPagina(this.totalPages-1)"> <img src="assets/icons/lastPageNext.png" alt="" width="25" height="25"></button>
       </a>
         <!-- FIN ÚLTIMA PÁGINA -->
 
         <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
         <div class="bg-none text-white d-inline-block align-text-center ms-5 mt-3">
-            <h5 class="ms-5">
+            <h5 *ngIf="nroTotalElements != 0" class="ms-5">
                 | Página: {{nroPage + 1}} <span class="bg-none" ></span> de <span class="bg-none ">{{totalPages}}</span> |
             </h5>
+            <h5 *ngIf="nroTotalElements === 0" class="ms-5">
+              | Página: {{nroPage}} <span class="bg-none" ></span> de <span class="bg-none ">{{totalPages}}</span> |
+          </h5>
         </div>
 
         <!-- ELEMENTOS SIN FILTRO -->
         <div class="bg-none text-white d-inline-block align-text-center ms-3 mt-3">
 
             <h5 class="" >
-                | Elementos: {{currentElements}} <span class="bg-none " ></span> de <span class="bg-none " > {{totalElements}} </span> |
+                | Elementos: {{nroCurrentElements}} <span class="bg-none " ></span> de <span class="bg-none " > {{nroTotalElements}} </span> |
             </h5>
         </div>
         <!-- FIN ELEMENTOS SIN FILTRO -->
