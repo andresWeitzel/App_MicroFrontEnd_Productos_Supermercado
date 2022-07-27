@@ -96,17 +96,67 @@
 
 
 
+</br>
 
 </br>
 
 | Área | Stack |
 | ------------- | ------------- |
-| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Highchart y Otros | 
-| Back End | Spring Boot, Spring Security, Lombok, Maven, Swagger UI, Open-API y Otros | 
+| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
+| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros | 
 | Database | pgAdmin, PostgreSQL, DBeaver , CMD y Otros | 
 
 <hr>
 
+</br>
+
+| Tecnologías FRONTEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| Angular |   13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular CLI | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| Angular Material | 13.3.9 | UI librería de componentes | 
+| ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
+| ngx-ui-loader | 13.0.0 | Animaciones de carga | 
+| Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
+| Otros | - | - |
+
+
+
+</br>
+
+
+
+| Tecnologías BACKEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| Java |   12.0.2 | JDK |
+| Spring Tool Suite 4 | 4.9.0  | IDE |
+| Spring Boot |   2.6.4  | Framework |
+| Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| Lombok | 1.18.22 | Automatización de Código | 
+| Open-Api y UI Swagger | 1.6.4 | Documentación de la Api | 
+| UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
+| Git | 2.29.1  | Control de Versiones |
+| Otros | - | - |
+
+
+
+</br>
+
+
+</br>
+
+| Tecnologías DATABASE | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| MongoDB | 5.0 | Base de Datos |
+| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| Otros | - | - |
+
+
+</br>
 
 
 
