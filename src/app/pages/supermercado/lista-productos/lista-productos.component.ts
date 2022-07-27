@@ -138,8 +138,6 @@ listarProductos(){
       this.nroCurrentElements = data.numberOfElements;
       this.nroTotalElements = data.totalElements;
 
-
-      console.log(data);
     },
     err => {
 
@@ -165,7 +163,7 @@ listarProductosFilter(){
       this.isLastPage = data.last;
       this.totalPages = data.totalPages;
       this.nroCurrentElements = data.numberOfElements;
-      this.nroTotalElements = this.nroElements * this.totalPages;
+      this.nroTotalElements = data.totalElements;
 
 
       //console.log(this.productos);
