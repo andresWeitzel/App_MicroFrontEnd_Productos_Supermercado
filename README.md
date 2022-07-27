@@ -13,6 +13,11 @@
 
 * Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
 
+</br>
+
+* Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
+* Repositorio Microdb_productos_supermercado_PostgreSQL : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
+
 
 </br>
 
