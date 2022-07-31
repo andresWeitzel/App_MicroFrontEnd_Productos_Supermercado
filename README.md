@@ -10,8 +10,12 @@
 * Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
 * Todas las Páginas de la Aplicación poseen modals de Ayuda.
 * Entre Otros Recursos Disponibles.
-
 * Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
+
+</br>
+
+* Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
+* Repositorio Microdb_productos_supermercado_PostgreSQL : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
 
 
 </br>
@@ -24,16 +28,24 @@
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/login-logout/login-view.png)
 
+#### Signin
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/signin/signinUsers.png)
 
 
 #### Inicio Post Login 
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/inicio/postLogin.png)
 
+</br>
+
 
 #### Servicios Deshabilitados para Usuarios 
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/users/usersService.png)
+
+
+</br>
 
 
 #### Listado de Productos Filtrado según Frutas 
@@ -51,11 +63,14 @@
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/paginado.png)
 
 
+</br>
 
 #### Checks Form Editar Producto 
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/edit-products/editSelectCheckDisabled.png)
 
+
+</br>
 
 #### Checks Form Agregar Producto Insertado
 
@@ -66,81 +81,137 @@
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/add-products/viewProductAdd.png)
 
 
+</br>
+
+
 #### Check Eliminar Producto
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheck.png)
-
-
-#### Producto Eliminado
-
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheckOK.png)
-
 
 
 #### Check Lista Producto Eliminado
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/delete-product/deleteProductCheckList.png)
 
+</br>
+
+#### Documentación Gráfica Acotada por razones de simplificación de documentación. Visualizar los videos anexados acerca de las Pruebas de Funcionalidad de la aplicación.
+
+</br>
+
+</br>
+
+| Área | Stack |
+| ------------- | ------------- |
+| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
+| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros | 
+| Database | pgAdmin, PostgreSQL, DBeaver , CMD y Otros | 
+
+<hr>
+
+</br>
+
+| Tecnologías FRONTEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| Angular |   13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular CLI | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| Angular Material | 13.3.9 | UI librería de componentes | 
+| ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
+| ngx-ui-loader | 13.0.0 | Animaciones de carga | 
+| Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
+| Otros | - | - |
 
 
 
+</br>
 
 
 
+| Tecnologías BACKEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| Java |   12.0.2 | JDK |
+| Spring Tool Suite 4 | 4.9.0  | IDE |
+| Spring Boot |   2.6.4  | Framework |
+| Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| Spring Security | 2.6.7 | Servicios de Seguridad |
+| JSON Web Token | 0.9.1 | Creación de tokens de acceso | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| PostMan | 9.4.1 | Test de Apis |
+| Lombok | 1.18.22 | Automatización de Código | 
+| Open-Api | 1.6.4 | Documentación de la Api | 
+| UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
+| Git | 2.29.1  | Control de Versiones |
+| Otros | - | - |
 
 
 
+</br>
+
+
+</br>
+
+| Tecnologías DATABASE | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| PostgreSQL | 14 | SGDB |
+| pgAdmin	| 4.0 |	Gestor SGDB |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| Otros | - | - |
 
 
 
-# -----------------------------------------------
-### Angular Popup
+</br>
 
-* Doc e instalación : https://www.npmjs.com/package/ng-angular-popup
+### Documentación Oficial Tecnologías
 
+* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
+* Spring Security:  https://spring.io/projects/spring-security  
+* JSON Web Security:  https://jwt.io/introduction/ 
+* Boostrap:         https://getbootstrap.com/
+* Angular CLI:      https://github.com/angular/angular-cli
+* XAMPP :       https://www.apachefriends.org/download.html 
+* Maven Repository: https://mvnrepository.com/ 
+* PostMan:        https://www.postman.com/downloads/ 
+* Bootstrap:   https://getbootstrap.com/
+* Angular:     https://angular.io/tutorial/toh-pt0
+* Visual Studio Code:         https://code.visualstudio.com/download
+* Spring Tool Suite 4 : https://spring.io/tools 
+* Git:         https://git-scm.com/docs
+* Otros
 
+</br>
 
-# -----------------------------------------------
-### Angular Material
+### Documentación Oficial/No Oficial Librerías Frontend
 
-* Doc e instalación : https://material.angular.io/guide/getting-started
+* Angular Popup : https://www.npmjs.com/package/ng-angular-popup
 
-#### ngx ui loader
+* Angular Material : https://material.angular.io/guide/getting-started
 
-* Instalacion: https://www.npmjs.com/package/ngx-ui-loader
-* Implements loader: https://tdev.app/ngx-ui-loader
+* Angular Bootstrap Validation 
+    * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Implementación/ejemplos : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
 
-# ------------------------------------------------
+* ngx ui loader 
+    * Instalación :  https://www.npmjs.com/package/ngx-ui-loader
+    * Implementación : https://tdev.app/ngx-ui-loader
 
+* Excel Sheets
+    * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
 
-# Angular Bootstrap Validation
+* Gráficos con Highchart
+    * Npm, config, detalles, etc : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
+    * Doc Oficial : https://api.highcharts.com/highcharts/
+    * Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
+    
+* Tipos de Gráficos Highchart
+    * Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
+    * Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
+    * Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
 
-* Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
-* Implementación/ejemplos: https://mdbootstrap.com/docs/b5/angular/forms/validation/
-* Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
-
-# --------------------------------------------------
-
-# Excel Sheets
-
-* Ejemplo base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
-
-
-
-# -----------------------------------------------
-
-
-### Documentación Creación de Gráficos con Highchart en Angular 12
-* Npm, config, detalles,  etc (RECOMIENDO) : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
-* Doc Oficial : https://api.highcharts.com/highcharts/
-* Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
-
-### Doc Tipos de Graficos
-* Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
-* Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
-* Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
-
-### Treemap Graphic
-* Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
-* Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
+* Treemap Graphic
+    * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
+    * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
 
