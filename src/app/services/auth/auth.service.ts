@@ -16,37 +16,13 @@ export class AuthService {
   constructor(private httpClient : HttpClient) {  }
 
 
-
-  //================= SIGNIN ===============
+    //================= SIGNIN ===============
  public signin(signinUsuario : SigninUsuarioDto): Observable<SigninUsuarioDto>{
-  return this.httpClient.post<SigninUsuarioDto>(this.AUTH_URL + 'signin' , signinUsuario).pipe(catchError(this.handleError));
+  return this.httpClient.post<SigninUsuarioDto>(this.AUTH_URL + 'signin' , signinUsuario);
  }
 //================= LOGIN ===============
 public login(loginUsuario : LoginUsuarioDto) : Observable<JwtDto>{
-  return this.httpClient.post<JwtDto>(this.AUTH_URL + 'login',loginUsuario).pipe(catchError(this.handleError));
-}
-
-
-
-
-
-
-
-
-
-private handleError(httpError: HttpErrorResponse) {
-  if (httpError.error instanceof ErrorEvent) {
-    // A client-side or network error occurred. Handle it accordingly.
-    console.error('Ha ocurrido un error:', httpError.error.message);
-  } else {
-    // The backend returned an unsuccessful response code.
-    // The response body may contain clues as to what went wrong.
-    console.error(
-      `Backend devuelve el código ${httpError.status}, ` +
-      `a causa de : ${httpError.error}`);
-  }
-  // Return an observable with a user-facing error message.
-  return throwError('Algo inesperado ha ocurrido , por favor intente nuevamente en unos minutos.');
+  return this.httpClient.post<JwtDto>(this.AUTH_URL + 'login',loginUsuario);
 }
 
 }

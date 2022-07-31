@@ -14,7 +14,12 @@ import { TokenService } from 'src/app/services/token/token.service';
 })
 export class SigninComponent implements OnInit {
 
+  //security
   isLogged = false;
+  isRegister = false;
+  isRegisterFail=false;
+  roles: string[] = [];
+
   nuevoUsuario: SigninUsuarioDto;
   nombre: string;
   username: string;
@@ -127,7 +132,7 @@ refresh(){
 
   onRegister(): void {
 
-    const signinUsuario=new SigninUsuarioDto(
+    this.nuevoUsuario = new SigninUsuarioDto(
       this.nombre,
       this.username,
       this.password,
@@ -135,8 +140,11 @@ refresh(){
     );
 
 
-        this.authService.signin(signinUsuario).subscribe(
+        this.authService.signin(this.nuevoUsuario).subscribe(
           data => {
+
+          this.isRegister = true;
+          this.isRegisterFail = false;
 
           console.log('usuario registrado');
 
@@ -145,16 +153,19 @@ refresh(){
          , duration:2000});
 
          setTimeout(() => {
-          this.router.navigate(['login']);
+          this.router.navigate(['/login']);
          }, 2200);
 
 
       },
       err => {
 
+        this.isRegister=false;
+        this.isRegisterFail = true;
+
         this.errMsj = err.error;
 
-        console.log(this.errMsj);
+        console.log('MSJ:',this.errMsj);
 
         this.toast.error({detail:"Error",summary:this.errMsj, duration:2000});
       },
