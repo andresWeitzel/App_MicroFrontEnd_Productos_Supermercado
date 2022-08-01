@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   isLogged=false;
+  isAdmin = false;
 
 
   constructor(
@@ -24,13 +25,23 @@ export class NavbarComponent implements OnInit {
     ) { }
 
 ngOnInit(){
-  if(this.tokenService.getToken()){
-    this.isLogged=true;
-  }else{
-    this.isLogged=false;
-  }
+  this.checkIsLogged();
+  this.checkIsAdmin();
   }
 
+
+ //=========== SEGURIDAD ==============
+
+ checkIsLogged(){
+  this.isLogged=this.tokenService.isLogged();
+}
+
+checkIsAdmin(){
+  this.isAdmin=this.tokenService.isAdmin();
+}
+
+
+//============== LOGOUT ================
   onLogOut(){
 
   //SPIN LOADING
@@ -52,21 +63,10 @@ ngOnInit(){
 
         this.toast.info({detail:"Info",summary:'Sesión Cerrada Correctamente', duration:1400});
 
-        window.setTimeout(function(){location.reload()},1500);
-
-
        }, 600);
-
-
-
 
     }, 600);
     //FIN LOGOUT AND TOASTS
-
-
-
-
-
 
   }
 

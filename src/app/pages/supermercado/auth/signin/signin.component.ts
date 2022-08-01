@@ -14,11 +14,6 @@ import { TokenService } from 'src/app/services/token/token.service';
 })
 export class SigninComponent implements OnInit {
 
-  //security
-  isLogged = false;
-  isRegister = false;
-  isRegisterFail=false;
-  roles: string[] = [];
 
   nuevoUsuario: SigninUsuarioDto;
   nombre: string;
@@ -41,19 +36,13 @@ formGroup: FormGroup;
 
   ngOnInit() {
 
-    this.checkToken();
     this.checkInputs();
   }
 
 
   //===================== SEGURIDAD ======================
+  //Desarrollado en el LoginGuard
 
-  checkToken():void{
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-    }
-
-  }
 
 
 
@@ -143,9 +132,6 @@ refresh(){
         this.authService.signin(this.nuevoUsuario).subscribe(
           data => {
 
-          this.isRegister = true;
-          this.isRegisterFail = false;
-
           console.log('usuario registrado');
 
          this.toast.success({detail:"Operación Exitosa "
@@ -159,9 +145,6 @@ refresh(){
 
       },
       err => {
-
-        this.isRegister=false;
-        this.isRegisterFail = true;
 
         this.errMsj = err.error;
 

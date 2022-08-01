@@ -14,12 +14,10 @@ import { TokenService } from 'src/app/services/token/token.service';
 export class LoginComponent implements OnInit {
 
 
-  isLogged = false;
-  isLoginFail = false;
+
   loginUsuarioDto : LoginUsuarioDto;
   username: string;
   password: string;
-  roles: string[] = [];
   errMsj: string;
 
 
@@ -34,14 +32,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(){
-     //---------- Check Logueo ------------
-     if (this.tokenService.getToken()) {
-      this.isLogged = true;
-      this.isLoginFail = false;
-      this.roles = this.tokenService.getAuthorities();
-    }
 
   }
+
+
+  //===================== SEGURIDAD ======================
+  //Desarrollado en el LoginGuard
+
 
 
   redirectPage() : void{
@@ -67,10 +64,10 @@ export class LoginComponent implements OnInit {
 
 
         //LOGIN AND TOASTS
-  setTimeout(() => {
-    this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
-    this.authService.login(this.loginUsuarioDto).subscribe(
-      data => {
+        setTimeout(() => {
+          this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
+          this.authService.login(this.loginUsuarioDto).subscribe(
+            data => {
 
 
 
@@ -79,19 +76,7 @@ export class LoginComponent implements OnInit {
 
         setTimeout(() => {
 
-          this.isLogged = true;
-          this.isLoginFail=false;
-
-          this.tokenService.setToken(data.token);
-          this.tokenService.setUsername(data.username);
-          this.tokenService.setAuthorities(data.authorities);
-
-          this.roles = data.authorities;
-
-
-
           this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:1400});
-
 
           window.setTimeout(function(){location.reload()},1500)
 
@@ -99,16 +84,9 @@ export class LoginComponent implements OnInit {
 
 
          }, 600);
-
-
-
-
       },
 
       err => {
-
-        this.isLogged = false;
-        this.isLoginFail=true;
 
         this.errMsj = err.error.message;
 

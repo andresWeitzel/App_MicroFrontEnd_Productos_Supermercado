@@ -19,7 +19,6 @@ export class AgregarProductosComponent implements OnInit {
 
 
 //Security
-roles: string[]=[];
 isAdmin = false;
 isUser = false;
 errMsj: string;
@@ -54,7 +53,7 @@ formGroup: FormGroup;
 
   ngOnInit(): void {
 
-    this.checkRoles();
+    this.checkIsAdmin();
     this.checkSecurity();
     this.checkInputs();
 
@@ -65,22 +64,10 @@ formGroup: FormGroup;
 
     //=========== SEGURIDAD ==============
 
- checkRoles(){
-  this.roles = this.tokenService.getAuthorities();
-  this.roles.forEach(
-    rol=>{
-      if(rol=='ROLE_ADMIN'){
-        this.isAdmin=true;
-        //console.log(this.isAdmin);
-      }
 
-      if(rol=='ROLE_USER'){
-        this.isUser=true;
-        //console.log(this.isUser);
-      }
-
-    });
-}
+    checkIsAdmin(){
+      this.isAdmin=this.tokenService.isAdmin();
+    }
 
 checkSecurity(){
   if(!(this.isAdmin) && !(this.isUser)){

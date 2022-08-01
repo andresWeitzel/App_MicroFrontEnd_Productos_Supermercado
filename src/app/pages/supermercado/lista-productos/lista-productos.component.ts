@@ -55,7 +55,6 @@ export class ListaProductosComponent implements OnInit {
   filtroProdBusqueda:string='';
 
   //SEGURIDAD
-  roles: string[]=[];
   isAdmin = false;
   isUser = false;
 
@@ -92,29 +91,17 @@ export class ListaProductosComponent implements OnInit {
 
   ngOnInit(){
 
-    this.checkRoles();
+    this.checkIsAdmin();
     this.checkSecurity();
 
   }
 
   //=========== SEGURIDAD ==============
 
- checkRoles(){
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(
-      rol=>{
-        if(rol=='ROLE_ADMIN'){
-          this.isAdmin=true;
-          //console.log(this.isAdmin);
-        }
-
-        if(rol=='ROLE_USER'){
-          this.isUser=true;
-          //console.log(this.isUser);
-        }
-
-      });
+ checkIsAdmin(){
+    this.isAdmin=this.tokenService.isAdmin();
   }
+
 
   checkSecurity(){
     if(!(this.isAdmin) && !(this.isUser)){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/services/token/token.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  username:string = '';
+
+  constructor(
+    private tokenService : TokenService
+    ) { }
 
   ngOnInit(): void {
+
+    this.checkUsername();
+
+  }
+
+  //============== SECURITY =============
+
+  private checkUsername(){
+    this.username = this.tokenService.getUsername();
   }
 
 }

@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { LoginUsuarioDto } from 'src/app/models/LoginUsuarioDto';
 import { SigninUsuarioDto } from 'src/app/models/SigninUsuarioDto';
 import { JwtDto } from 'src/app/models/JwtDto';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,18 +12,18 @@ import { JwtDto } from 'src/app/models/JwtDto';
 })
 export class AuthService {
 
-  AUTH_URL = 'http://localhost:8098/api/v1/auth/';
+  urlAuthApi = environment.URL_AUTH_API;
 
   constructor(private httpClient : HttpClient) {  }
 
 
     //================= SIGNIN ===============
  public signin(signinUsuario : SigninUsuarioDto): Observable<SigninUsuarioDto>{
-  return this.httpClient.post<SigninUsuarioDto>(this.AUTH_URL + 'signin' , signinUsuario);
+  return this.httpClient.post<SigninUsuarioDto>(this.urlAuthApi + 'signin' , signinUsuario);
  }
 //================= LOGIN ===============
 public login(loginUsuario : LoginUsuarioDto) : Observable<JwtDto>{
-  return this.httpClient.post<JwtDto>(this.AUTH_URL + 'login',loginUsuario);
+  return this.httpClient.post<JwtDto>(this.urlAuthApi + 'login',loginUsuario);
 }
 
 }

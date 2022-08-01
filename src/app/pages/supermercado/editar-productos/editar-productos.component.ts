@@ -18,7 +18,6 @@ export class EditarProductosComponent implements OnInit {
 
 
 //Security
-  roles: string[]=[];
   isAdmin = false;
   isUser = false;
   errMsj: string;
@@ -57,7 +56,7 @@ stock:number=null;
    }
 
   ngOnInit(): void {
-    this.checkRoles();
+    this.checkIsAdmin();
     this.checkSecurity();
     this.checkProducto();
   }
@@ -67,21 +66,8 @@ stock:number=null;
 
     //=========== SEGURIDAD ==============
 
- checkRoles(){
-  this.roles = this.tokenService.getAuthorities();
-  this.roles.forEach(
-    rol=>{
-      if(rol=='ROLE_ADMIN'){
-        this.isAdmin=true;
-        //console.log(this.isAdmin);
-      }
-
-      if(rol=='ROLE_USER'){
-        this.isUser=true;
-        //console.log(this.isUser);
-      }
-
-    });
+ checkIsAdmin(){
+  this.isAdmin=this.tokenService.isAdmin();
 }
 
 checkSecurity(){
