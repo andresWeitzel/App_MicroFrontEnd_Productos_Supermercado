@@ -21,9 +21,9 @@ export class LoginGuard implements CanActivate {
 
       if(this.tokenService.isLogged()){
 
-        //this.router.navigate(['/inicio']);
+        this.router.navigate(['/inicio']);
 
-        this.router.navigate(['/']);
+        //this.router.navigate(['/']);
 
         return false;
       }

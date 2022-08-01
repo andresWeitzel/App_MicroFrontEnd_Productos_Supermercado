@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 //Variables que se almacenan en el cliente
@@ -14,7 +15,7 @@ export class TokenService {
 
   roles: Array<string> = [];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
   //================= TOKEN ===============
@@ -52,8 +53,83 @@ public getToken(): string{
 
   }
 
+
+  public isAdmin(): boolean{
+
+    if(!(this.isLogged)){
+      return false;
+    }
+    const token = this.getToken();
+    console.log('TOKEN',token);
+
+    const payload = (token == null) ? null :  token.split('.')[1];
+    console.log('TOKEN PAYLOAD',payload);
+
+    const payloadDecoded = atob(payload);
+    console.log('TOKEN PAYLOAD DECODED',payloadDecoded);
+
+
+    const values = JSON.parse(payloadDecoded);
+    console.log('TOKEN VALORES',values);
+
+    const roles = values.roles;
+    console.log('TOKEN ROLES',roles);
+
+    if (roles.indexOf('ROLE_ADMIN') < 0) {
+      return false;
+    }
+
+    return true;
+
+
+  }
+
+
+  public isUser(): boolean{
+
+    if(!(this.isLogged)){
+      return false;
+    }
+    const token = this.getToken();
+    console.log('TOKEN',token);
+
+    const payload = (token == null) ? null :  token.split('.')[1];
+    console.log('TOKEN PAYLOAD',payload);
+
+    const payloadDecoded = atob(payload);
+    console.log('TOKEN PAYLOAD DECODED',payloadDecoded);
+
+
+    const values = JSON.parse(payloadDecoded);
+    console.log('TOKEN VALORES',values);
+
+    const roles = values.roles;
+    console.log('TOKEN ROLES',roles);
+
+
+    if (roles.indexOf('ROLE_USER') < 0) {
+      return false;
+    }
+
+    return true;
+  }
+
+
+
+  public isLogged():boolean{
+    if(this.getToken()){
+      return true;
+    }
+      return false;
+
+
+  }
+
+
   public logOut() : void{
     window.sessionStorage.clear();
+    this.router.navigate(['/login']);
+
   }
 
 
