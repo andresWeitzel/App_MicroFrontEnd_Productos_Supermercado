@@ -33,8 +33,34 @@ public getToken(): string{
     window.sessionStorage.removeItem(USERNAME_KEY);
     window.sessionStorage.setItem(USERNAME_KEY,username);
   }
+
+
+
+
   public getUsername(): string{
-    return sessionStorage.getItem(USERNAME_KEY)!;
+
+    if(!(this.isLogged)){
+      return null;
+    }
+
+    const token = this.getToken();
+    console.log('TOKEN',token);
+
+    const payload = (token == null) ? null :  token.split('.')[1];
+    console.log('TOKEN PAYLOAD',payload);
+
+    const payloadDecoded = atob(payload);
+    console.log('TOKEN PAYLOAD DECODED',payloadDecoded);
+
+
+    const values = JSON.parse(payloadDecoded);
+    console.log('TOKEN VALORES',values);
+
+    const username = values.sub;
+    console.log('TOKEN ROLES',username);
+
+    return username;
+
   }
 
   //================= AUTHORITIES ===============

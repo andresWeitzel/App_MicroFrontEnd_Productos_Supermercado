@@ -23,8 +23,6 @@ export class LoginGuard implements CanActivate {
 
         this.router.navigate(['/inicio']);
 
-        //this.router.navigate(['/']);
-
         return false;
       }
 

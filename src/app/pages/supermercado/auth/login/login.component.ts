@@ -67,11 +67,10 @@ export class LoginComponent implements OnInit {
 
 
         //LOGIN AND TOASTS
-  setTimeout(() => {
-    this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
-    this.authService.login(this.loginUsuarioDto).subscribe(
-      data => {
-
+        setTimeout(() => {
+          this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
+          this.authService.login(this.loginUsuarioDto).subscribe(
+        data => {
 
 
         this.router.navigate(['/inicio']);
@@ -87,6 +86,8 @@ export class LoginComponent implements OnInit {
           this.tokenService.setAuthorities(data.authorities);
 
           this.roles = data.authorities;
+
+
 
 
 
