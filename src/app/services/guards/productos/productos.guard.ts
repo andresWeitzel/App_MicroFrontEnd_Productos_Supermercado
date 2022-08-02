@@ -8,9 +8,6 @@ import { TokenService } from '../../token/token.service';
 })
 export class ProductosGuard implements CanActivate {
 
-
-  rol:string;
-
   isAdmin:boolean=false;
   isUser:boolean=false;
 
@@ -23,21 +20,20 @@ export class ProductosGuard implements CanActivate {
 
 
 
-  canActivate(): boolean  {
+  canActivate( route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): boolean  {
 
       this.isAdmin = this.tokenService.isAdmin();
+      //console.log('ADMIN?',this.isAdmin);
       this.isUser = this.tokenService.isUser();
+      //console.log('USER?',this.isUser);
 
       if(!(this.tokenService.isLogged())
       || (!(this.isAdmin) && !(this.isUser))
       ){
-        this.router.navigate(['/login']);
-
+        this.router.navigate(['login']);
         return false;
       }
       return true;
-
-
-  }
-
+    }
 }

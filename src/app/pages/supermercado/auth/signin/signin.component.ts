@@ -20,6 +20,7 @@ export class SigninComponent implements OnInit {
   isRegisterFail=false;
   roles: string[] = [];
 
+  //signin
   nuevoUsuario: SigninUsuarioDto;
   nombre: string;
   username: string;
@@ -46,7 +47,7 @@ formGroup: FormGroup;
   }
 
 
-  //===================== SEGURIDAD ======================
+  //========= SEGURIDAD ==========
 
   checkToken():void{
     if (this.tokenService.getToken()) {
@@ -58,7 +59,7 @@ formGroup: FormGroup;
 
 
 
-//============= VALIDATORS FORM ==============
+//======== VALIDATORS FORM ==========
 
 //Patrones
   /*PATTERN LETRAS MINUS/MAYUSC, NUMEROS, GUIONES MEDIO Y ESPACIOS [a-zA-Z0-9.-\s]+ */
@@ -118,7 +119,7 @@ get emailForm(){
   return this.formGroup.get('email');
 }
 
-//======================== UTILIDADES ========================
+//========== UTILIDADES =========
 
 refresh(){
   window.location.reload();
@@ -127,7 +128,7 @@ refresh(){
 
 
 
-//======================== METODOS CRUD =========================
+//========== METODOS CRUD ==========
 
 
   onRegister(): void {
