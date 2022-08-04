@@ -14,8 +14,8 @@
 
 </br>
 
-* Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
-* Repositorio Microdb_productos_supermercado_PostgreSQL : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
+* Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado(último release) : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
+* Repositorio Microdb_productos_supermercado_PostgreSQL(último release) : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
 
 
 </br>
