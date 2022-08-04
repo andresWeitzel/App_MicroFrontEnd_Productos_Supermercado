@@ -44,6 +44,7 @@ export class ListaProductosComponent implements OnInit {
 
   //FILTRO BUSQUEDA PRODUCTOS
   filtroProdBusqueda: string = '';
+  filtroProdCampo:string='';
 
   //SEGURIDAD
   //roles: string[]=[];
@@ -156,7 +157,29 @@ export class ListaProductosComponent implements OnInit {
       );
   }
 
-  setFilter(filtro: string) {
+  //-------------- ESPECIFIC FILTER ---------------
+  setFilterEspecific(filtro: string, campo:string) {
+    this.filtroProdBusqueda = '';
+    this.filtroProdCampo = '';
+
+    if (filtro === '' || filtro === null) {
+      this.listarProductos();
+    } else {
+      this.filtroProdBusqueda = filtro;
+      this.filtroProdCampo = campo;
+
+      /*
+      console.log('ESPECIFIC FILTER');
+      console.log(this.filtroProdBusqueda);
+      console.log(this.filtroProdCampo);
+      */
+
+    }
+  }
+
+
+  //-------------- GENERIC FILTER ---------------
+  setFilterGeneric(filtro: string) {
     this.filtroProdBusqueda = '';
 
     if (filtro === '' || filtro === null) {
@@ -335,8 +358,8 @@ export class ListaProductosComponent implements OnInit {
     },
 
     chart: {
-      height: 200,
-      width: 800,
+      height: 250,
+      width: 900,
       inverted: true,
     },
 

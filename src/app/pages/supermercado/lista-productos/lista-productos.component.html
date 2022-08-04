@@ -1,237 +1,288 @@
 <!-- LISTADO DE PRODUCTOS -->
-<div class="container text-center mt-5  p-1">
+<div class="container text-center mt-5 p-1">
 
-<!-- TITULO EDICCION DE PRODUCTOS -->
-<div class="d-flex flex-row justify-content-center bd-highlight mt-5 ">
-
-
-  <div class="d-flex d-row">
-  <h1 class="mt-3">
-      <span class="badge  text-decoration-underline">Listado de Productos</span>
-
-             <!-- BTN MODAL INFO  -->
-             <button type="button" class="btn p-1  " data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
-              <img src="assets/icons/idea.png" alt="Inicio" title="Inicio" width="50px" height="50px">
-              </button>
-              <!-- FIN BTN MODAL INFO -->
-  </h1>
-
-          <!--BTN EXCEL-->
-          <div class="">
-            <a target="_blanck">
-                <button type="button" class="btn bg-none p-1 m-2" (click)="generateExcel()">
-        <img src="assets/icons/excel.png" alt="" width="55"
-          height="55">
-      </button>
-            </a>
-        </div>
-        <!--BTN EXCEL-->
-
-</div>
+  <!-- TITULO EDICCION DE PRODUCTOS -->
+  <div class="d-flex flex-row justify-content-center bd-highlight mt-5 ">
 
 
+    <div class="d-flex d-row">
+      <h1 class="mt-3">
+        <span class="badge text-decoration-underline">Listado de Productos</span>
+        <!-- BTN MODAL INFO  -->
+        <button type="button" class="btn p-1 " data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop">
+          <img src="assets/icons/idea.png" alt="Inicio" title="Inicio"
+            width="50px" height="50px">
+        </button>
+        <!-- FIN BTN MODAL INFO -->
+      </h1>
 
-</div>
-<!-- FIN TITULO EDICCION DE PRODUCTOS -->
-
-
-
-
-    <!--BUSCADOR Y UTILIDADES-->
-    <div class="d-flex flex-row justify-content-center mt-5 ">
-
-
-
-
-      <!-- BUSCADOR -->
-        <div class="text-left  mt-5 me-1" id="buscador">
-
-            <div class="d-flex flex-row justify-content-center mt-5">
-
-                <!-- FORM FILTRO -->
-                <div class="text-left ms-0 me-5 col-12">
-
-                    <div class="d-flex flex-row text-left col-12 me-5"  (ngSubmit)="setFilter(filtroInput.value)" >
-
-                      <img src="./assets/icons/products-storage.png" alt="" width="45"height="45" class="p-1 m-1">
-
-                        <input  type="text" name="filtro" class="form-control bg-white" placeholder="Filtrar Producto/s" aria-label="valor" id="filtro"  #filtroInput>
-                        <!--BTN BUSQUEDA-->
-                        <a >
-                          <button class="btn border-none p-1" type="button" (click)="setFilter(filtroInput.value)" required>
-                            <img src="./assets/icons/search02.png" alt="" width="45"
-                                height="45" class="">
-                          </button>
-                      </a>
-                      <!--FIN BTN BUSQUEDA-->
-
-
-                        <!--BTN LIMPIAR-->
-                        <button class="btn bg-none p-1 " (click)="filtroInput.value=''">
-              <img src="./assets/icons/recycle.png" alt="" width="45"
-                height="45" class="">
-            </button>
-                        <!--FIN BTN LIMPIAR-->
-
-                    </div>
-                </div>
-                <!-- FIN FORM FILTRO -->
-            </div>
-        </div>
-        <!-- FIN BUSCADOR-->
-
-
-
-      <!--TREEMAP HIGHCHART-->
-      <div class=" me-0 mb-0 justify-content-end">
-        <highcharts-chart [Highcharts]="Highcharts03" [options]="chartOptions03"></highcharts-chart>
+      <!--BTN EXCEL-->
+      <div class="">
+        <a target="_blanck">
+          <button type="button" class="btn bg-none p-1 m-2"
+            (click)="generateExcel()">
+            <img src="assets/icons/excel.png" alt="" width="55"
+              height="55">
+          </button>
+        </a>
       </div>
-      <!--FIN TREEMAP HIGHCHART-->
-
-
-
-
-
-
-
-
+      <!--BTN EXCEL-->
 
     </div>
-    <!--FIN BUSCADOR Y UTILIDADES-->
+
+
+
+  </div>
+  <!-- FIN TITULO EDICCION DE PRODUCTOS -->
 
 
 
 
-
-    <!-- TABLA PRODUCTOS -->
-    <table table-condensed class="table table-bordered   table-hover text-center " id="table">
-
-        <thead>
-            <tr>
-                <th class="">ID
-                    <!-- BTN ORDER BY ID ASC DESC -->
-                    <div class="d-flex justify-content-center ">
-
-                            <button type="button" class="btn-sm  m-2" (click)="orderByDirection('id','asc')">
-                <img src="assets/icons/sortUp.png" alt=""
-                  width="15" height="15">
-              </button>
+  <!--BUSCADORES Y UTILIDADES-->
+  <div class="d-flex flex-row justify-content-center mt-5 ">
 
 
-                          <button type="button" class="btn-sm  m-2" (click)="orderByDirection('id','desc')">
-              <img src="assets/icons/sortDown.png" alt=""
-                width="15" height="15">
-            </button>
+    <!-- BUSCADORES -->
+    <div class="text-left ms-0 me-5 mb-2" id="buscador">
 
-                    </div>
-                    <!-- FIN BTN ORDER BY ID ASC DESC -->
+      <h5 class="mt-1 ms-5 me-5">Buscador Específico</h5>
 
-                </th>
-                <th class="text-center">CÓDIGO
-                        <!-- BTN ORDER BY CODIGO ASC DESC -->
-                        <div class="d-flex justify-content-center ">
-                          <a>
-                            <button type="button" class="btn-sm  m-2" (click)="orderByDirection('codigo','asc')">
-                <img src="assets/icons/sortUp.png" alt=""
-                  width="15" height="15">
-              </button>
-                        </a>
-                        <a>
-                          <button type="button" class="btn-sm  m-2" (click)="orderByDirection('codigo','desc')">
-              <img src="assets/icons/sortDown.png" alt=""
-                width="15" height="15">
-            </button>
-                      </a>
-                      </div>
-                      <!-- FIN BTN ORDER BY CODIGO ASC DESC -->
-                </th>
-                <th class="text-center">IMAGEN
-                    <!-- BTN ORDER BY IMAGEN ASC DESC -->
-                    <div class="d-flex justify-content-center ">
-                      <a>
-                        <button type="button" class="btn-sm  m-2" (click)="orderByDirection('imagen','asc')">
-            <img src="assets/icons/sortUp.png" alt=""
-              width="15" height="15">
+      <!--BUSCADOR FILTRO ESPECIFICO-->
+      <div class="d-flex flex-row text-left col-12 me-5"
+        (ngSubmit)="setFilterEspecific(filtroInput.value, campoInput.value)">
+
+        <!--SELECT FILTER-->
+        <select type="text"
+          name="categoria" #campoInput>
+          <option value="codigo">Código</option>
+          <option value="nombre">Nombre</option>
+          <option value="marca">Tipo</option>
+          <option value="grupo">Grupo</option>
+          <option value="peso">Peso</option>
+          <option value="precioUnidad">Precio</option>
+          <option value="stock">Stock</option>
+        </select>
+        <!--FIN SELECT FILTER-->
+
+        <input type="text" name="filtro" class="form-control bg-white"
+          placeholder="Ingresar Valor..." aria-label="valor" id="filtro"
+          #filtroInput>
+        <!--BTN BUSQUEDA-->
+        <a>
+          <button class="btn border-none p-1" type="button"
+            (click)="setFilterEspecific(filtroInput.value , campoInput.value)" required id="btnBusqueda">
+            <img src="./assets/icons/search02.png" alt="" width="35"
+              height="35" class="" >
           </button>
-                    </a>
-                    <a>
-                      <button type="button" class="btn-sm  m-2" (click)="orderByDirection('imagen','desc')">
-          <img src="assets/icons/sortDown.png" alt=""
-            width="15" height="15">
+        </a>
+        <!--FIN BTN BUSQUEDA-->
+        <!--BTN LIMPIAR-->
+        <button class="btn bg-none p-1 " (click)="filtroInput.value=''" id="btnLimpiar">
+          <img src="./assets/icons/recycle.png" alt="" width="35"
+            height="35" class="">
         </button>
-                  </a>
-                  </div>
-                  <!-- FIN BTN ORDER BY IMAGEN ASC DESC -->
-                </th>
-                <th class="text-center">NOMBRE
-                  <!-- BTN ORDER BY NOMBRE ASC DESC -->
-                  <div class="d-flex justify-content-center ">
-                    <a>
-                      <button type="button" class="btn-sm  m-2" (click)="orderByDirection('nombre','asc')">
-          <img src="assets/icons/sortUp.png" alt=""
-            width="15" height="15">
-        </button>
-                  </a>
-                  <a>
-                    <button type="button" class="btn-sm  m-2" (click)="orderByDirection('nombre','desc')">
-        <img src="assets/icons/sortDown.png" alt=""
-          width="15" height="15">
-      </button>
-                </a>
-                </div>
-                <!-- FIN BTN ORDER BY NMOBRE ASC DESC -->
-              </th>
-              <th class="text-center">MARCA
-                <!-- BTN ORDER BY MARCA ASC DESC -->
-                <div class="d-flex justify-content-center ">
-                  <a>
-                    <button type="button" class="btn-sm  m-2" (click)="orderByDirection('marca','asc')">
-        <img src="assets/icons/sortUp.png" alt=""
-          width="15" height="15">
-      </button>
-                </a>
-                <a>
-                  <button type="button" class="btn-sm  m-2" (click)="orderByDirection('marca','desc')">
-      <img src="assets/icons/sortDown.png" alt=""
-        width="15" height="15">
-    </button>
-              </a>
-              </div>
-              <!-- FIN BTN ORDER BY MARCA ASC DESC -->
-            </th>
-            <th class="text-center">TIPO
-              <!-- BTN ORDER BY TIPO ASC DESC -->
-              <div class="d-flex justify-content-center ">
-                <a>
-                  <button type="button" class="btn-sm  m-2" (click)="orderByDirection('tipo','asc')">
-      <img src="assets/icons/sortUp.png" alt=""
-        width="15" height="15">
-    </button>
-              </a>
-              <a>
-                <button type="button" class="btn-sm  m-2" (click)="orderByDirection('tipo','desc')">
-    <img src="assets/icons/sortDown.png" alt=""
-      width="15" height="15">
-  </button>
-            </a>
-            </div>
-            <!-- FIN BTN ORDER BY TIPO ASC DESC -->
-          </th>
-          <th class="text-center">GRUPO
-            <!-- BTN ORDER BY GRUPOE ASC DESC -->
-            <div class="d-flex justify-content-center ">
-              <a>
-                <button type="button" class="btn-sm  m-2" (click)="orderByDirection('grupo','asc')">
-    <img src="assets/icons/sortUp.png" alt=""
-      width="15" height="15">
-  </button>
+        <!--FIN BTN LIMPIAR-->
+      </div>
+      <!--FIN BUSCADOR FILTRO ESPECIFICO-->
+
+
+
+      <h5 class="mt-4 ms-5 me-5">Buscador Genérico</h5>
+
+      <!--BUSCADOR FILTRO ESPECIFICO-->
+      <div class="d-flex flex-row text-left col-12 me-5 "
+        (ngSubmit)="setFilterGeneric(filtroInput.value)">
+
+        <img src="./assets/icons/products-storage.png" alt="" width="45"
+          height="45" class="p-1 m-1">
+
+        <input type="text" name="filtro" class="form-control bg-white"
+          placeholder="Ingresar Valor...." aria-label="valor" id="filtro"
+          #filtroInput>
+        <!--BTN BUSQUEDA-->
+        <a>
+          <button class="btn border-none p-1" type="button"
+            (click)="setFilterGeneric(filtroInput.value)" required id="btnBusqueda">
+            <img src="./assets/icons/search02.png" alt="" width="35"
+              height="35" class="">
+          </button>
+        </a>
+        <!--FIN BTN BUSQUEDA-->
+        <!--BTN LIMPIAR-->
+        <button class="btn bg-none p-1 " (click)="filtroInput.value=''" id="btnLimpiar">
+          <img src="./assets/icons/recycle.png" alt="" width="35"
+            height="35" class="">
+        </button >
+        <!--FIN BTN LIMPIAR-->
+      </div>
+      <!--FIN BUSCADOR FILTRO ESPECIFICO-->
+    </div>
+    <!-- FIN BUSCADORES-->
+
+
+
+    <!--TREEMAP HIGHCHART-->
+    <div class=" me-0 mb-0 justify-content-end">
+      <highcharts-chart [Highcharts]="Highcharts03" [options]="chartOptions03"></highcharts-chart>
+    </div>
+    <!--FIN TREEMAP HIGHCHART-->
+
+
+
+
+
+  </div>
+  <!--FIN BUSCADORES Y UTILIDADES-->
+
+
+
+
+
+  <!-- TABLA PRODUCTOS -->
+  <table table-condensed class="table table-bordered table-hover text-center "
+    id="table">
+
+    <thead>
+      <tr>
+        <th class="">ID
+          <!-- BTN ORDER BY ID ASC DESC -->
+          <div class="d-flex justify-content-center ">
+
+            <button type="button" class="btn-sm m-2"
+              (click)="orderByDirection('id','asc')">
+              <img src="assets/icons/sortUp.png" alt=""
+                width="15" height="15">
+            </button>
+
+
+            <button type="button" class="btn-sm m-2"
+              (click)="orderByDirection('id','desc')">
+              <img src="assets/icons/sortDown.png" alt=""
+                width="15" height="15">
+            </button>
+
+          </div>
+          <!-- FIN BTN ORDER BY ID ASC DESC -->
+
+        </th>
+        <th class="text-center">CÓDIGO
+          <!-- BTN ORDER BY CODIGO ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('codigo','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
             </a>
             <a>
-              <button type="button" class="btn-sm  m-2" (click)="orderByDirection('grupo','desc')">
-  <img src="assets/icons/sortDown.png" alt=""
-    width="15" height="15">
-</button>
-          </a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('codigo','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY CODIGO ASC DESC -->
+        </th>
+        <th class="text-center">IMAGEN
+          <!-- BTN ORDER BY IMAGEN ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('imagen','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('imagen','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY IMAGEN ASC DESC -->
+        </th>
+        <th class="text-center">NOMBRE
+          <!-- BTN ORDER BY NOMBRE ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('nombre','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('nombre','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY NMOBRE ASC DESC -->
+        </th>
+        <th class="text-center">MARCA
+          <!-- BTN ORDER BY MARCA ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('marca','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('marca','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY MARCA ASC DESC -->
+        </th>
+        <th class="text-center">TIPO
+          <!-- BTN ORDER BY TIPO ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('tipo','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('tipo','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY TIPO ASC DESC -->
+        </th>
+        <th class="text-center">GRUPO
+          <!-- BTN ORDER BY GRUPOE ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('grupo','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('grupo','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
           </div>
           <!-- FIN BTN ORDER BY GRUPO ASC DESC -->
         </th>
@@ -239,185 +290,209 @@
           <!-- BTN ORDER BY PESO ASC DESC -->
           <div class="d-flex justify-content-center ">
             <a>
-              <button type="button" class="btn-sm  m-2" (click)="orderByDirection('peso','asc')">
-  <img src="assets/icons/sortUp.png" alt=""
-    width="15" height="15">
-</button>
-          </a>
-          <a>
-            <button type="button" class="btn-sm  m-2" (click)="orderByDirection('peso','desc')">
-<img src="assets/icons/sortDown.png" alt=""
-  width="15" height="15">
-</button>
-        </a>
-        </div>
-        <!-- FIN BTN ORDER BY PESO ASC DESC -->
-      </th>
-      <th class="text-center">PRECIO UNIDAD
-        <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
-        <div class="d-flex justify-content-center ">
-          <a>
-            <button type="button" class="btn-sm  m-2" (click)="orderByDirection('precioUnidad','asc')">
-<img src="assets/icons/sortUp.png" alt=""
-  width="15" height="15">
-</button>
-        </a>
-        <a>
-          <button type="button" class="btn-sm  m-2" (click)="orderByDirection('precioUnidad','desc')">
-<img src="assets/icons/sortDown.png" alt=""
-width="15" height="15">
-</button>
-      </a>
-      </div>
-      <!-- FIN BTN ORDER BY PRECIO UNIDAD ASC DESC -->
-    </th>
-    <th class="text-center">STOCK
-      <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
-      <div class="d-flex justify-content-center ">
-        <a>
-          <button type="button" class="btn-sm  m-2" (click)="orderByDirection('stock','asc')">
-<img src="assets/icons/sortUp.png" alt=""
-width="15" height="15">
-</button>
-      </a>
-      <a>
-        <button type="button" class="btn-sm  m-2" (click)="orderByDirection('stock','desc')">
-<img src="assets/icons/sortDown.png" alt=""
-width="15" height="15">
-</button>
-    </a>
-    </div>
-    <!-- FIN BTN ORDER BY PRECIO UNIDAD ASC DESC -->
-  </th>
-                <th>
-                    <div class="d-flex justify-content-center mb-3">ACCIÓN</div>
-                </th>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('peso','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('peso','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY PESO ASC DESC -->
+        </th>
+        <th class="text-center">PRECIO UNIDAD
+          <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('precioUnidad','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('precioUnidad','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+        </th>
+        <th class="text-center">STOCK
+          <!-- BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+          <div class="d-flex justify-content-center ">
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('stock','asc')">
+                <img src="assets/icons/sortUp.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+            <a>
+              <button type="button" class="btn-sm m-2"
+                (click)="orderByDirection('stock','desc')">
+                <img src="assets/icons/sortDown.png" alt=""
+                  width="15" height="15">
+              </button>
+            </a>
+          </div>
+          <!-- FIN BTN ORDER BY PRECIO UNIDAD ASC DESC -->
+        </th>
+        <th>
+          <div class="d-flex justify-content-center mb-3">ACCIÓN</div>
+        </th>
 
 
-            </tr>
-        </thead>
+      </tr>
+    </thead>
 
 
-        <!-- REGISTROS SIN FILTRO -->
-        <tbody >
-            <tr *ngFor="let producto of productos">
-              <th scope="row">{{producto.id}}</th>
-                <td >{{producto.codigo}}</td>
-                <td class="bg-white"><a target="_blank"><img src="{{producto.imagen}}" alt="" width="80px" height="100px"></a></td>
-                <td >{{producto.nombre}}</td>
-                <td >{{producto.marca}}</td>
-                <td >{{producto.tipo}}</td>
-                <td >{{producto.grupo}}</td>
-                <td >{{producto.peso}} Kg</td>
-                <td >${{producto.precioUnidad}}</td>
-                <td >{{producto.stock}}u</td>
+    <!-- REGISTROS SIN FILTRO -->
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <th scope="row">{{producto.id}}</th>
+        <td>{{producto.codigo}}</td>
+        <td class="bg-white"><a target="_blank"><img src="{{producto.imagen}}"
+              alt="" width="80px" height="100px"></a></td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.marca}}</td>
+        <td>{{producto.tipo}}</td>
+        <td>{{producto.grupo}}</td>
+        <td>{{producto.peso}} Kg</td>
+        <td>${{producto.precioUnidad}}</td>
+        <td>{{producto.stock}}u</td>
 
 
-                <td>
-                    <div class="d-flex justify-content-center p-1">
-                        <a >
-                            <button type="button" class="btn bg-none " (click)="editarProducto(producto)">
+        <td>
+          <div class="d-flex justify-content-center p-1">
+            <a>
+              <button type="button" class="btn bg-none "
+                (click)="editarProducto(producto)">
                 <img src="assets/icons/edit.png" alt="" width="45"
                   height="45">
               </button>
-                        </a>
-                        <a >
-                    <!-- BTN MODAL DELETE CHECK  -->
-                    <button type="button" class="btn p-1  " data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(producto)">
-                      <img src="assets/icons/delete.png" alt="Inicio" title="Inicio" width="45" height="45">
-                      </button>
-                      <!-- FIN BTN MODAL DELETE CHECK -->
-                        </a>
+            </a>
+            <a>
+              <!-- BTN MODAL DELETE CHECK  -->
+              <button type="button" class="btn p-1 " data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop02"
+                (click)="setProductoSelect(producto)">
+                <img src="assets/icons/delete.png" alt="Inicio" title="Inicio"
+                  width="45" height="45">
+              </button>
+              <!-- FIN BTN MODAL DELETE CHECK -->
+            </a>
 
 
 
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-        <!-- FIN REGISTROS SIN FILTRO -->
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <!-- FIN REGISTROS SIN FILTRO -->
 
-    </table>
-    <!-- FIN TABLA PRODUCTOS -->
-
-
-    <!-- PAGINACION -->
-    <div class="d-flex justify-content-center p-1" id="pagination">
-
-        <!-- PRIMERA PÁGINA -->
-        <a >
-            <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="cambiarPagina(0)"> <img src="assets/icons/lastPagePrevious.png" alt="" width="25" height="25"></button>
-        </a>
-        <!-- FIN PRIMERA PÁGINA -->
-
-        <!-- BTN LAST PAGINA -->
-        <a >
-          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="paginaAnterior()"> <img src="assets/icons/pagePrevious.png" alt="" width="25" height="25"></button>
-      </a>
-        <!-- BTN LAST PAGINA -->
-
-        <!--NUMEROS -->
-        <!-- NUMERO 1 -->
-        <a >
-            <button class="btn border-none p-1" type="button" (click)="cambiarPagina(0)">
-              <h2 class="text-white ">1</h2>
-            </button>
-        </a>
-        <!-- FIN  NUMERO 1 -->
-
-        <!-- NUMERO 2 -->
-        <a >
-          <button class="btn border-none p-1" type="button" (click)="cambiarPagina(1)">
-            <h2 class="text-white ">2</h2>
-          </button>
-      </a>
-        <!-- FIN  NUMERO 2 -->
-
-        <!-- NUMERO 3 -->
-        <a >
-          <button class="btn border-none p-1" type="button" (click)="cambiarPagina(2)">
-            <h2 class="text-white ">3</h2>
-          </button>
-      </a>
-        <!-- FIN NUMERO 3 -->
-
-        <!-- FIN NUMEROS -->
-
-        <!-- BTN NEXT PAGINA -->
-        <a >
-          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="paginaSiguiente()"> <img src="assets/icons/pageNext.png" alt="" width="25" height="25"></button>
-      </a>
-        <!-- FIN BTN NEXT PAGINA -->
+  </table>
+  <!-- FIN TABLA PRODUCTOS -->
 
 
-        <!-- ÚLTIMA PÁGINA -->
-        <a >
-          <button type="button" class="btn  border-light alert-link  bg-none p-1 m-1" (click)="cambiarPagina(this.totalPages-1)"> <img src="assets/icons/lastPageNext.png" alt="" width="25" height="25"></button>
-      </a>
-        <!-- FIN ÚLTIMA PÁGINA -->
+  <!-- PAGINACION -->
+  <div class="d-flex justify-content-center p-1" id="pagination">
 
-        <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
-        <div class="bg-none text-white d-inline-block align-text-center ms-5 mt-3">
-            <h5 *ngIf="nroTotalElements != 0" class="ms-5">
-                | Página: {{nroPage + 1}} <span class="bg-none" ></span> de <span class="bg-none ">{{totalPages}}</span> |
-            </h5>
-            <h5 *ngIf="nroTotalElements === 0" class="ms-5">
-              | Página: {{nroPage}} <span class="bg-none" ></span> de <span class="bg-none ">{{totalPages}}</span> |
-          </h5>
-        </div>
+    <!-- PRIMERA PÁGINA -->
+    <a>
+      <button type="button" class="btn border-light alert-link bg-none p-1 m-1"
+        (click)="cambiarPagina(0)"> <img src="assets/icons/lastPagePrevious.png"
+          alt="" width="25" height="25"></button>
+    </a>
+    <!-- FIN PRIMERA PÁGINA -->
 
-        <!-- ELEMENTOS SIN FILTRO -->
-        <div class="bg-none text-white d-inline-block align-text-center ms-3 mt-3">
+    <!-- BTN LAST PAGINA -->
+    <a>
+      <button type="button" class="btn border-light alert-link bg-none p-1 m-1"
+        (click)="paginaAnterior()"> <img src="assets/icons/pagePrevious.png"
+          alt="" width="25" height="25"></button>
+    </a>
+    <!-- BTN LAST PAGINA -->
 
-            <h5 class="" >
-                | Elementos: {{nroCurrentElements}} <span class="bg-none " ></span> de <span class="bg-none " > {{nroTotalElements}} </span> |
-            </h5>
-        </div>
-        <!-- FIN ELEMENTOS SIN FILTRO -->
-        <!-- FIN INFO NRO DE PAGINA Y ELEMENTOS -->
+    <!--NUMEROS -->
+    <!-- NUMERO 1 -->
+    <a>
+      <button class="btn border-none p-1" type="button"
+        (click)="cambiarPagina(0)">
+        <h2 class="text-white ">1</h2>
+      </button>
+    </a>
+    <!-- FIN  NUMERO 1 -->
+
+    <!-- NUMERO 2 -->
+    <a>
+      <button class="btn border-none p-1" type="button"
+        (click)="cambiarPagina(1)">
+        <h2 class="text-white ">2</h2>
+      </button>
+    </a>
+    <!-- FIN  NUMERO 2 -->
+
+    <!-- NUMERO 3 -->
+    <a>
+      <button class="btn border-none p-1" type="button"
+        (click)="cambiarPagina(2)">
+        <h2 class="text-white ">3</h2>
+      </button>
+    </a>
+    <!-- FIN NUMERO 3 -->
+
+    <!-- FIN NUMEROS -->
+
+    <!-- BTN NEXT PAGINA -->
+    <a>
+      <button type="button" class="btn border-light alert-link bg-none p-1 m-1"
+        (click)="paginaSiguiente()"> <img src="assets/icons/pageNext.png" alt=""
+          width="25" height="25"></button>
+    </a>
+    <!-- FIN BTN NEXT PAGINA -->
+
+
+    <!-- ÚLTIMA PÁGINA -->
+    <a>
+      <button type="button" class="btn border-light alert-link bg-none p-1 m-1"
+        (click)="cambiarPagina(this.totalPages-1)"> <img
+          src="assets/icons/lastPageNext.png" alt="" width="25" height="25"></button>
+    </a>
+    <!-- FIN ÚLTIMA PÁGINA -->
+
+    <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
+    <div class="bg-none text-white d-inline-block align-text-center ms-5 mt-3">
+      <h5 *ngIf="nroTotalElements != 0" class="ms-5">
+        | Página: {{nroPage + 1}} <span class="bg-none"></span> de <span
+          class="bg-none ">{{totalPages}}</span> |
+      </h5>
+      <h5 *ngIf="nroTotalElements === 0" class="ms-5">
+        | Página: {{nroPage}} <span class="bg-none"></span> de <span
+          class="bg-none ">{{totalPages}}</span> |
+      </h5>
     </div>
-    <!-- FIN PAGINACION -->
+
+    <!-- ELEMENTOS SIN FILTRO -->
+    <div class="bg-none text-white d-inline-block align-text-center ms-3 mt-3">
+      <h5 class="">
+        | Elementos: {{nroCurrentElements}} <span class="bg-none "></span> de
+        <span class="bg-none "> {{nroTotalElements}} </span> |
+      </h5>
+    </div>
+    <!-- FIN ELEMENTOS SIN FILTRO -->
+    <!-- FIN INFO NRO DE PAGINA Y ELEMENTOS -->
+  </div>
+  <!-- FIN PAGINACION -->
 </div>
 <!-- FIN LISTADO DE PRODUCTOS -->
 
@@ -425,29 +500,44 @@ width="15" height="15">
 
 <!--MODAL AYUDA -->
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content" id="modalAyuda">
       <div class="modal-header">
-        <h4 class="modal-title" id="staticBackdropLabel">Guía para el Listado de Productos</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="staticBackdropLabel">Guía para el Listado de
+          Productos</h4>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <h5>Acerca de la Gestión de Productos </h5>
-        <p>En esta sección podemos visualizar los Productos según los requerimientos deseados, existe paginación de productos, podemos aplicar filtros de búsqueda y las operaciones CRUD requeridas según el rol que se tenga. Los admins podrán realizar todas las Operaciones, los usuarios solamente la visualización y búsquedas.</p>
+        <p>En esta sección podemos visualizar los Productos según los
+          requerimientos deseados, existe paginación de productos, podemos
+          aplicar filtros de búsqueda y las operaciones CRUD requeridas según el
+          rol que se tenga. Los admins podrán realizar todas las Operaciones,
+          los usuarios solamente la visualización y búsquedas.</p>
         <h5>Buscador de Productos </h5>
-        <p>Es posible realizar la búsqueda de productos según filtros aplicados para cada campo del Listado. Es decir, las siglas o palabras ingresadas serán aplicadas para todos los campos. </p>
+        <p>Es posible realizar la búsqueda de productos según filtros aplicados
+          para cada campo del Listado. Es decir, las siglas o palabras
+          ingresadas serán aplicadas para todos los campos. </p>
         <h5>Campos del Listado</h5>
-        <p>Cada campo describe una característica del producto específico por fila. El campo acción nos permite editar y eliminar el producto seleccionado.
-        Podemos agregar un producto desde la barra de navegación.</p>
+        <p>Cada campo describe una característica del producto específico por
+          fila. El campo acción nos permite editar y eliminar el producto
+          seleccionado.
+          Podemos agregar un producto desde la barra de navegación.</p>
         <ul>
-          <li><strong>ID:</strong> El ID es el identificador del Producto en el Sistema. De forma característica aplicamos un código de Producto.</li>
-          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de un máximo de 10 digitos.</li>
+          <li><strong>ID:</strong> El ID es el identificador del Producto en el
+            Sistema. De forma característica aplicamos un código de Producto.</li>
+          <li><strong>Código:</strong> Este código hace referencia al producto,
+            no es posible que existan duplicados, es válido solo letras, números
+            y ciertos caracteres. Además de un máximo de 10 digitos.</li>
           <li><strong>Nombre:</strong></li>
         </ul>
         <div class="mt-5 ">
-        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL DESARROLLADOR</strong>
-      </div>
+          <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL DESARROLLADOR</strong>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
@@ -455,7 +545,7 @@ width="15" height="15">
     </div>
   </div>
 </div>
-    <!--FIN MODAL AYUDA-->
+<!--FIN MODAL AYUDA-->
 
 
 
@@ -464,31 +554,41 @@ width="15" height="15">
 
 
 <!-- MODAL CHECK ADMIN-->
-    <div class="modal fade" id="staticBackdrop02" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngIf="!isAdmin ; else adminValidado">
+<div class="modal fade" id="staticBackdrop02" data-bs-backdrop="static"
+  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true" *ngIf="!isAdmin ; else adminValidado">
 
-      <div class="modal-dialog"  >
-        <div class="modal-content" id="modalCheckDelete">
+  <div class="modal-dialog">
+    <div class="modal-content" id="modalCheckDelete">
 
-            <div class="alert alert-danger alert-link" role="alert">
-              <div class="d-flex d-row">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
+      <div class="alert alert-danger alert-link" role="alert">
+        <div class="d-flex d-row">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            fill="currentColor" class="bi bi-exclamation-triangle-fill
+            flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+            aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+              13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0
+              1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35
+              3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1
+              1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
 
-              <h5>
-                Servicio Habilitado para administradores!!
+            <h5>
+              Servicio Habilitado para administradores!!
             </h5>
-            </div>
-              <div class="d-flex justify-content-end mt-2">
-                <button type="button" class="btn btn-success btn-sm p-1 m-1" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+          <div class="d-flex justify-content-end mt-2">
+            <button type="button" class="btn btn-success btn-sm p-1 m-1"
+              data-bs-dismiss="modal">Aceptar</button>
 
 
-              </div>
-              </div>
-
-
+          </div>
         </div>
+
+
       </div>
+    </div>
   </div>
 
   <!-- FIN MODAL CHECK ADMIN-->
@@ -497,37 +597,50 @@ width="15" height="15">
 
 
 
-<!-- TEMPLATE MODAL DELETE-->
+  <!-- TEMPLATE MODAL DELETE-->
   <ng-template #adminValidado>
 
-<!--MODAL CHECK DELETE -->
-<div class="modal fade" id="staticBackdrop02" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!--MODAL CHECK DELETE -->
+    <div class="modal fade" id="staticBackdrop02" data-bs-backdrop="static"
+      data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-  <div class="modal-dialog"  >
-    <div class="modal-content" id="modalCheckDelete">
+      <div class="modal-dialog">
+        <div class="modal-content" id="modalCheckDelete">
 
-        <div class="alert alert-danger alert-link" role="alert">
-          <div class="d-flex d-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
+          <div class="alert alert-danger alert-link" role="alert">
+            <div class="d-flex d-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="currentColor" class="bi bi-exclamation-triangle-fill
+                flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+                aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+                  13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0
+                  1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35
+                  3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002
+                  6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
 
-          <h5>
-         Está Seguro que desea Eliminar el Producto {{nombrProdSelect}} ??
-        </h5>
+                <h5>
+                  Está Seguro que desea Eliminar el Producto {{nombrProdSelect}}
+                  ??
+                </h5>
+              </div>
+              <div class="d-flex justify-content-end mt-2">
+                <button type="button" class="btn btn-success btn-sm p-1 m-1"
+                  data-bs-dismiss="modal">Cancelar</button>
+
+                <button type="button" class="btn btn-danger btn-sm p-1 m-1"
+                  data-bs-dismiss="modal"
+                  (click)="eliminarProducto(idProdSelect)">Eliminar</button>
+              </div>
+            </div>
+
+
+          </div>
         </div>
-          <div class="d-flex justify-content-end mt-2">
-            <button type="button" class="btn btn-success btn-sm p-1 m-1" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+      <!--FIN MODAL CHECK DELETE-->
+    </ng-template>
 
-            <button type="button" class="btn btn-danger btn-sm p-1 m-1" data-bs-dismiss="modal" (click)="eliminarProducto(idProdSelect)">Eliminar</button>
-          </div>
-          </div>
-
-
-    </div>
-  </div>
-</div>
-    <!--FIN MODAL CHECK DELETE-->
-</ng-template>
-
-<!-- FIN TEMPLATE MODAL DELETE-->
+    <!-- FIN TEMPLATE MODAL DELETE-->
