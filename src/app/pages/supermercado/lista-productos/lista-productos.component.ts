@@ -81,6 +81,7 @@ export class ListaProductosComponent implements OnInit {
 
   ngOnInit() {
     this.listarProductos();
+    this.checkEliminarProducto();
   }
 
   //=========== SEGURIDAD ==============
@@ -241,6 +242,11 @@ export class ListaProductosComponent implements OnInit {
 
     this.navigationExtras.state['value'] = producto;
     this.router.navigate(['editar-productos'], this.navigationExtras);
+  }
+
+  //----------CHECK ELIMINAR PRODUCTO----------
+  checkEliminarProducto(){
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   //----------ELIMINAR PRODUCTOS ---------------
