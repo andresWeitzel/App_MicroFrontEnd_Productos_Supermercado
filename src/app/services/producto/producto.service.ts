@@ -33,6 +33,13 @@ export class ProductoService {
     return this.httpClient.get<any>(`${this.productoUrlApi}listado-filter/${filtro}?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
+
+  //--- GET ALL FILTER AND FIELD---
+  //----APLICA TODOS LOS METODOS DE BUSQUEDA-----
+  public listadoFilterAndField(filtro:string, campo:string, nroPagina:number , nroElementos:number , orderType:string, orderBy:string ):Observable<ProductoDto[]>{
+    return this.httpClient.get<any>(`${this.productoUrlApi}${campo}/${filtro}?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
+  }
+
 //--- ADD ---
 public add(producto:ProductoDto):Observable<ProductoDto>{
   return this.httpClient.post<any>(`${this.productoUrlApi}`,producto);
@@ -51,7 +58,7 @@ public add(producto:ProductoDto):Observable<ProductoDto>{
   }
 
 
-  //================ METODOS DE BUSQUEDA ====================
+
 
 
 }

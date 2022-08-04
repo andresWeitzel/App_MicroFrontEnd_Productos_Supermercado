@@ -44,7 +44,7 @@ export class ListaProductosComponent implements OnInit {
 
   //FILTRO BUSQUEDA PRODUCTOS
   filtroProdBusqueda: string = '';
-  filtroProdCampo:string='';
+  filtroProdCampo: string = '';
 
   //SEGURIDAD
   //roles: string[]=[];
@@ -81,11 +81,10 @@ export class ListaProductosComponent implements OnInit {
 
   ngOnInit() {
     this.listarProductos();
-   }
+  }
 
-
-    //=========== SEGURIDAD ==============
-    //Aplicada en productos.guard y agregada en el routing
+  //=========== SEGURIDAD ==============
+  //Aplicada en productos.guard y agregada en el routing
 
   //=========== METODOS CRUD ==============
 
@@ -157,8 +156,50 @@ export class ListaProductosComponent implements OnInit {
       );
   }
 
+
+  //-----LISTADO PRODUCTOS FILTER/CAMPO ---------------
+  listarProductosFilterAndField() {
+    this.productoService
+      .listadoFilterAndField(
+        this.filtroProdBusqueda,
+        this.filtroProdCampo,
+        this.nroPage,
+        this.nroElements,
+        this.orderBy,
+        this.direction
+      )
+      .subscribe(
+        (data: any) => {
+          this.productos = data.content;
+          this.isFirstPage = data.first;
+          this.isLastPage = data.last;
+          this.totalPages = data.totalPages;
+          this.nroCurrentElements = data.numberOfElements;
+          this.nroTotalElements = data.totalElements;
+
+          //console.log(this.productos);
+        },
+        (err) => {
+          this.errMsj = err.error.message;
+
+          //TOAST ERROR
+          setTimeout(() => {
+            this.toast.error({
+              detail: 'ERROR',
+              summary: 'Producto/s No Encontrados!!',
+              duration: 2000,
+            });
+          }, 600);
+          //FIN TOAST ERROR
+          console.log(err);
+        }
+      );
+  }
+
+
+
   //-------------- ESPECIFIC FILTER ---------------
-  setFilterEspecific(filtro: string, campo:string) {
+  setFilterEspecific(filtro: string, campo: string) {
     this.filtroProdBusqueda = '';
     this.filtroProdCampo = '';
 
@@ -168,15 +209,11 @@ export class ListaProductosComponent implements OnInit {
       this.filtroProdBusqueda = filtro;
       this.filtroProdCampo = campo;
 
-      /*
-      console.log('ESPECIFIC FILTER');
-      console.log(this.filtroProdBusqueda);
-      console.log(this.filtroProdCampo);
-      */
+      this.listarProductosFilterAndField();
+
 
     }
   }
-
 
   //-------------- GENERIC FILTER ---------------
   setFilterGeneric(filtro: string) {
@@ -265,6 +302,7 @@ export class ListaProductosComponent implements OnInit {
       this.refresh();
     }, 2100);
   }
+
 
   //=============== UTILS ===============
 
