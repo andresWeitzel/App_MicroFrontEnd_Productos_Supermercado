@@ -21,9 +21,19 @@ export class AuthService {
   public signin(signinUsuario : SigninUsuarioDto): Observable<SigninUsuarioDto>{
     return this.httpClient.post<SigninUsuarioDto>(this.urlAuthApi + 'signin' , signinUsuario);
    }
+
+
+
   //================= LOGIN ===============
   public login(loginUsuario : LoginUsuarioDto) : Observable<JwtDto>{
     return this.httpClient.post<JwtDto>(this.urlAuthApi + 'login',loginUsuario);
   }
+
+
+  //================= REFRESH_TOKEN ===============
+public refreshToken(jwtDto : JwtDto) : Observable<JwtDto>{
+  return this.httpClient.post<JwtDto>(this.urlAuthApi + 'refresh-token', jwtDto);
+}
+
 
 }
