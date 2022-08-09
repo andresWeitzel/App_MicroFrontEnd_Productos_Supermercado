@@ -26,6 +26,7 @@
     "highcharts-angular": "^3.0.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
+    "localstorage-slim": "^2.3.0",
     "mdb-angular-ui-kit": "^2.3.0",
     "ng-angular-popup": "^0.1.2",
     "ngx-toastr": "^14.3.0",

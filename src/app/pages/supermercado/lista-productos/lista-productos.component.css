@@ -10,6 +10,7 @@ h1 span {
   color: white;
   background-color: #2C5D33;
   border-color: #1f4a25;
+  border-radius: 2px;
 }
 
 #table {

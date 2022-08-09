@@ -90,23 +90,12 @@ export class LoginComponent implements OnInit {
         this.isLogged = false;
         this.isLoginFail=true;
 
-        this.errMsj = err.error.message;
+        this.errMsj = err.error;
 
-          //SPIN LOADING
-          this.ngxService.start();
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 100);
-          //FIN SPIN LOADING
+        console.log('MSJ:',this.errMsj);
 
-          //TOAST ERROR
-      setTimeout(() => {
-        this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
-      }, 600);
-      //FIN TOAST ERROR
-
-        console.log(this.errMsj);
-      },
+        //==TRABAJAMOS EL MSJ EN EL INTERCEPTOR-PRODUCTO-SERVICE==
+      }
     );
   }, 600);
   //FIN LOGIN AND TOASTS

@@ -8,6 +8,7 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router, RouterEvent, RouterState } from '@angular/router';
 import { request } from 'http';
 import { NgToastService } from 'ng-angular-popup';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -33,7 +34,7 @@ export class InterceptorsProductosService implements HttpInterceptor {
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
-    private http: HttpClient,
+    private router:Router,
     private toast: NgToastService,
     private ngxService: NgxUiLoaderService
   ) {}
@@ -77,11 +78,17 @@ export class InterceptorsProductosService implements HttpInterceptor {
             })
           );
         } else {
-          this.tokenService.logOut();
 
-          this.toastError();
+          if(!(this.router.url == '/signin')
+          && !(this.router.url == '/login')){
 
-          return throwError(err);
+            this.tokenService.logOut();
+          }
+
+
+          this.toastError(err.error);
+
+          //return throwError(err);
         }
       })
     );
@@ -110,19 +117,17 @@ export class InterceptorsProductosService implements HttpInterceptor {
        //FIN SPIN LOADING
   }
 
-  private toastError(){
+  private toastError(respuesta:string){
         //TOAST ERROR
         setTimeout(() => {
           this.toast.error({
             detail: 'ERROR',
-            summary: 'No está Autorizado!!',
+            summary: respuesta,
             duration: 2000,
           });
         }, 600);
         //FIN TOAST ERROR
   }
-
-
 
 
 

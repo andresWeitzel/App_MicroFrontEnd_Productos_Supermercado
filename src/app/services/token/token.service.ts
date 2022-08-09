@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import localStor from 'localstorage-slim';
 
 
 //Variables que se almacenan en el cliente
 const TOKEN_KEY = 'AuthToken';
+
+//Habilitamos la encriptacion para el token
+localStor.config.encrypt=true;
 
 
 @Injectable({
@@ -13,17 +17,21 @@ export class TokenService {
 
   roles: Array<string> = [];
 
+
   constructor(private router:Router) { }
+
 
 
   //================= TOKEN ===============
 public setToken(token:string):void{
-  window.localStorage.removeItem(TOKEN_KEY);
-  window.localStorage.setItem(TOKEN_KEY,token);
+  localStor.remove(TOKEN_KEY);
+  localStor.set(TOKEN_KEY,token);
+
 }
 
 public getToken(): string{
-  return localStorage.getItem(TOKEN_KEY)!;
+  return  localStor.get(TOKEN_KEY);
+
 }
 
   //================= LOGIN ===============

@@ -168,7 +168,7 @@ refresh(){
 
         console.log('MSJ:',this.errMsj);
 
-        this.toast.error({detail:"Error",summary:this.errMsj, duration:2000});
+       //==TRABAJAMOS EL MSJ EN EL INTERCEPTOR-PRODUCTO-SERVICE==
       },
     );
 

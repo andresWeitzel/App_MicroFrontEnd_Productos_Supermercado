@@ -46,7 +46,7 @@
     <!-- BUSCADORES -->
     <div class="text-left ms-0 me-5 mb-2" id="buscador">
 
-      <h5 class="mt-1 ms-5 me-5">Buscador Específico</h5>
+      <h5 class="mt-1 ms-5 me-5">Buscador con Filtro</h5>
 
       <!--BUSCADOR FILTRO ESPECIFICO-->
       <div class="d-flex flex-row text-left col-12 me-5"
@@ -90,33 +90,33 @@
 
       <h5 class="mt-4 ms-5 me-5">Buscador Genérico</h5>
 
-      <!--BUSCADOR FILTRO ESPECIFICO-->
+      <!--BUSCADOR FILTRO GENERICO-->
       <div class="d-flex flex-row text-left col-12 me-5 "
         (ngSubmit)="setFilterGeneric(filtroInput.value)">
 
         <img src="./assets/icons/products-storage.png" alt="" width="45"
           height="45" class="p-1 m-1">
 
-        <input type="text" name="filtro" class="form-control bg-white"
+        <input type="text" name="filtroGenerico" class="form-control bg-white"
           placeholder="Ingresar Valor...." aria-label="valor" id="filtro"
-          #filtroInput>
+          #filtroGenericoInput>
         <!--BTN BUSQUEDA-->
         <a>
           <button class="btn border-none p-1" type="button"
-            (click)="setFilterGeneric(filtroInput.value)" required id="btnBusqueda">
+            (click)="setFilterGeneric(filtroGenericoInput.value)" required id="btnBusqueda">
             <img src="./assets/icons/search02.png" alt="" width="35"
               height="35" class="">
           </button>
         </a>
         <!--FIN BTN BUSQUEDA-->
         <!--BTN LIMPIAR-->
-        <button class="btn bg-none p-1 " (click)="filtroInput.value=''" id="btnLimpiar">
+        <button class="btn bg-none p-1 " (click)="filtroGenericoInput.value=''" id="btnLimpiar">
           <img src="./assets/icons/recycle.png" alt="" width="35"
             height="35" class="">
         </button >
         <!--FIN BTN LIMPIAR-->
       </div>
-      <!--FIN BUSCADOR FILTRO ESPECIFICO-->
+      <!--FIN BUSCADOR FILTRO GENERICO-->
     </div>
     <!-- FIN BUSCADORES-->
 
