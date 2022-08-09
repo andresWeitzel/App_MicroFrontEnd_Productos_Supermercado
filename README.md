@@ -1,21 +1,22 @@
 # App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL
 
-* Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, Open-Api, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
-* La aplicación esta basada para la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
-* Como sistema de seguridad para manejo de recursos de la app se aplica Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de los productos requeridos.
+* Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* La aplicación esta basada para la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, con postman o desde swagger ui, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
+* Como sistema de seguridad para manejo de recursos de la app se usa Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de estos según el requerimiento deseado.
 * Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
 * Se implementa Paginación Completa.
-* Se aplica un filtro para la búsqueda de productos menos estricto, permitiendo las mismas según coincidencias de carácteres y palabras para todos los campos.
+* Se aplican dos filtros de búsqueda, uno para productos de forma genérica y otro según el campo deseado, permitiendo coincidencias de carácteres y palabras.
 * Para la experiencia de usuario se utiliza Popupts, Loaders, Angular Material, Etc.
 * Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
 * Todas las Páginas de la Aplicación poseen modals de Ayuda.
 * Entre Otros Recursos Disponibles.
-* Aclaración : ESTE MICROFRONTEND NO COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad empleado.  
+* Aclaración : ESTE MICROFRONTEND NO ES COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.  
 
 </br>
 
 * Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado(último release) : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
 * Repositorio Microdb_productos_supermercado_PostgreSQL(último release) : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
+* PlayList pruebas de funcionalidad de la aplicación : https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO
 
 
 </br>
@@ -215,3 +216,10 @@
     * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
     * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
 
+* Cifrado Token JWT
+    * Instalación y uso : https://www.npmjs.com/package/@auth0/angular-jwt
+
+
+<hr>
+
+### Documentación en Proceso de Desarrollo
