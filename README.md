@@ -119,6 +119,9 @@
 | Angular Material | 13.3.9 | UI librería de componentes | 
 | ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
 | ngx-ui-loader | 13.0.0 | Animaciones de carga | 
+| jspdf/html2canvas | - | Pdf Export| 
+| xlsx | - | Excell/Csv Export| 
+| Highcharts | - | Excell/Csv Export| 
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
 | Otros | - | - |
@@ -200,7 +203,12 @@
     * Implementación : https://tdev.app/ngx-ui-loader
 
 * Excel Sheets
+    * Instalación y Doc : https://www.npmjs.com/package/xlsx
     * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
+    
+* JSPDF
+    * Ejemplo Base : https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/
+    * Otro ej. : https://howtojs.io/how-to-generate-pdf-file-in-angular-13-application-in-multiple-ways/
 
 * Gráficos con Highchart
     * Npm, config, detalles, etc : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
