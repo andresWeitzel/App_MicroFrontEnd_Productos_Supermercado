@@ -49,14 +49,14 @@
 </br>
 
 
-#### Listado de Productos Filtrado según Frutas 
+#### Listado de Productos Filtrado según Bebidas
 
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/filterByFrutas.png)
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/filterByBebidas.png)
 
 
-#### Listado de Productos Formato xlsx 
+#### Listado de Productos Formato csv
 
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsExcel.png)
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsCsv.png)
 
 
 #### Listado de Productos sección Paginado 
