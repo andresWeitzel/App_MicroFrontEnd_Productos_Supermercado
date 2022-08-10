@@ -9,11 +9,16 @@ import { TokenService } from 'src/app/services/token/token.service';
 //Excell
 import * as XLSX from 'xlsx';
 
+//PDF
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 //Highchart and Treemap chart
 import * as Highcharts from 'highcharts';
 import More from 'highcharts/highcharts-more';
 import Tree from 'highcharts/modules/treemap';
 import Heatmap from 'highcharts/modules/heatmap';
+import { wordBreak } from 'html2canvas/dist/types/css/property-descriptors/word-break';
 More(Highcharts);
 Tree(Highcharts);
 Heatmap(Highcharts);
@@ -59,10 +64,14 @@ export class ListaProductosComponent implements OnInit {
   isLastPage = false;
   totalPages = 0;
 
+
   //Elements
   nroElements = 10;
   nroCurrentElements = 0;
   nroTotalElements = 0;
+
+
+
 
   //Caracteristicas
   orderBy = 'id';
@@ -375,22 +384,75 @@ export class ListaProductosComponent implements OnInit {
   }
 
   //============= GENERATE EXCEL ====================
-  name = 'listaProductos.xlsx';
+  nameExcell = 'listaProductos.xlsx';
 
   generateExcel(): void {
     let element = document.getElementById('table');
+
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     const book: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
 
-    XLSX.writeFile(book, this.name);
+
+    XLSX.utils.book_append_sheet(book, worksheet);
+
+
+    //Reemplazamos el campo accion por vacio
+    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "K1" });
+
+    //Agregamos paginado
+    XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: "L1" });
+
+    XLSX.utils.sheet_add_aoa(worksheet, [[this.nroPage+'/'+this.totalPages]], { origin: "L2" });
+
+    XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: "M1" });
+
+    XLSX.utils.sheet_add_aoa(worksheet, [[this.nroCurrentElements+'/'+this.nroTotalElements]], { origin: "M2" });
+
+
+    XLSX.writeFile(book, this.nameExcell);
   }
 
-  //=============== PRODUCTOS POR GRUPO =============
-  countProdByGroup(): void {
-    //this.nroProdAgua = this.productos.find.g
+   //============= GENERATE CSV ====================
+   nameCsv = 'listaProductos.csv';
+
+   generateCsv(): void {
+     let element = document.getElementById('table');
+
+     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+
+     const book: XLSX.WorkBook = XLSX.utils.book_new();
+
+
+     XLSX.utils.book_append_sheet(book, worksheet);
+
+     //Reemplazamos el campo accion por vacio
+     XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "K1" });
+
+     XLSX.utils.sheet_to_csv;
+
+
+     XLSX.writeFile(book, this.nameCsv);
+   }
+
+   //============= GENERATE PDF ====================
+   namePdf = 'listaProductos.pdf';
+
+   generatePdf(): void {
+    let DATA: any = document.getElementById('table');
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      PDF.save(this.namePdf);
+    });
+
   }
+
 
   //============== HIGHCHART =================
 

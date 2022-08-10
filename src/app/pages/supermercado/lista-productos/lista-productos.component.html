@@ -17,6 +17,20 @@
         <!-- FIN BTN MODAL INFO -->
       </h1>
 
+
+      <!--BTN CSV-->
+      <div class="">
+        <a target="_blanck">
+          <button type="button" class="btn bg-none p-1 m-2"
+            (click)="generateCsv()">
+            <img src="assets/icons/csv.png" alt="" width="63"
+              height="60">
+          </button>
+        </a>
+      </div>
+      <!--BTN CSV-->
+
+
       <!--BTN EXCEL-->
       <div class="">
         <a target="_blanck">
@@ -28,6 +42,24 @@
         </a>
       </div>
       <!--BTN EXCEL-->
+
+
+
+
+      <!--BTN PDF-->
+      <div class="">
+        <a target="_blanck">
+          <button type="button" class="btn bg-none p-1 m-2"
+            (click)="generatePdf()">
+            <img src="assets/icons/pdf (3).png" alt="" width="58"
+              height="55">
+          </button>
+        </a>
+      </div>
+      <!--BTN PDF-->
+
+
+
 
     </div>
 
@@ -51,7 +83,6 @@
       <!--BUSCADOR FILTRO ESPECIFICO-->
       <div class="d-flex flex-row text-left col-12 me-5"
         (ngSubmit)="setFilterEspecific(filtroInput.value, campoInput.value)">
-
         <!--SELECT FILTER-->
         <select type="text"
           name="categoria" #campoInput>
@@ -71,14 +102,16 @@
         <!--BTN BUSQUEDA-->
         <a>
           <button class="btn border-none p-1" type="button"
-            (click)="setFilterEspecific(filtroInput.value , campoInput.value)" required id="btnBusqueda">
+            (click)="setFilterEspecific(filtroInput.value , campoInput.value)"
+            required id="btnBusqueda">
             <img src="./assets/icons/search02.png" alt="" width="35"
-              height="35" class="" >
+              height="35" class="">
           </button>
         </a>
         <!--FIN BTN BUSQUEDA-->
         <!--BTN LIMPIAR-->
-        <button class="btn bg-none p-1 " (click)="filtroInput.value=''" id="btnLimpiar">
+        <button class="btn bg-none p-1 " (click)="filtroInput.value=''"
+          id="btnLimpiar">
           <img src="./assets/icons/recycle.png" alt="" width="35"
             height="35" class="">
         </button>
@@ -103,17 +136,19 @@
         <!--BTN BUSQUEDA-->
         <a>
           <button class="btn border-none p-1" type="button"
-            (click)="setFilterGeneric(filtroGenericoInput.value)" required id="btnBusqueda">
+            (click)="setFilterGeneric(filtroGenericoInput.value)" required
+            id="btnBusqueda">
             <img src="./assets/icons/search02.png" alt="" width="35"
               height="35" class="">
           </button>
         </a>
         <!--FIN BTN BUSQUEDA-->
         <!--BTN LIMPIAR-->
-        <button class="btn bg-none p-1 " (click)="filtroGenericoInput.value=''" id="btnLimpiar">
+        <button class="btn bg-none p-1 " (click)="filtroGenericoInput.value=''"
+          id="btnLimpiar">
           <img src="./assets/icons/recycle.png" alt="" width="35"
             height="35" class="">
-        </button >
+        </button>
         <!--FIN BTN LIMPIAR-->
       </div>
       <!--FIN BUSCADOR FILTRO GENERICO-->
@@ -562,7 +597,7 @@
     <div class="modal-content" id="modalCheckDelete">
 
       <div class="alert alert-danger alert-link" role="alert">
-        <div class="d-flex d-row bg-none" >
+        <div class="d-flex d-row bg-none">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             fill="currentColor" class="bi bi-exclamation-triangle-fill
             flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
