@@ -7,7 +7,7 @@
 * Se implementa Paginación Completa.
 * Se aplican dos filtros de búsqueda, uno para productos de forma genérica y otro según el campo deseado, permitiendo coincidencias de carácteres y palabras.
 * Para la experiencia de usuario se utiliza Popupts, Loaders, Angular Material, Etc.
-* Es posible descargar el Listado de Productos Paginado en formato xlsx(excel).
+* Es posible descargar el Listado de Productos Paginado en formato xlsx(excel), csv y pdf.
 * Todas las Páginas de la Aplicación poseen modals de Ayuda.
 * Entre Otros Recursos Disponibles.
 * Aclaración : ESTE MICROFRONTEND NO ES COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.  
