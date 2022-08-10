@@ -49,9 +49,9 @@
 </br>
 
 
-#### Listado de Productos Filtrado según Bebidas
+#### Listado de Productos 
 
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/filterByBebidas.png)
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/paginado.png)
 
 
 #### Listado de Productos Formato csv
