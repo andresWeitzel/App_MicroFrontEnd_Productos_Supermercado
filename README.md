@@ -224,8 +224,10 @@
     * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
     * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
 
-* Cifrado Token JWT
-    * Instalación y uso : https://www.npmjs.com/package/@auth0/angular-jwt
+* Cifrado Token (CriptoJs) y Secure Local Storage
+    * Guía de Uso : https://rupesh94.medium.com/how-to-encrypt-localstorage-data-in-angular-270ebcbc1435
+    * Instalación Secure Local Storage : https://www.npmjs.com/package/secure-web-storage?activeTab=readme
+    * Instalacion CryptoJs : https://www.npmjs.com/package/crypto-js
 
 
 <hr>
