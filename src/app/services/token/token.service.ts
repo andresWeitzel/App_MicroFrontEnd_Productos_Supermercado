@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import localStor from 'localstorage-slim';
-
+import { StorageEncryptedService } from './storage-encrypted/storage-encrypted.service';
+//import localStor from 'localstorage-slim';
 
 //Variables que se almacenan en el cliente
 const TOKEN_KEY = 'AuthToken';
 
-//Habilitamos la encriptacion para el token
-localStor.config.encrypt=true;
+//Habilitamos la encriptacion y desencriptacion para el token
+//localStor.config.encrypt=true;
 
 
 @Injectable({
@@ -18,19 +18,25 @@ export class TokenService {
   roles: Array<string> = [];
 
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    private storageService:StorageEncryptedService
+    ) { }
 
 
 
   //================= TOKEN ===============
 public setToken(token:string):void{
-  localStor.remove(TOKEN_KEY);
-  localStor.set(TOKEN_KEY,token);
+
+  this.storageService.secureStorage.removeItem(TOKEN_KEY);
+  this.storageService.secureStorage.setItem(TOKEN_KEY, token);
+
 
 }
 
 public getToken(): string{
-  return  localStor.get(TOKEN_KEY);
+  return this.storageService.secureStorage.getItem(TOKEN_KEY);
+
 
 }
 
