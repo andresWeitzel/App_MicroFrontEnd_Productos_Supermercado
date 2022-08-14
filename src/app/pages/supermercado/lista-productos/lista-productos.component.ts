@@ -18,7 +18,6 @@ import * as Highcharts from 'highcharts';
 import More from 'highcharts/highcharts-more';
 import Tree from 'highcharts/modules/treemap';
 import Heatmap from 'highcharts/modules/heatmap';
-import { wordBreak } from 'html2canvas/dist/types/css/property-descriptors/word-break';
 More(Highcharts);
 Tree(Highcharts);
 Heatmap(Highcharts);
@@ -213,11 +212,14 @@ export class ListaProductosComponent implements OnInit {
     this.filtroProdBusqueda = '';
     this.filtroProdCampo = '';
 
-    if (filtro === '' || filtro === null) {
+    if (filtro === '' || filtro === null
+    || campo === '' || campo === null) {
       this.listarProductos();
     } else {
       this.filtroProdBusqueda = filtro;
       this.filtroProdCampo = campo;
+
+
 
       this.listarProductosFilterAndField();
 
@@ -349,37 +351,54 @@ export class ListaProductosComponent implements OnInit {
     }
   }
 
+
   //Pagina Anterior
   paginaAnterior(): void {
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
-      if (!this.isFirstPage) {
+      if (this.nroPage != 0 && this.nroPage > 0) {
         this.nroPage--;
         this.listarProductos();
       } else {
-        this.listarProductosFilter();
+        //TOAST ERROR
+        setTimeout(() => {
+          this.toast.error({
+            detail: 'ERROR',
+            summary: 'No es Posible Disminuir una Página!!',
+            duration: 2000,
+          });
+        }, 600);
+        //FIN TOAST ERROR
       }
     }
   }
-
-  //Pagina Anterior
+  //Pagina Siguiente
   paginaSiguiente(): void {
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
-      if (!this.isLastPage) {
+      if (!this.isLastPage && this.nroPage >= 0) {
         this.nroPage++;
         this.listarProductos();
       } else {
-        this.listarProductosFilter();
+        //TOAST ERROR
+        setTimeout(() => {
+          this.toast.error({
+            detail: 'ERROR',
+            summary: 'No es Posible Aumentar una Página!!',
+            duration: 2000,
+          });
+        }, 600);
+        //FIN TOAST ERROR
       }
     }
   }
 
   cambiarPagina(pagina: number): void {
+
     this.nroPage = pagina;
 
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
-      this.listarProductosFilter();
+     this.listarProductosFilter();
     }
   }
 
