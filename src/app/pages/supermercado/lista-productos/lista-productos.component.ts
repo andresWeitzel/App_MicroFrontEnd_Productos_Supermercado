@@ -375,6 +375,10 @@ export class ListaProductosComponent implements OnInit {
     //Reemplazamos el campo accion por vacio
     XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "K1" });
 
+
+    //Reemplazamos el campo imagenes por vacio
+    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "C1" });
+
     //Agregamos paginado
     XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: "L1" });
 
@@ -405,6 +409,9 @@ export class ListaProductosComponent implements OnInit {
      //Reemplazamos el campo accion por vacio
      XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "K1" });
 
+        //Reemplazamos el campo imagenes por vacio
+    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "C1" });
+
      XLSX.utils.sheet_to_csv;
 
 
@@ -414,10 +421,22 @@ export class ListaProductosComponent implements OnInit {
    //============= GENERATE PDF ====================
    namePdf = 'listaProductos.pdf';
 
+
+
+
    generatePdf(): void {
+
+    //Admitimos img
+    const options = { logging: true, letterRendering: true, useCORS: true };
+
     let DATA: any = document.getElementById('table');
-    html2canvas(DATA).then((canvas) => {
+
+
+    html2canvas(DATA, options).then((canvas) => {
       let fileWidth = 208;
+
+
+
       let fileHeight = (canvas.height * fileWidth) / canvas.width;
       const FILEURI = canvas.toDataURL('image/png');
       let PDF = new jsPDF('p', 'mm', 'a4');

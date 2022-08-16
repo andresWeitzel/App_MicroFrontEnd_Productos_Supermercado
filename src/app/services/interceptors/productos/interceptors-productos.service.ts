@@ -77,6 +77,16 @@ export class InterceptorsProductosService implements HttpInterceptor {
               return next.handle(interceptRequest);
             })
           );
+        }else if(err.status == 422){
+
+          if((this.router.url == '/agregar-productos')
+          || (this.router.url == '/editar-productos')){
+
+            this.toastError('El Código debe ser único!!');
+          }else{
+            this.tokenService.logOut();
+          }
+
         } else {
 
           if(!(this.router.url == '/signin')
