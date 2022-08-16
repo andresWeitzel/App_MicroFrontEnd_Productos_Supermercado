@@ -55,9 +55,12 @@ export class ListaProductosComponent implements OnInit {
   isAdmin = false;
   isUser = false;
 
-  //PAGINADO
 
-  //Pages
+  //TYPE LIST
+  typeListTable = true;
+
+
+  //PAGINADO
   nroPage = 0;
   isFirstPage = false;
   isLastPage = false;
@@ -127,51 +130,12 @@ export class ListaProductosComponent implements OnInit {
       );
   }
 
-  //----------LISTADO PRODUCTOS FILTER ---------------
-  listarProductosFilter() {
-    this.productoService
-      .listadoFilter(
-        this.filtroProdBusqueda,
-        this.nroPage,
-        this.nroElements,
-        this.orderBy,
-        this.direction
-      )
-      .subscribe(
-        (data: any) => {
-          this.productos = data.content;
-          this.isFirstPage = data.first;
-          this.isLastPage = data.last;
-          this.totalPages = data.totalPages;
-          this.nroCurrentElements = data.numberOfElements;
-          this.nroTotalElements = data.totalElements;
-
-          //console.log(this.productos);
-        },
-        (err) => {
-          this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: 'Producto/s No Encontrados!!',
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          console.log(err);
-        }
-      );
-  }
-
-
   //-----LISTADO PRODUCTOS FILTER/CAMPO ---------------
   listarProductosFilterAndField() {
     this.productoService
       .listadoFilterAndField(
-        this.filtroProdBusqueda,
         this.filtroProdCampo,
+        this.filtroProdBusqueda,
         this.nroPage,
         this.nroElements,
         this.orderBy,
@@ -207,19 +171,19 @@ export class ListaProductosComponent implements OnInit {
 
 
 
-  //-------------- ESPECIFIC FILTER ---------------
-  setFilterEspecific(filtro: string, campo: string) {
-    this.filtroProdBusqueda = '';
+  //--------------FILTER ---------------
+  setFilter(campo: string, filtro: string,) {
     this.filtroProdCampo = '';
+    this.filtroProdBusqueda = '';
+
 
     if (filtro === '' || filtro === null
     || campo === '' || campo === null) {
       this.listarProductos();
     } else {
-      this.filtroProdBusqueda = filtro;
+
       this.filtroProdCampo = campo;
-
-
+      this.filtroProdBusqueda = filtro;
 
       this.listarProductosFilterAndField();
 
@@ -227,20 +191,6 @@ export class ListaProductosComponent implements OnInit {
     }
   }
 
-  //-------------- GENERIC FILTER ---------------
-  setFilterGeneric(filtro: string) {
-    this.filtroProdBusqueda = '';
-
-    if (filtro === '' || filtro === null) {
-      this.listarProductos();
-    } else {
-      this.filtroProdBusqueda = filtro;
-
-      //console.log(this.filtroProdBusqueda);
-
-      this.listarProductosFilter();
-    }
-  }
 
   //----------EDITAR PRODUCTOS ---------------
   editarProducto(producto: any): void {
@@ -337,6 +287,11 @@ export class ListaProductosComponent implements OnInit {
     console.log('Producto Seleccionado: ', producto);
   }
 
+    //------------TYPE LIST ---------------
+    setTypeListTable(set:boolean){
+      this.typeListTable = set;
+    }
+
   //=========== METODOS PAGINACION ==============
 
   //Ordenar los registros por type
@@ -347,7 +302,7 @@ export class ListaProductosComponent implements OnInit {
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
-      this.listarProductosFilter();
+      this.listarProductosFilterAndField();
     }
   }
 
@@ -398,7 +353,7 @@ export class ListaProductosComponent implements OnInit {
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
-     this.listarProductosFilter();
+     this.listarProductosFilterAndField();
     }
   }
 
@@ -484,7 +439,7 @@ export class ListaProductosComponent implements OnInit {
 
     chart: {
       height: 250,
-      width: 900,
+      width: 800,
       inverted: true,
     },
 

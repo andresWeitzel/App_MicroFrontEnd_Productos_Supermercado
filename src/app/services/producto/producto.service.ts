@@ -28,15 +28,9 @@ export class ProductoService {
     return this.httpClient.get<any>(`${this.productoUrlApi}listado?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
-//--- GET ALL FILTER---
-  public listadoFilter(filtro:string, nroPagina:number , nroElementos:number , orderType:string, orderBy:string ):Observable<ProductoDto[]>{
-    return this.httpClient.get<any>(`${this.productoUrlApi}listado-filter/${filtro}?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
-  }
-
-
   //--- GET ALL FILTER AND FIELD---
   //----APLICA TODOS LOS METODOS DE BUSQUEDA-----
-  public listadoFilterAndField(filtro:string, campo:string, nroPagina:number , nroElementos:number , orderType:string, orderBy:string ):Observable<ProductoDto[]>{
+  public listadoFilterAndField(campo:string,filtro:string, nroPagina:number , nroElementos:number , orderType:string, orderBy:string ):Observable<ProductoDto[]>{
     return this.httpClient.get<any>(`${this.productoUrlApi}${campo}/${filtro}?page=${nroPagina}&size=${nroElementos}&sort=${orderType},${orderBy}`);
   }
 
