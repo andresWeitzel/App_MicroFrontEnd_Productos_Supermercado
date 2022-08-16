@@ -138,13 +138,12 @@
 </br>
 
 #### Alojamiento de Imágenes en Servidor
-
 [![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/03.00_alojImgServ.png)](https://www.youtube.com/watch?v=SRHMc2F8ZmM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=10) 
 
 </br>
 
 #### Archivos de Descarga ( XLSX, CSV, PDF)
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/04.00_archivosDescarga.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/04.00_archivosDesc.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
 
 </br>
 
