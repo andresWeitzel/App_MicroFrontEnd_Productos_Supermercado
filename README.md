@@ -49,16 +49,22 @@
 </br>
 
 
-#### Listado de Productos 
+#### Listado de Productos Formato Tabla
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProducts.png)
 
 
-#### Listado de Productos Formato csv
+#### Listado de Productos Formato Cards
+
+![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsCard02.png)
+
+
+
+#### Listado de Productos Archivo csv
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsCsv.png)
 
-#### Listado de Productos Formato pdf
+#### Listado de Productos Archivo pdf
 
 ![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/list-products/listProductsPdf.png)
 
@@ -131,9 +137,9 @@
 
 </br>
 
+#### Alojamiento de Imágenes en Servidor
 
-#### Listados Paginados, Filtros y Búsquedas de Productos
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/03.00_listado.png)](https://www.youtube.com/watch?v=20IB68HKcQE&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=6) 
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/03.00_alojImgServ.png)](https://www.youtube.com/watch?v=SRHMc2F8ZmM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=10) 
 
 </br>
 
@@ -142,34 +148,29 @@
 
 </br>
 
+
+#### Configuración de Lista Formato Tabla/Card
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/05.00_configListTablaCard.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
+
+</br>
+
+
+#### Filtros Personalizados
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/06.00_filtrosPerson.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
+
+</br>
+
+#### Filtros por Campos y Generales
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/07.00_filtrosCampos.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
+
+</br>
+
+
 #### Paginado de Tabla y Ordenamientos de Productos
 
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/05.00_paginadoTabla.png)](https://www.youtube.com/watch?v=gCOfQwGyk8o&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=8) 
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/08.00_pagTablasOrdenam.png)](https://www.youtube.com/watch?v=gCOfQwGyk8o&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=8) 
 
 </br>
-
-#### Formulario Editar Producto y Validaciones
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/06.00_formEditarProducto.png)](https://www.youtube.com/watch?v=TC9EFuDTrJo&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=9) 
-
-</br>
-
-#### Alojamiento de Imágenes en Servidor
-
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/07.00_alojImg.png)](https://www.youtube.com/watch?v=SRHMc2F8ZmM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=10) 
-
-</br>
-
-
-#### Formulario Agregar Productos y Validaciones
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/08.00_agregarProductos.png)](https://www.youtube.com/watch?v=05lKkzKMZQI&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=11) 
-
-</br>
-
-
-
-#### Eliminar Productos y Validaciones
-
-[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/09.00_eliminarProductos.png)](https://www.youtube.com/watch?v=aYk1ga5YBaM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=12) 
 
 <hr>
 
