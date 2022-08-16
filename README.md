@@ -109,75 +109,71 @@
 ### Prueba de Funcionalidad de la App
 
 #### Auth ( Login y Signin )
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/01.00_loginSignin.png)
-
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/01.00_loginSignin.png)](https://www.youtube.com/watch?v=V-MhwnJb6Gk&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=1) 
 </br>
 
 #### Auth ( Refresh Token )
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/01.01_refreshToken.png)
-
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/01.01_refreshToken.png)](https://www.youtube.com/watch?v=LOOkbnc-vrE&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=2) 
 </br>
 
 #### Análisis de Seguridad ( Cifrado de Token )
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.00_cifradoInicialToken.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.00_cifradoInicialToken.png)](https://www.youtube.com/watch?v=KAOINbLGxLY&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=3) 
 
 </br>
 
 #### Análisis de Seguridad ( Credenciales en JWT )
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.01_credencialesJwt.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.01_credencialesJwt.png)](https://www.youtube.com/watch?v=oc7YDwmAnq8&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=4) 
 
 </br>
 
 #### Metodología de Cifrado de Token AES SHA-256
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.02_cifradoFinalToken.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/02.02_cifradoFinalToken.png)](https://www.youtube.com/watch?v=I0_Uw8CWm1I&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=5) 
 
 </br>
 
 
 #### Listados Paginados, Filtros y Búsquedas de Productos
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/03.00_listado.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/03.00_listado.png)](https://www.youtube.com/watch?v=20IB68HKcQE&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=6) 
 
 </br>
 
 #### Archivos de Descarga ( XLSX, CSV, PDF)
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/04.00_archivosDescarga.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/04.00_archivosDescarga.png)](https://www.youtube.com/watch?v=_GB_kPRdD0k&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=7) 
 
 </br>
 
 #### Paginado de Tabla y Ordenamientos de Productos
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/05.00_paginadoTabla.png)
+
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/05.00_paginadoTabla.png)](https://www.youtube.com/watch?v=gCOfQwGyk8o&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=8) 
 
 </br>
 
-
 #### Formulario Editar Producto y Validaciones
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/06.00_formEditarProducto.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/06.00_formEditarProducto.png)](https://www.youtube.com/watch?v=TC9EFuDTrJo&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=9) 
 
 </br>
 
 #### Alojamiento de Imágenes en Servidor
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/07.00_alojImg.png)
+
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/07.00_alojImg.png)](https://www.youtube.com/watch?v=SRHMc2F8ZmM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=10) 
 
 </br>
 
 
 #### Formulario Agregar Productos y Validaciones
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/08.00_agregarProductos.png)
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/08.00_agregarProductos.png)](https://www.youtube.com/watch?v=05lKkzKMZQI&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=11) 
 
 </br>
 
 
 
 #### Eliminar Productos y Validaciones
-![Index app](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/09.00_eliminarProductos.png)
+
+[![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/09.00_eliminarProductos.png)](https://www.youtube.com/watch?v=aYk1ga5YBaM&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=12) 
+
+<hr>
 
 </br>
-
-
-
-
-
-
 
 
 
@@ -187,7 +183,7 @@
 | Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros | 
 | Database | pgAdmin, PostgreSQL, DBeaver , CMD y Otros | 
 
-<hr>
+
 
 </br>
 
