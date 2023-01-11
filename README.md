@@ -196,7 +196,7 @@
 | ngx-ui-loader | 13.0.0 | Animaciones de carga | 
 | jspdf/html2canvas | - | Pdf Export| 
 | xlsx | - | Excell/Csv Export| 
-| Highcharts | - | Excell/Csv Export| 
+| Highcharts | - | Librería JS para la generación de gráficos  | 
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
 | Otros | - | - |
