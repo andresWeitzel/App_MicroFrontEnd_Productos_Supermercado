@@ -245,19 +245,19 @@
 
 ### Documentación Oficial Tecnologías
 
-* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
-* Spring Security:  https://spring.io/projects/spring-security  
-* JSON Web Security:  https://jwt.io/introduction/ 
-* Boostrap:         https://getbootstrap.com/
-* Angular CLI:      https://github.com/angular/angular-cli
-* XAMPP :       https://www.apachefriends.org/download.html 
-* Maven Repository: https://mvnrepository.com/ 
-* PostMan:        https://www.postman.com/downloads/ 
-* Bootstrap:   https://getbootstrap.com/
-* Angular:     https://angular.io/tutorial/toh-pt0
-* Visual Studio Code:         https://code.visualstudio.com/download
-* Spring Tool Suite 4 : https://spring.io/tools 
-* Git:         https://git-scm.com/docs
+* [Java-JDK 12](https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html)
+* [Spring Security](https://spring.io/projects/spring-security)  
+* [JSON Web Security](https://jwt.io/introduction/) 
+* [Boostrap](https://getbootstrap.com/)
+* [Angular CLI](https://github.com/angular/angular-cli)
+* [XAMPP](https://www.apachefriends.org/download.html) 
+* [Maven Repository](https://mvnrepository.com/) 
+* [PostMan](https://www.postman.com/downloads/) 
+* [Bootstrap](https://getbootstrap.com/)
+* [Angular](https://angular.io/tutorial/toh-pt0)
+* [Visual Studio Code](https://code.visualstudio.com/download)
+* [Spring Tool Suite 4](https://spring.io/tools) 
+* [Git](https://git-scm.com/docs)
 * Otros
 
 </br>
