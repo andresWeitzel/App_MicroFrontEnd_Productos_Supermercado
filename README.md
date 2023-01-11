@@ -1,6 +1,6 @@
-# App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL
+# App MicroFrontEnd Productos de Supermercado
 
-* Micro Front End Acerca de Productos de Supermercado aplicando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
 * La aplicación esta basada para la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, con postman o desde swagger ui, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
 * Como sistema de seguridad para manejo de recursos de la app se usa Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de estos según el requerimiento deseado.
 * Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
@@ -14,9 +14,9 @@
 
 </br>
 
-* Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado(último release) : https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado
-* Repositorio Microdb_productos_supermercado_PostgreSQL(último release) : https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL
-* PlayList pruebas de funcionalidad de la aplicación : https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO
+* [Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado(último release)](https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado)
+* [Repositorio Microdb_productos_supermercado_PostgreSQL(último release)](https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL)
+* [PlayList pruebas de funcionalidad de la aplicación](https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO)
 
 
 </br>
@@ -201,11 +201,7 @@
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
 | Otros | - | - |
 
-
-
 </br>
-
-
 
 | Tecnologías BACKEND | Versión | Finalidad
 | ------------- | ------------- | ------------- |
@@ -225,8 +221,6 @@
 | Git | 2.29.1  | Control de Versiones |
 | Otros | - | - |
 
-
-
 </br>
 
 
@@ -238,7 +232,6 @@
 | pgAdmin	| 4.0 |	Gestor SGDB |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Otros | - | - |
-
 
 
 </br>
@@ -264,9 +257,9 @@
 
 ### Documentación Oficial/No Oficial Librerías Frontend
 
-* Angular Popup : https://www.npmjs.com/package/ng-angular-popup
+* [Angular Popup](https://www.npmjs.com/package/ng-angular-popup)
 
-* Angular Material : https://material.angular.io/guide/getting-started
+* [Angular Material](https://material.angular.io/guide/getting-started)
 
 * Angular Bootstrap Validation 
     * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
