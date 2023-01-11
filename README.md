@@ -1,7 +1,7 @@
 # App MicroFrontEnd Productos de Supermercado
 
 * Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
-* La aplicación esta basada para la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, con postman o desde swagger ui, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
+* El enfoque de la aplicación es la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, con postman o desde swagger ui, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
 * Como sistema de seguridad para manejo de recursos de la app se usa Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de estos según el requerimiento deseado.
 * Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
 * Se implementa Paginación Completa.
@@ -262,40 +262,40 @@
 * [Angular Material](https://material.angular.io/guide/getting-started)
 
 * Angular Bootstrap Validation 
-    * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
-    * Implementación/ejemplos : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
-    * Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
+    * [Instalación](https://mdbootstrap.com/docs/b5/angular/getting-started/installation/)
+    * [Implementación/ejemplos](https://mdbootstrap.com/docs/b5/angular/getting-started/installation/)
+    * [Validation Forms(tanto bootstrap 4 como 5](https://mdbootstrap.com/docs/angular/forms/validation/)
 
 * ngx ui loader 
-    * Instalación :  https://www.npmjs.com/package/ngx-ui-loader
-    * Implementación : https://tdev.app/ngx-ui-loader
+    * [Instalación](https://www.npmjs.com/package/ngx-ui-loader)
+    * [Implementación](https://tdev.app/ngx-ui-loader)
 
 * Excel Sheets
-    * Instalación y Doc : https://www.npmjs.com/package/xlsx
-    * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
+    * [Instalación y Doc](https://www.npmjs.com/package/xlsx)
+    * [Ejemplo Base](https://www.delftstack.com/howto/angular/angular-export-to-excel/)
     
 * JSPDF
-    * Ejemplo Base : https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/
-    * Otro ej. : https://howtojs.io/how-to-generate-pdf-file-in-angular-13-application-in-multiple-ways/
+    * [Ejemplo Base](https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/)
+    * [Otro ej.](https://howtojs.io/how-to-generate-pdf-file-in-angular-13-application-in-multiple-ways/)
 
 * Gráficos con Highchart
-    * Npm, config, detalles, etc : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
-    * Doc Oficial : https://api.highcharts.com/highcharts/
-    * Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
+    * [Npm, config, detalles, etc](https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12)
+    * [Doc Oficial](https://api.highcharts.com/highcharts/)
+    * [Doc Oficial Instalación](https://www.highcharts.com/docs/getting-started/install-from-npm)
     
 * Tipos de Gráficos Highchart
-    * Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
-    * Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
-    * Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
+    * [Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
+    * [Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
+    * [Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
 
 * Treemap Graphic
-    * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
-    * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
+    * [Ej. Base](https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts)
+    * [Ej. Base algunas configs](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels)
 
 * Cifrado Token (CriptoJs) y Secure Local Storage
-    * Guía de Uso : https://rupesh94.medium.com/how-to-encrypt-localstorage-data-in-angular-270ebcbc1435
-    * Instalación Secure Local Storage : https://www.npmjs.com/package/secure-web-storage?activeTab=readme
-    * Instalacion CryptoJs : https://www.npmjs.com/package/crypto-js
+    * [Guía de Uso](https://rupesh94.medium.com/how-to-encrypt-localstorage-data-in-angular-270ebcbc1435)
+    * [Instalación Secure Local Storage](https://www.npmjs.com/package/secure-web-storage?activeTab=readme)
+    * [Instalacion CryptoJs](https://www.npmjs.com/package/crypto-js)
 
 
 <hr>
