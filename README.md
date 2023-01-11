@@ -257,9 +257,11 @@
 
 ### Documentación Oficial/No Oficial Librerías Frontend
 
-* [Angular Popup](https://www.npmjs.com/package/ng-angular-popup)
+* Angular Popup
+    * [Instalación](https://www.npmjs.com/package/ng-angular-popup)   
 
-* [Angular Material](https://material.angular.io/guide/getting-started)
+* Angular Material
+    * [Instalación](https://material.angular.io/guide/getting-started) 
 
 * Angular Bootstrap Validation 
     * [Instalación](https://mdbootstrap.com/docs/b5/angular/getting-started/installation/)
@@ -284,9 +286,9 @@
     * [Doc Oficial Instalación](https://www.highcharts.com/docs/getting-started/install-from-npm)
     
 * Tipos de Gráficos Highchart
-    * [Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
-    * [Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
-    * [Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
+    * [Nuevo sitio Tipos de Graf](https://www.highcharts.com/blog/chartchooser/)
+    * [Ejemplo Base 2d](https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts)
+    * [Modificación Gráfico 2d a 3d](https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/)
 
 * Treemap Graphic
     * [Ej. Base](https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts)
@@ -298,6 +300,4 @@
     * [Instalacion CryptoJs](https://www.npmjs.com/package/crypto-js)
 
 
-<hr>
 
-### Documentación en Proceso de Desarrollo
