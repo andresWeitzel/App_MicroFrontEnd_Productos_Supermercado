@@ -1,6 +1,60 @@
-# App MicroFrontEnd Productos de Supermercado
+<img src="./doc/inicio/postLogin.png" style="width: 100%; height: 80%"/>
 
-* Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+# App MicroFrontEnd Productos de Supermercado
+Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+
+* [Repositorio Api Rest](https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado)
+* [Repositorio base de datos](https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL)
+* [PlayList pruebas de funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO)
+
+
+<br>
+
+## Índice 📜
+
+<details>
+ <summary> Ver </summary>
+ 
+ <br>
+ 
+### Sección 1) Descripción, Tecnologías y Dependencias 
+
+ - [1.0) Descripción del Proyecto.](#10-descripción-)
+ - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+ - [1.2) Tecnologías.](#12-tecnologías-)
+
+  
+### Sección 2) Endpoints y Recursos 
+ 
+ - [2.0) EndPoints.](#endpoints-)
+ - [2.1) Recursos y Servicios.](#recursos-y-servicios-)
+  
+  
+### Sección 3) Prueba de Funcionalidad y Referencias
+ 
+ - [3.0) Prueba de Funcionalidad.](#30-prueba-de-funcionalidad-)
+ - [3.1) Referencias.](#31-referencias-)
+	  
+  
+  
+<br>
+
+</details>
+
+
+
+<br>
+
+## Sección 1) Descripción, Tecnologías y Dependencias 
+
+
+### 1.0) Descripción [🔝](#índice-) 
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+ 
 * El enfoque de la aplicación es la gestión de productos, si bien se ha desarrollado también el back para la gestión de usuarios, este recurso aplica solo desde la Api, con postman o desde swagger ui, se implementa el Modelo de Negocios para un MicroFrontEnd, por ende se deberá desarrollar otra app para la gestión de dichos usuarios. 
 * Como sistema de seguridad para manejo de recursos de la app se usa Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de estos según el requerimiento deseado.
 * Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
@@ -12,14 +66,121 @@
 * Entre Otros Recursos Disponibles.
 * Aclaración : ESTE MICROFRONTEND NO ES COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.  
 
-</br>
+<br>
 
-* [Repositorio ApiRest_MicroFrontEnd_ProductosSupermercado(último release)](https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado)
-* [Repositorio Microdb_productos_supermercado_PostgreSQL(último release)](https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL)
-* [PlayList pruebas de funcionalidad de la aplicación](https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO)
+* [Repositorio Api Rest](https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado)
+* [Repositorio base de datos](https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL)
+* [PlayList pruebas de funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO)
 
 
-</br>
+<br>
+
+</details>
+
+
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+  
+ <br>  
+  
+* Crear un entorno de trabajo a través de algún IDE
+* Clonar el Proyecto (`git clone https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_Supermercado`)
+* Posicionarnos sobre el proyecto
+  * `cd proyecto`
+* Dentro del directorio instalar todos los plugins implementados
+  * `npm i`
+* Ejecutar la base de datos
+* Ejecutar la api rest
+* Ejecutar el proyecto
+  * `ng serve`
+
+<br>
+
+</details>
+
+
+
+
+### 1.2) Tecnologías [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+| Tecnologías FRONTEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [HTML](https://www.w3schools.com/html/) |  5.0 | Lenguaje de Hipertexto | 
+| [Css](https://www.w3schools.com/css/) |  3.0 | Lenguaje de hojas de estilo para presentación de documentos.  |
+| [Scss](https://sass-lang.com/) | 1.57 | Preprocesador de css.  |
+| [Angular](https://angular.io/) |  13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| [Angular CLI](https://docs.angular.lat/cli) | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| [Angular Material](https://material.angular.io/) | 13.3.9 | UI librería de componentes | 
+| [ng-angular-popup](https://www.npmjs.com/package/ng-angular-popup) | 0.1.2 |  Mensajes emergentes personalizados |
+| [jspdf/html2canvas](https://www.npmjs.com/package/jspdf-html2canvas) | - | Pdf Export| 
+| [xlsx](https://www.npmjs.com/package/xlsx) | - | Excell/Csv Export| 
+| [ngx-ui-loader](https://www.npmjs.com/package/ngx-ui-loader) | 13.0.0 | Animaciones de carga | 
+| [Highchart](https://www.highcharts.com/) | 13.3.9 | Librería para la generación de gráficos |  
+| [Bootstrap](https://getbootstrap.com/) | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| [Visual Studio Code](https://code.visualstudio.com/download) | 1.51.1  | Entorno de Desarrollo |
+
+
+
+| Tecnologías BACKEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [Java]( https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html) |   12.0.2 | JDK |
+| [Spring Tool Suite 4](https://spring.io/blog/2021/06/21/spring-tools-4-11-0-released) | 4.9.0  | IDE |
+| [Spring Boot](https://spring.io/) |   2.6.4  | Framework |
+| [Spring Boot Data JPA](https://spring.io/projects/spring-data-jpa)  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| [Spring Security](https://spring.io/projects/spring-security) | 2.6.7 | Servicios de Seguridad |
+| [JSON Web Token](https://jwt.io/) | 0.9.1 | Creación de tokens de acceso | 
+| [Maven](https://maven.apache.org/) |  4.0.0 | Gestor de Proyectos |
+| [Postman](https://www.postman.com/) | 9.4.1 | Test de Apis |
+| [Lombok](https://projectlombok.org/) | 1.18.22 | Automatización de Código | 
+| [Open-Api](https://www.openapis.org/) | 1.6.4 | Documentación de la Api | 
+| [UI Swagger](https://swagger.io/tools/swagger-ui/) | 1.6.4 | Visualización y Gestión de la Api | 
+| [GNU bash / Terminal](https://www.gnu.org/software/bash/) | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
+| [Git](https://git-scm.com/) | 2.29.1  | Control de Versiones |
+
+
+| Tecnologías DATABASE | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [PostgreSQL](https://www.postgresql.org/) | 13.2 | Sistema de Gestión de DB'S |
+| [DBeaver](https://dbeaver.io/) | 22.1  | Editor de Base de Datos |
+| [pgAdmin](https://github.com/pgadmin-org/pgadmin4) | 5.1 | Sistema de Administración de DB'S |
+
+
+<br>
+
+</details>
+
+
+<br>
+
+
+## Sección 2) EndPoints y Recursos
+
+### 2.0) EndPoints [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+   
+
+<br>
+
+</details>
+
+
+
+
+
+### 2.1) Recursos y Servicios [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+  
 
 ### Seguidamente se Representa Gráficamente de Forma Sucinta algunos Servicios y Recursos de la Aplicación.
 
@@ -108,11 +269,24 @@
 
 #### Documentación Gráfica Acotada por razones de simplificación de documentación. Visualizar los videos anexados acerca de las Pruebas de Funcionalidad de la aplicación.
 
-</br>
 
-</hr>
+<br>
 
-### Prueba de Funcionalidad de la App
+</details>
+
+
+
+<br>
+
+
+## Sección 3) Prueba de Funcionalidad y Referencias
+
+
+### 3.0) Prueba de Funcionalidad [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+
 
 #### Auth ( Login y Signin )
 [![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/01.00_loginSignin.png)](https://www.youtube.com/watch?v=V-MhwnJb6Gk&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=1) 
@@ -169,72 +343,24 @@
 
 [![Alt text](https://github.com/andresWeitzel/App_MicroFrontEnd_Productos_SpringBoot_SpringSecurity_PostgreSQL/blob/master/doc/ytPlaylist/08.00_pagTablasOrdenam.png)](https://www.youtube.com/watch?v=gCOfQwGyk8o&list=PLCl11UFjHurBcKBhduZ4suiDSMbyyBqCO&index=8) 
 
-</br>
 
-<hr>
+ <br>
+  
+### `Se resume documentación gráfica. Visualizar Playlist del proyecto para más funcionalidades`  
 
-</br>
+ <br>
 
-
-
-| Área | Stack |
-| ------------- | ------------- |
-| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
-| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros | 
-| Database | pgAdmin, PostgreSQL, DBeaver , CMD y Otros | 
+</details>
 
 
 
-</br>
 
-| Tecnologías FRONTEND | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| Angular |   13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
-| Angular CLI | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
-| Angular Material | 13.3.9 | UI librería de componentes | 
-| ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
-| ngx-ui-loader | 13.0.0 | Animaciones de carga | 
-| jspdf/html2canvas | - | Pdf Export| 
-| xlsx | - | Excell/Csv Export| 
-| Highcharts | - | Librería JS para la generación de gráficos  | 
-| Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
-| Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
-| Otros | - | - |
+### 3.1) Referencias [🔝](#índice-)
 
-</br>
-
-| Tecnologías BACKEND | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| Java |   12.0.2 | JDK |
-| Spring Tool Suite 4 | 4.9.0  | IDE |
-| Spring Boot |   2.6.4  | Framework |
-| Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
-| Spring Security | 2.6.7 | Servicios de Seguridad |
-| JSON Web Token | 0.9.1 | Creación de tokens de acceso | 
-| Maven |  4.0.0 | Gestor de Proyectos |
-| PostMan | 9.4.1 | Test de Apis |
-| Lombok | 1.18.22 | Automatización de Código | 
-| Open-Api | 1.6.4 | Documentación de la Api | 
-| UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
-| Maven |  4.0.0 | Gestor de Proyectos |
-| GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
-| Git | 2.29.1  | Control de Versiones |
-| Otros | - | - |
-
-</br>
+<details>
+ <summary>Ver</summary>
 
 
-</br>
-
-| Tecnologías DATABASE | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| PostgreSQL | 14 | SGDB |
-| pgAdmin	| 4.0 |	Gestor SGDB |
-| CMD | 10 | Símbolo del Sistema para linea de comandos | 
-| Otros | - | - |
-
-
-</br>
 
 ### Documentación Oficial Tecnologías
 
@@ -298,6 +424,19 @@
     * [Guía de Uso](https://rupesh94.medium.com/how-to-encrypt-localstorage-data-in-angular-270ebcbc1435)
     * [Instalación Secure Local Storage](https://www.npmjs.com/package/secure-web-storage?activeTab=readme)
     * [Instalacion CryptoJs](https://www.npmjs.com/package/crypto-js)
+
+
+
+</details>
+
+<br>
+
+
+
+
+
+
+
 
 
 
