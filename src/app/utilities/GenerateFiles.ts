@@ -79,4 +79,61 @@ export class GenerateFiles {
       }, 200);
     }
   }
+
+  generateExcel(excelName: string, data: any, paginate: any) {
+    try {
+      //Paginate
+      let nroPage = paginate['nroPage'];
+      let totalPages = paginate['totalPages'];
+      let nroCurrentElements = paginate['nroCurrentElements'];
+      let nroTotalElements = paginate['nroTotalElements'];
+
+      setTimeout(() => {
+        this.toast.success({
+          detail: 'SUCCESS',
+          summary: 'Descargando Archivo .xlsx!!',
+          duration: 2000,
+        });
+      }, 200);
+
+      const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(data);
+
+      const book: XLSX.WorkBook = XLSX.utils.book_new();
+
+      XLSX.utils.book_append_sheet(book, worksheet);
+
+      //Reemplazamos el campo accion por vacio
+      XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'K1' });
+
+      //Reemplazamos el campo imagenes por vacio
+      XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'C1' });
+
+      //Agregamos paginado
+      XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: 'L1' });
+
+      XLSX.utils.sheet_add_aoa(worksheet, [[nroPage + '/' + totalPages]], {
+        origin: 'L2',
+      });
+
+      XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], {
+        origin: 'M1',
+      });
+
+      XLSX.utils.sheet_add_aoa(
+        worksheet,
+        [[nroCurrentElements + '/' + nroTotalElements]],
+        { origin: 'M2' },
+      );
+
+      XLSX.writeFile(book, excelName);
+    } catch (error) {
+      setTimeout(() => {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'No se ha podido descargar el archivo .xlsx!!',
+          duration: 2000,
+        });
+      }, 200);
+    }
+  }
 }

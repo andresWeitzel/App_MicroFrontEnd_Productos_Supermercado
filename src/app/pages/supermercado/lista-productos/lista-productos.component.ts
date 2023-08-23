@@ -363,44 +363,32 @@ export class ListaProductosComponent implements OnInit {
     }
   }
 
+  getPaginate() {
+    var paginate = {
+      nroPage: this.nroPage,
+      totalPages: this.totalPages,
+      nroCurrentElements: this.nroCurrentElements,
+      nroTotalElements: this.nroTotalElements,
+    };
+    return paginate;
+  }
+
   // =========================
   // ===== GENERATE EXCEL===
   // =========================
-  nameExcell = 'listaProductos.xlsx';
 
   generateExcel(): void {
-    let element = document.getElementById('table');
+    let nameExcel = 'listaProductos.xlsx';
 
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    let data = document.getElementById('table');
 
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    let paginate = this.getPaginate();
 
-    XLSX.utils.book_append_sheet(book, worksheet);
-
-    //Reemplazamos el campo accion por vacio
-    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'K1' });
-
-    //Reemplazamos el campo imagenes por vacio
-    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'C1' });
-
-    //Agregamos paginado
-    XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: 'L1' });
-
-    XLSX.utils.sheet_add_aoa(
-      worksheet,
-      [[this.nroPage + '/' + this.totalPages]],
-      { origin: 'L2' },
+    let excel = new GenerateFiles(this.toast).generateExcel(
+      nameExcel,
+      data,
+      paginate,
     );
-
-    XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: 'M1' });
-
-    XLSX.utils.sheet_add_aoa(
-      worksheet,
-      [[this.nroCurrentElements + '/' + this.nroTotalElements]],
-      { origin: 'M2' },
-    );
-
-    XLSX.writeFile(book, this.nameExcell);
   }
 
   // =====================
