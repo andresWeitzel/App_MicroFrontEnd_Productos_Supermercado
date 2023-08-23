@@ -9,10 +9,6 @@ import { TokenService } from 'src/app/services/token/token.service';
 //Excell
 import * as XLSX from 'xlsx';
 
-//PDF
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
 //Highchart and Treemap chart
 import * as Highcharts from 'highcharts';
 import More from 'highcharts/highcharts-more';
@@ -410,38 +406,23 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   // ===== GENERATE CSV===
   // =====================
-  nameCsv = 'listaProductos.csv';
 
   generateCsv(): void {
-    let element = document.getElementById('table');
+    let nameCsv = 'listaProductos.csv';
 
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    let data = document.getElementById('table');
 
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
-
-    XLSX.utils.book_append_sheet(book, worksheet);
-
-    //Reemplazamos el campo accion por vacio
-    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'K1' });
-
-    //Reemplazamos el campo imagenes por vacio
-    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: 'C1' });
-
-    XLSX.utils.sheet_to_csv;
-
-    XLSX.writeFile(book, this.nameCsv);
+    let csv = new GenerateFiles(this.toast).generateCsv(nameCsv, data);
   }
 
   // =====================
   // ===== GENERATE PDF===
   // =====================
   generatePdf(): void {
-    let namePdf = "listaComponentes.pdf";
-    let data: any = document.getElementById("table");
+    let namePdf = 'listaComponentes.pdf';
+    let data: any = document.getElementById('table');
 
-    let pdf = new GenerateFiles(this.toast);
-    pdf.generatePdf(namePdf, data);
-
+    let pdf = new GenerateFiles(this.toast).generatePdf(namePdf, data);
   }
 
   // =====================
