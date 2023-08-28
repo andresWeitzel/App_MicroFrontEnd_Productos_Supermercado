@@ -1,57 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { ProductoDto } from 'src/app/models/ProductoDto';
-import { ProductoService } from 'src/app/services/producto/producto.service';
-import { TokenService } from 'src/app/services/token/token.service';
-
-//Excell
-import * as XLSX from 'xlsx';
+import { Component, OnInit } from "@angular/core";
+import { NavigationExtras, Router } from "@angular/router";
+import { NgToastService } from "ng-angular-popup";
+import { NgxUiLoaderService } from "ngx-ui-loader";
+import { ProductoDto } from "src/app/models/ProductoDto";
+import { ProductoService } from "src/app/services/producto/producto.service";
+import { TokenService } from "src/app/services/token/token.service";
+import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
+import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
 
 //Highchart and Treemap chart
-import * as Highcharts from 'highcharts';
-import More from 'highcharts/highcharts-more';
-import Tree from 'highcharts/modules/treemap';
-import Heatmap from 'highcharts/modules/heatmap';
-import { GenerateFiles } from 'src/app/utilities/GenerateFiles';
+import * as Highcharts from "highcharts";
+import More from "highcharts/highcharts-more";
+import Tree from "highcharts/modules/treemap";
+import Heatmap from "highcharts/modules/heatmap";
+
 More(Highcharts);
 Tree(Highcharts);
 Heatmap(Highcharts);
 
 @Component({
-  selector: 'app-lista-productos',
-  templateUrl: './lista-productos.component.html',
-  styleUrls: ['./lista-productos.component.scss'],
+  selector: "app-lista-productos",
+  templateUrl: "./lista-productos.component.html",
+  styleUrls: ["./lista-productos.component.scss"],
 })
 export class ListaProductosComponent implements OnInit {
   //ImgPaths
-  imgHelp = 'assets/icons/idea.png';
-  imgCsv = 'assets/icons/csv.png';
-  imgExcel = 'assets/icons/excel.png';
-  imgPdf = 'assets/icons/pdf (3).png';
-  imgSearch = 'assets/icons/search02.png';
-  imgRecycle = 'assets/icons/recycle.png';
+  imgHelp = "assets/icons/idea.png";
+  imgCsv = "assets/icons/csv.png";
+  imgExcel = "assets/icons/excel.png";
+  imgPdf = "assets/icons/pdf (3).png";
+  imgSearch = "assets/icons/search02.png";
+  imgRecycle = "assets/icons/recycle.png";
   //Table list
-  imgSortUp = 'assets/icons/sortUp.png';
-  imgSortDown = 'assets/icons/sortDown.png';
-  imgEditProduct = 'assets/icons/edit.png';
-  imgDeleteProduct = 'assets/icons/delete.png';
+  imgSortUp = "assets/icons/sortUp.png";
+  imgSortDown = "assets/icons/sortDown.png";
+  imgEditProduct = "assets/icons/edit.png";
+  imgDeleteProduct = "assets/icons/delete.png";
   //Pagination
-  imgLastPagePrevious = 'assets/icons/lastPagePrevious.png';
-  imgPagePrevious = 'assets/icons/pagePrevious.png';
+  imgLastPagePrevious = "assets/icons/lastPagePrevious.png";
+  imgPagePrevious = "assets/icons/pagePrevious.png";
 
   //Product
   productos: ProductoDto[] = [];
   productoSelect: ProductoDto[] = [];
   idProdSelect: number = 0;
-  codProdSelect: string = '';
-  nombrProdSelect: string = '';
+  codProdSelect: string = "";
+  nombrProdSelect: string = "";
   nroProdAgua = 3;
 
   //Filters Products
-  filtroProdBusqueda: string = '';
-  filtroProdCampo: string = '';
+  filtroProdBusqueda: string = "";
+  filtroProdCampo: string = "";
 
   //Segurity
   isAdmin = false;
@@ -66,8 +65,8 @@ export class ListaProductosComponent implements OnInit {
   nroElements = 10;
   nroCurrentElements = 0;
   nroTotalElements = 0;
-  orderBy = 'id';
-  direction = 'asc';
+  orderBy = "id";
+  direction = "asc";
 
   //Errors
   errMsj: string;
@@ -84,6 +83,8 @@ export class ListaProductosComponent implements OnInit {
     private tokenService: TokenService,
     private toast: NgToastService,
     private ngxService: NgxUiLoaderService,
+    private generateFileService: GenerateFilesService,
+    private toastService: ToastNotificationService
   ) {}
 
   ngOnInit() {
@@ -108,18 +109,9 @@ export class ListaProductosComponent implements OnInit {
         },
         (err) => {
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          console.log(err);
-        },
+          console.log(this.errMsj);
+          this.toastService.error(this.errMsj);
+        }
       );
   }
 
@@ -134,7 +126,7 @@ export class ListaProductosComponent implements OnInit {
         this.nroPage,
         this.nroElements,
         this.orderBy,
-        this.direction,
+        this.direction
       )
       .subscribe(
         (data: any) => {
@@ -147,18 +139,9 @@ export class ListaProductosComponent implements OnInit {
         },
         (err) => {
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: 'Producto/s No Encontrados!!',
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          console.log(err);
-        },
+          console.log(this.errMsj);
+          this.toastService.error(this.errMsj);
+        }
       );
   }
 
@@ -166,10 +149,10 @@ export class ListaProductosComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(campo: string, filtro: string) {
-    this.filtroProdCampo = '';
-    this.filtroProdBusqueda = '';
+    this.filtroProdCampo = "";
+    this.filtroProdBusqueda = "";
 
-    if (filtro === '' || filtro === null || campo === '' || campo === null) {
+    if (filtro === "" || filtro === null || campo === "" || campo === null) {
       this.listarProductos();
     } else {
       this.filtroProdCampo = campo;
@@ -190,8 +173,8 @@ export class ListaProductosComponent implements OnInit {
     }, 100);
     //FIN SPIN LOADING
 
-    this.navigationExtras.state['value'] = producto;
-    this.router.navigate(['editar-productos'], this.navigationExtras);
+    this.navigationExtras.state["value"] = producto;
+    this.router.navigate(["editar-productos"], this.navigationExtras);
   }
 
   // =============================
@@ -214,13 +197,8 @@ export class ListaProductosComponent implements OnInit {
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
-        this.toast.success({
-          detail: 'Operación Exitosa',
-          summary: 'Se ha Eliminado el Producto!!',
-          duration: 2000,
-        });
 
-        console.log('Producto Eliminado');
+        this.toastService.successfulOperation('Se ha eliminado el Producto');
 
         setTimeout(() => {
           this.refresh();
@@ -228,18 +206,9 @@ export class ListaProductosComponent implements OnInit {
       },
       (err) => {
         this.errMsj = err.error.message;
-
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: this.errMsj,
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
-        console.log(err);
-      },
+        console.log(this.errMsj);
+        this.toastService.error(this.errMsj);
+      }
     );
   }
 
@@ -254,11 +223,7 @@ export class ListaProductosComponent implements OnInit {
     }, 100);
     //FIN SPIN LOADING
 
-    this.toast.error({
-      detail: 'Operación No Autorizada',
-      summary: 'Servicio Habilitado para administradores!!',
-      duration: 2000,
-    });
+    this.toastService.unauthorizedOperation('Servicio Habilitado para administradores!!');
 
     setTimeout(() => {
       this.refresh();
@@ -279,8 +244,6 @@ export class ListaProductosComponent implements OnInit {
     this.idProdSelect = producto.id;
     this.codProdSelect = producto.codigo;
     this.nombrProdSelect = producto.nombre;
-
-    console.log('Producto Seleccionado: ', producto);
   }
 
   // ====================
@@ -301,7 +264,7 @@ export class ListaProductosComponent implements OnInit {
     this.orderBy = type;
     this.direction = direct;
 
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
       this.listarProductosFilterAndField();
@@ -312,7 +275,7 @@ export class ListaProductosComponent implements OnInit {
   // ===== LAST PAGE===
   // =====================
   paginaAnterior(): void {
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       if (this.nroPage != 0 && this.nroPage > 0) {
         this.nroPage--;
         this.listarProductos();
@@ -320,8 +283,8 @@ export class ListaProductosComponent implements OnInit {
         //TOAST ERROR
         setTimeout(() => {
           this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Disminuir una Página!!',
+            detail: "ERROR",
+            summary: "No es Posible Disminuir una Página!!",
             duration: 2000,
           });
         }, 600);
@@ -333,7 +296,7 @@ export class ListaProductosComponent implements OnInit {
   // ===== NEXT PAGE===
   // =====================
   paginaSiguiente(): void {
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       if (!this.isLastPage && this.nroPage >= 0) {
         this.nroPage++;
         this.listarProductos();
@@ -341,8 +304,8 @@ export class ListaProductosComponent implements OnInit {
         //TOAST ERROR
         setTimeout(() => {
           this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Aumentar una Página!!',
+            detail: "ERROR",
+            summary: "No es Posible Aumentar una Página!!",
             duration: 2000,
           });
         }, 600);
@@ -356,7 +319,7 @@ export class ListaProductosComponent implements OnInit {
   cambiarPagina(pagina: number): void {
     this.nroPage = pagina;
 
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
       this.listarProductosFilterAndField();
@@ -378,17 +341,19 @@ export class ListaProductosComponent implements OnInit {
   // =========================
 
   generateExcel(): void {
-    let nameExcel = 'listaProductos.xlsx';
+    try {
+      let nameExcel = "listaProductos.xlsx";
 
-    let data = document.getElementById('table');
+      let data = document.getElementById("table");
 
-    let paginate = this.getPaginate();
+      let paginate = this.getPaginate();
 
-    let excel = new GenerateFiles(this.toast).generateExcel(
-      nameExcel,
-      data,
-      paginate,
-    );
+      this.generateFileService.generateExcel(nameExcel, data, paginate);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =====================
@@ -396,21 +361,33 @@ export class ListaProductosComponent implements OnInit {
   // =====================
 
   generateCsv(): void {
-    let nameCsv = 'listaProductos.csv';
+    try {
+      let nameCsv = "listaProductos.csv";
 
-    let data = document.getElementById('table');
+      let data = document.getElementById("table");
 
-    let csv = new GenerateFiles(this.toast).generateCsv(nameCsv, data);
+      this.generateFileService.generateCsv(nameCsv, data);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =====================
   // ===== GENERATE PDF===
   // =====================
   generatePdf(): void {
-    let namePdf = 'listaComponentes.pdf';
-    let data: any = document.getElementById('table');
+    try {
+      let namePdf = "listaComponentes.pdf";
+      let data: any = document.getElementById("table");
 
-    let pdf = new GenerateFiles(this.toast).generatePdf(namePdf, data);
+      this.generateFileService.generatePdf(namePdf, data);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =====================
@@ -430,28 +407,28 @@ export class ListaProductosComponent implements OnInit {
     },
 
     title: {
-      text: '',
+      text: "",
     },
     tooltip: {
-      pointFormat: '<b><strong>{point.name}</strong></b>',
+      pointFormat: "<b><strong>{point.name}</strong></b>",
     },
     series: [
       {
-        type: 'treemap',
-        layoutAlgorithm: 'stripes',
+        type: "treemap",
+        layoutAlgorithm: "stripes",
         alternateStartingDirection: true,
         levels: [
           {
             level: 1,
-            layoutAlgorithm: 'stripes',
+            layoutAlgorithm: "stripes",
             dataLabels: {
               enabled: true,
 
-              align: 'left',
-              verticalAlign: 'top',
+              align: "left",
+              verticalAlign: "top",
               style: {
-                fontSize: '13px',
-                fontWeight: 'bold',
+                fontSize: "13px",
+                fontWeight: "bold",
               },
             },
           },
@@ -459,94 +436,94 @@ export class ListaProductosComponent implements OnInit {
         data: [
           {
             //-----------------BEBIDAS-------------------
-            id: 'Beb',
-            name: 'BEBIDAS',
-            color: 'rgb(18, 92, 19)',
+            id: "Beb",
+            name: "BEBIDAS",
+            color: "rgb(18, 92, 19)",
           },
           {
-            name: 'Agua',
-            parent: 'Beb',
+            name: "Agua",
+            parent: "Beb",
             value: 1,
           },
           {
-            name: 'Vinos',
-            parent: 'Beb',
+            name: "Vinos",
+            parent: "Beb",
             value: 1,
           },
           {
-            name: 'Gaseosas',
-            parent: 'Beb',
+            name: "Gaseosas",
+            parent: "Beb",
             value: 1,
           },
           //-----------------CARNES/PESCADOS-------------------
           {
-            id: 'Car/Pes',
-            name: 'CARNES Y PESCADOS',
-            color: 'rgb(35, 112, 20)',
+            id: "Car/Pes",
+            name: "CARNES Y PESCADOS",
+            color: "rgb(35, 112, 20)",
           },
           {
-            name: 'Carne Vacuna',
-            parent: 'Car/Pes',
+            name: "Carne Vacuna",
+            parent: "Car/Pes",
             value: 1,
           },
           {
-            name: 'Pollo/Granja',
-            parent: 'Car/Pes',
+            name: "Pollo/Granja",
+            parent: "Car/Pes",
             value: 1,
           },
           //-----------------CONGELADOS-------------------
           {
-            id: 'Cong',
-            name: 'CONGELADOS',
-            color: 'rgb(55, 124, 25)',
+            id: "Cong",
+            name: "CONGELADOS",
+            color: "rgb(55, 124, 25)",
           },
           {
-            name: 'Nugg/Rebozados',
-            parent: 'Cong',
+            name: "Nugg/Rebozados",
+            parent: "Cong",
             value: 1,
           },
           {
-            name: 'Hamburguesas',
-            parent: 'Cong',
+            name: "Hamburguesas",
+            parent: "Cong",
             value: 1,
           },
           {
-            name: 'Helados',
-            parent: 'Cong',
+            name: "Helados",
+            parent: "Cong",
             value: 1,
           },
           //-----------------LACTEOS/FRESCOS-------------------
 
           {
-            id: 'Lact',
-            name: 'LÁCTEOS Y FRESCOS',
-            color: 'rgb(75, 134, 30)',
+            id: "Lact",
+            name: "LÁCTEOS Y FRESCOS",
+            color: "rgb(75, 134, 30)",
           },
           {
-            name: 'Leches',
-            parent: 'Lact',
+            name: "Leches",
+            parent: "Lact",
             value: 1,
           },
           {
-            name: 'Yogures',
-            parent: 'Lact',
+            name: "Yogures",
+            parent: "Lact",
             value: 1,
           },
 
           //-----------------FRUTAS/VERDURAS-------------------
           {
-            id: 'Frut/Ver',
-            name: 'FRUTAS Y VERDURAS',
-            color: 'rgb(100, 144, 35)',
+            id: "Frut/Ver",
+            name: "FRUTAS Y VERDURAS",
+            color: "rgb(100, 144, 35)",
           },
           {
-            name: 'Verduras',
-            parent: 'Frut/Ver',
+            name: "Verduras",
+            parent: "Frut/Ver",
             value: 1,
           },
           {
-            name: 'Frutas',
-            parent: 'Frut/Ver',
+            name: "Frutas",
+            parent: "Frut/Ver",
             value: 1,
           },
         ],
