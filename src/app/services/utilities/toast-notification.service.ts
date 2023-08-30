@@ -30,7 +30,7 @@ export class ToastNotificationService {
         });
       }, TIMEOUT);
     } catch (error) {
-      console.log(`Error in error() function. Caused by ${error}`);
+      console.log(`Error in ToastNotificationService error() function. Caused by ${error}`);
     }
   }
 
@@ -44,7 +44,7 @@ export class ToastNotificationService {
         });
       }, TIMEOUT);
     } catch (error) {
-      console.log(`Error in unauthorizedOperation() function. Caused by ${error}`);
+      console.log(`Error in ToastNotificationService unauthorizedOperation() function. Caused by ${error}`);
     }
   }
 
@@ -58,7 +58,7 @@ export class ToastNotificationService {
         });
       }, TIMEOUT);
     } catch (error) {
-      console.log(`Error in success() function. Caused by ${error}`);
+      console.log(`Error in ToastNotificationService success() function. Caused by ${error}`);
     }
   }
 
@@ -72,7 +72,7 @@ export class ToastNotificationService {
         });
       }, TIMEOUT);
     } catch (error) {
-      console.log(`Error in successfulOperation() function. Caused by ${error}`);
+      console.log(`Error in ToastNotificationService successfulOperation() function. Caused by ${error}`);
     }
   }
 }

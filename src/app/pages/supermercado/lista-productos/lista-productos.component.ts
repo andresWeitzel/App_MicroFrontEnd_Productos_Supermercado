@@ -1,18 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { NavigationExtras, Router } from "@angular/router";
-import { NgToastService } from "ng-angular-popup";
-import { NgxUiLoaderService } from "ngx-ui-loader";
 import { ProductoDto } from "src/app/models/ProductoDto";
 import { ProductoService } from "src/app/services/producto/producto.service";
 import { TokenService } from "src/app/services/token/token.service";
 import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
 import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
+import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
 
 //Highchart and Treemap chart
 import * as Highcharts from "highcharts";
 import More from "highcharts/highcharts-more";
 import Tree from "highcharts/modules/treemap";
 import Heatmap from "highcharts/modules/heatmap";
+
 
 More(Highcharts);
 Tree(Highcharts);
@@ -81,10 +81,9 @@ export class ListaProductosComponent implements OnInit {
     private router: Router,
     private productoService: ProductoService,
     private tokenService: TokenService,
-    private toast: NgToastService,
-    private ngxService: NgxUiLoaderService,
     private generateFileService: GenerateFilesService,
-    private toastService: ToastNotificationService
+    private toastService: ToastNotificationService,
+    private spinLoaderService: SpinLoaderService
   ) {}
 
   ngOnInit() {
@@ -108,6 +107,7 @@ export class ListaProductosComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
+
           this.errMsj = err.error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
@@ -138,7 +138,7 @@ export class ListaProductosComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-          this.errMsj = err.error.message;
+          this.errMsj = err.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -149,10 +149,10 @@ export class ListaProductosComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(campo: string, filtro: string) {
-    this.filtroProdCampo = "";
-    this.filtroProdBusqueda = "";
+    this.filtroProdCampo = '';
+    this.filtroProdBusqueda = '';
 
-    if (filtro === "" || filtro === null || campo === "" || campo === null) {
+    if (filtro === ('' || null) || campo === ('' || null)) {
       this.listarProductos();
     } else {
       this.filtroProdCampo = campo;
@@ -166,12 +166,8 @@ export class ListaProductosComponent implements OnInit {
   // ===== EDIT PRODUCTS ===
   // =======================
   editarProducto(producto: any): void {
-    //SPIN LOADING
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, 100);
-    //FIN SPIN LOADING
+
+    this.spinLoaderService.load(100);
 
     this.navigationExtras.state["value"] = producto;
     this.router.navigate(["editar-productos"], this.navigationExtras);
@@ -188,17 +184,13 @@ export class ListaProductosComponent implements OnInit {
   // ===== DELETE PRODUCTS ===
   // =======================
   eliminarProducto(id: number): void {
-    //SPIN LOADING
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, 100);
-    //FIN SPIN LOADING
+
+    this.spinLoaderService.load(100);
+
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
-
-        this.toastService.successfulOperation('Se ha eliminado el Producto');
+        this.toastService.successfulOperation("Se ha eliminado el Producto");
 
         setTimeout(() => {
           this.refresh();
@@ -216,14 +208,13 @@ export class ListaProductosComponent implements OnInit {
   // ===== DELETE PRODUCT ERROR AUTH===
   // =====================================
   eliminarProductoNoAuth(id: number): void {
-    //SPIN LOADING
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, 100);
-    //FIN SPIN LOADING
 
-    this.toastService.unauthorizedOperation('Servicio Habilitado para administradores!!');
+    this.spinLoaderService.load(100);
+
+
+    this.toastService.unauthorizedOperation(
+      "Servicio Habilitado para administradores!!"
+    );
 
     setTimeout(() => {
       this.refresh();
@@ -261,13 +252,19 @@ export class ListaProductosComponent implements OnInit {
   // ===== ORDER BY ===
   // =====================
   orderByDirection(type: string, direct: string): void {
-    this.orderBy = type;
-    this.direction = direct;
+    try {
+      this.orderBy = type;
+      this.direction = direct;
 
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-      this.listarProductosFilterAndField();
+      if (this.filtroProdBusqueda == ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilterAndField();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
@@ -275,65 +272,73 @@ export class ListaProductosComponent implements OnInit {
   // ===== LAST PAGE===
   // =====================
   paginaAnterior(): void {
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      if (this.nroPage != 0 && this.nroPage > 0) {
-        this.nroPage--;
-        this.listarProductos();
-      } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: "ERROR",
-            summary: "No es Posible Disminuir una Página!!",
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
+    try {
+      if (this.filtroProdBusqueda == ("" || null)) {
+        if (this.nroPage != 0 && this.nroPage > 0) {
+          this.nroPage--;
+          this.listarProductos();
+        } else {
+          this.toastService.error("No es posible disminuir una página!!");
+        }
       }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
   // =====================
   // ===== NEXT PAGE===
   // =====================
   paginaSiguiente(): void {
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      if (!this.isLastPage && this.nroPage >= 0) {
-        this.nroPage++;
-        this.listarProductos();
-      } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: "ERROR",
-            summary: "No es Posible Aumentar una Página!!",
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
+    try {
+      if (this.filtroProdBusqueda === ("" || null)) {
+        if (!this.isLastPage && this.nroPage >= 0) {
+          this.nroPage++;
+          this.listarProductos();
+        } else {
+          this.toastService.error("No es posible aumentar una página!!");
+        }
       }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
   // =====================
   // ===== CHANGE PAGE===
   // =====================
   cambiarPagina(pagina: number): void {
-    this.nroPage = pagina;
+    try {
+      this.nroPage = pagina;
 
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-      this.listarProductosFilterAndField();
+      if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilterAndField();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
   getPaginate() {
-    var paginate = {
-      nroPage: this.nroPage,
-      totalPages: this.totalPages,
-      nroCurrentElements: this.nroCurrentElements,
-      nroTotalElements: this.nroTotalElements,
-    };
-    return paginate;
+    try {
+      var paginate = {
+        nroPage: this.nroPage,
+        totalPages: this.totalPages,
+        nroCurrentElements: this.nroCurrentElements,
+        nroTotalElements: this.nroTotalElements,
+      };
+      return paginate;
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =========================

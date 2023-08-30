@@ -38,7 +38,7 @@ export class GenerateFilesService {
       });
     } catch (error) {
       this.errMsj = error.message;
-      console.log(this.errMsj);
+      console.log(`Error in GenerateFilesService generatePdf() function. Caused by ${error}`);
       this.toastService.error(this.errMsj);
     }
   }
@@ -64,7 +64,7 @@ export class GenerateFilesService {
       XLSX.writeFile(book, csvName);
     } catch (error) {
       this.errMsj = error.message;
-      console.log(this.errMsj);
+      console.log(`Error in GenerateFilesService generateCsv() function. Caused by ${error}`);
       this.toastService.error(this.errMsj);
     }
   }
@@ -111,7 +111,7 @@ export class GenerateFilesService {
       XLSX.writeFile(book, excelName);
     } catch (error) {
       this.errMsj = error.message;
-      console.log(this.errMsj);
+      console.log(`Error in GenerateFilesService generateExcel() function. Caused by ${error}`);
       this.toastService.error(this.errMsj);
     }
   }
