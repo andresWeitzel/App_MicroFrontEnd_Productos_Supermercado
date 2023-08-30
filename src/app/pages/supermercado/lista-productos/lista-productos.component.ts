@@ -6,7 +6,7 @@ import { TokenService } from "src/app/services/token/token.service";
 import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
 import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
 import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
-
+//Update
 //Highchart and Treemap chart
 import * as Highcharts from "highcharts";
 import More from "highcharts/highcharts-more";
