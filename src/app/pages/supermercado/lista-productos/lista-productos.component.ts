@@ -31,16 +31,15 @@ export class ListaProductosComponent implements OnInit {
   imgPagePrevious = "assets/icons/pagePrevious.png";
 
   //Product
-  productos: ProductoDto[] = [];
-  productoSelect: ProductoDto[] = [];
-  idProdSelect: number = 0;
-  codProdSelect: string = "";
-  nombrProdSelect: string = "";
-  nroProdAgua = 3;
+  products: ProductoDto[] = [];
+  productSelected: ProductoDto[] = [];
+  idProductSelected: number = 0;
+  codeProductSelected: string = "";
+  nameProductSelected: string = "";
 
   //Filters Products
-  filtroProdBusqueda: string = "";
-  filtroProdCampo: string = "";
+  productsSearchFilter: string = "";
+  productsFieldSearch: string = "";
 
   //Segurity
   isAdmin = false;
@@ -93,7 +92,7 @@ export class ListaProductosComponent implements OnInit {
       .listado(this.nroPage, this.nroElements, this.orderBy, this.direction)
       .subscribe(
         (data: any) => {
-          this.productos = data.content;
+          this.products = data.content;
           this.isFirstPage = data.first;
           this.isLastPage = data.last;
           this.totalPages = data.totalPages;
@@ -115,8 +114,8 @@ export class ListaProductosComponent implements OnInit {
   listarProductosFilterAndField() {
     this.productoService
       .listadoFilterAndField(
-        this.filtroProdCampo,
-        this.filtroProdBusqueda,
+        this.productsFieldSearch,
+        this.productsSearchFilter,
         this.nroPage,
         this.nroElements,
         this.orderBy,
@@ -124,7 +123,7 @@ export class ListaProductosComponent implements OnInit {
       )
       .subscribe(
         (data: any) => {
-          this.productos = data.content;
+          this.products = data.content;
           this.isFirstPage = data.first;
           this.isLastPage = data.last;
           this.totalPages = data.totalPages;
@@ -143,14 +142,14 @@ export class ListaProductosComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(campo: string, filtro: string) {
-    this.filtroProdCampo = '';
-    this.filtroProdBusqueda = '';
+    this.productsFieldSearch = '';
+    this.productsSearchFilter = '';
 
     if (filtro === ('' || null) || campo === ('' || null)) {
       this.listarProductos();
     } else {
-      this.filtroProdCampo = campo;
-      this.filtroProdBusqueda = filtro;
+      this.productsFieldSearch = campo;
+      this.productsSearchFilter = filtro;
 
       this.listarProductosFilterAndField();
     }
@@ -225,10 +224,10 @@ export class ListaProductosComponent implements OnInit {
   // ====================
   // ===== SET PRODUCT===
   // ====================
-  setProductoSelect(producto: ProductoDto) {
-    this.idProdSelect = producto.id;
-    this.codProdSelect = producto.codigo;
-    this.nombrProdSelect = producto.nombre;
+  setProductSelected(producto: ProductoDto) {
+    this.idProductSelected = producto.id;
+    this.codeProductSelected = producto.codigo;
+    this.nameProductSelected = producto.nombre;
   }
 
   // ====================
@@ -250,7 +249,7 @@ export class ListaProductosComponent implements OnInit {
       this.orderBy = type;
       this.direction = direct;
 
-      if (this.filtroProdBusqueda == ("" || null)) {
+      if (this.productsSearchFilter == ("" || null)) {
         this.listarProductos();
       } else {
         this.listarProductosFilterAndField();
@@ -267,7 +266,7 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   paginaAnterior(): void {
     try {
-      if (this.filtroProdBusqueda == ("" || null)) {
+      if (this.productsSearchFilter == ("" || null)) {
         if (this.nroPage != 0 && this.nroPage > 0) {
           this.nroPage--;
           this.listarProductos();
@@ -286,7 +285,7 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   paginaSiguiente(): void {
     try {
-      if (this.filtroProdBusqueda === ("" || null)) {
+      if (this.productsSearchFilter === ("" || null)) {
         if (!this.isLastPage && this.nroPage >= 0) {
           this.nroPage++;
           this.listarProductos();
@@ -307,7 +306,7 @@ export class ListaProductosComponent implements OnInit {
     try {
       this.nroPage = pagina;
 
-      if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
+      if (this.productsSearchFilter === "" || this.productsSearchFilter === null) {
         this.listarProductos();
       } else {
         this.listarProductosFilterAndField();

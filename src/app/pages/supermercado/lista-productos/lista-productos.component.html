@@ -1,12 +1,12 @@
-<!-- LISTADO DE PRODUCTOS -->
+<!-- LISTADO DE productS -->
 <div class="container text-center mt-5 p-1">
   <div class="row justify-content-center m-3">
-    <!-- TITULO EDICCION DE PRODUCTOS -->
+    <!-- TITULO EDICCION DE productS -->
     <div class="d-flex flex-row justify-content-center bd-highlight mt-5">
       <div class="d-flex d-row">
         <h1 class="mt-3">
           <span class="badge text-decoration-underline"
-            >Listado de Productos</span
+            >Listado de products</span
           >
           <!-- BTN MODAL INFO  -->
           <button
@@ -74,7 +74,7 @@
         <!--BTN PDF-->
       </div>
     </div>
-    <!-- FIN TITULO EDICCION DE PRODUCTOS -->
+    <!-- FIN TITULO EDICCION DE productS -->
 
     <!--BUSCADOR Y UTILIDADES-->
     <div class="d-flex flex-row justify-content-center mt-5">
@@ -159,7 +159,7 @@
                   <option>Tipo</option>
                   <option value="Bebidas">Bebidas</option>
                   <option value="Carnes y Pescados">Carnes y Pescados</option>
-                  <option value="Lácteos y Productos Frescos">
+                  <option value="Lácteos y products Frescos">
                     Lácteos y Frescos
                   </option>
                   <option value="Frutas y Verduras">Frutas y Verduras</option>
@@ -417,7 +417,7 @@
     </div>
     <!--FIN BUSCADORES Y UTILIDADES-->
 
-    <!-- TABLA PRODUCTOS -->
+    <!-- TABLA productS -->
     <table
       table-condensed
       class="table table-bordered table-hover text-center"
@@ -781,25 +781,25 @@
 
       <!-- REGISTROS SIN FILTRO -->
       <tbody>
-        <tr *ngFor="let producto of productos">
-          <th scope="row">{{ producto.id }}</th>
-          <td>{{ producto.codigo }}</td>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{ product.id }}</th>
+          <td>{{ product.codigo }}</td>
           <td class="bg-white">
             <a target="_blank"
               ><img
-                src="{{ producto.imagen }}"
+                src="{{ product.imagen }}"
                 alt=""
                 width="80px"
                 height="100px"
             /></a>
           </td>
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.marca }}</td>
-          <td>{{ producto.tipo }}</td>
-          <td>{{ producto.grupo }}</td>
-          <td>{{ producto.peso }} Kg</td>
-          <td>${{ producto.precioUnidad }}</td>
-          <td>{{ producto.stock }}u</td>
+          <td>{{ product.nombre }}</td>
+          <td>{{ product.marca }}</td>
+          <td>{{ product.tipo }}</td>
+          <td>{{ product.grupo }}</td>
+          <td>{{ product.peso }} Kg</td>
+          <td>${{ product.precioUnidad }}</td>
+          <td>{{ product.stock }}u</td>
 
           <td>
             <div class="d-flex justify-content-center p-1">
@@ -807,7 +807,7 @@
                 <button
                   type="button"
                   class="btn bg-none"
-                  (click)="editarProducto(producto)"
+                  (click)="editarProducto(product)"
                 >
                   <img
                     src="{{imgEditProduct}}"
@@ -824,7 +824,7 @@
                   class="btn p-1"
                   data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop02"
-                  (click)="setProductoSelect(producto)"
+                  (click)="setProductSelected(product)"
                 >
                   <img
                     src="{{imgDeleteProduct}}"
@@ -842,21 +842,21 @@
       </tbody>
       <!-- FIN REGISTROS SIN FILTRO -->
     </table>
-    <!-- FIN TABLA PRODUCTOS -->
+    <!-- FIN TABLA productS -->
 
     <!-- TEMPLATE CARDS TABLE-->
     <ng-template #cardsTable>
       <div
         class="card d-flex d-row mb-3 m-2"
         style="width: 550px; height: 300px"
-        *ngFor="let producto of productos"
+        *ngFor="let product of products"
         id="cardsTable"
       >
         <div class="row g-0">
           <div class="col-md-4">
-            {{ producto.codigo }}
+            {{ product.codigo }}
             <img
-              src="{{ producto.imagen }}"
+              src="{{ product.imagen }}"
               target="_blank"
               class="img-fluid rounded-start"
               alt="..."
@@ -865,15 +865,15 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title text-center">
-                {{ producto.nombre | slice: 0 : 25 }}...
+                {{ product.nombre | slice: 0 : 25 }}...
               </h5>
               <br />
               <p>
-                <strong>Descripción : </strong>{{ producto.tipo }} /
-                {{ producto.grupo }} / {{ producto.marca }}
+                <strong>Descripción : </strong>{{ product.tipo }} /
+                {{ product.grupo }} / {{ product.marca }}
               </p>
-              <p><strong>Precio : </strong>${{ producto.precioUnidad }}</p>
-              <p><strong>Stock : </strong>{{ producto.stock }}u.</p>
+              <p><strong>Precio : </strong>${{ product.precioUnidad }}</p>
+              <p><strong>Stock : </strong>{{ product.stock }}u.</p>
               <!--BTNS-->
               <div
                 class="card-footer d-flex justify-content-center bg-none me-0"
@@ -883,9 +883,9 @@
                     <button
                       type="button"
                       class="btn btn-success bg-none p-1"
-                      (click)="editarProducto(producto)"
+                      (click)="editarProducto(product)"
                     >
-                      <!--Icono Editar Producto-->
+                      <!--Icono Editar product-->
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
@@ -913,7 +913,7 @@
                                       1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
                         />
                       </svg>
-                      <!--Fin Icono Editar Producto-->
+                      <!--Fin Icono Editar product-->
                     </button>
                   </a>
                   <!-- BTN MODAL DELETE CHECK  -->
@@ -923,9 +923,9 @@
                       class="btn btn-danger p-1 ms-2"
                       data-bs-toggle="modal"
                       data-bs-target="#staticBackdrop02"
-                      (click)="setProductoSelect(producto)"
+                      (click)="setProductSelected(product)"
                     >
-                      <!--Icono Eliminar Producto-->
+                      <!--Icono Eliminar product-->
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
@@ -957,7 +957,7 @@
                                           3V2h11v1h-11z"
                         />
                       </svg>
-                      <!--Fin Icono Eliminar Producto-->
+                      <!--Fin Icono Eliminar product-->
                     </button>
                   </a>
                   <!-- FIN BTN MODAL DELETE CHECK -->
@@ -1106,7 +1106,7 @@
     </div>
     <!-- FIN PAGINACION -->
   </div>
-  <!-- FIN LISTADO DE PRODUCTOS -->
+  <!-- FIN LISTADO DE productS -->
 
   <!--MODAL AYUDA -->
   <!-- Modal -->
@@ -1123,7 +1123,7 @@
       <div class="modal-content" id="modalAyuda">
         <div class="modal-header">
           <h4 class="modal-title" id="staticBackdropLabel">
-            Guía para el Listado de Productos
+            Guía para el Listado de products
           </h4>
           <button
             type="button"
@@ -1133,34 +1133,34 @@
           ></button>
         </div>
         <div class="modal-body">
-          <h5>Acerca de la Gestión de Productos</h5>
+          <h5>Acerca de la Gestión de products</h5>
           <p>
-            En esta sección podemos visualizar los Productos según los
-            requerimientos deseados, existe paginación de productos, podemos
+            En esta sección podemos visualizar los products según los
+            requerimientos deseados, existe paginación de products, podemos
             aplicar filtros de búsqueda y las operaciones CRUD requeridas según
             el rol que se tenga. Los admins podrán realizar todas las
             Operaciones, los usuarios solamente la visualización y búsquedas.
           </p>
-          <h5>Buscador de Productos</h5>
+          <h5>Buscador de products</h5>
           <p>
-            Es posible realizar la búsqueda de productos según filtros aplicados
+            Es posible realizar la búsqueda de products según filtros aplicados
             para cada campo del Listado. Es decir, las siglas o palabras
             ingresadas serán aplicadas para todos los campos.
           </p>
           <h5>Campos del Listado</h5>
           <p>
-            Cada campo describe una característica del producto específico por
-            fila. El campo acción nos permite editar y eliminar el producto
-            seleccionado. Podemos agregar un producto desde la barra de
+            Cada campo describe una característica del product específico por
+            fila. El campo acción nos permite editar y eliminar el product
+            seleccionado. Podemos agregar un product desde la barra de
             navegación.
           </p>
           <ul>
             <li>
-              <strong>ID:</strong> El ID es el identificador del Producto en el
-              Sistema. De forma característica aplicamos un código de Producto.
+              <strong>ID:</strong> El ID es el identificador del product en el
+              Sistema. De forma característica aplicamos un código de product.
             </li>
             <li>
-              <strong>Código:</strong> Este código hace referencia al producto,
+              <strong>Código:</strong> Este código hace referencia al product,
               no es posible que existan duplicados, es válido solo letras,
               números y ciertos caracteres. Además de un máximo de 10 digitos.
             </li>
@@ -1285,8 +1285,8 @@
               </svg>
 
               <h5>
-                Está Seguro que desea Eliminar el Producto
-                {{ nombrProdSelect }}
+                Está Seguro que desea Eliminar el product
+                {{ nameProductSelected }}
                 ??
               </h5>
             </div>
@@ -1302,7 +1302,7 @@
                 type="button"
                 class="btn btn-danger btn-sm p-1 m-1"
                 data-bs-dismiss="modal"
-                (click)="eliminarProducto(idProdSelect)"
+                (click)="eliminarProducto(idProductSelected)"
               >
                 Eliminar
               </button>
