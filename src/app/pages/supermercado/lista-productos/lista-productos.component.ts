@@ -6,17 +6,7 @@ import { TokenService } from "src/app/services/token/token.service";
 import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
 import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
 import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
-
-//Highchart and Treemap chart
-import * as Highcharts from "highcharts";
-import More from "highcharts/highcharts-more";
-import Tree from "highcharts/modules/treemap";
-import Heatmap from "highcharts/modules/heatmap";
-
-
-More(Highcharts);
-Tree(Highcharts);
-Heatmap(Highcharts);
+import { GenerateHighchartsService } from "src/app/services/utilities/generate-highcharts.service";
 
 @Component({
   selector: "app-lista-productos",
@@ -41,23 +31,22 @@ export class ListaProductosComponent implements OnInit {
   imgPagePrevious = "assets/icons/pagePrevious.png";
 
   //Product
-  productos: ProductoDto[] = [];
-  productoSelect: ProductoDto[] = [];
-  idProdSelect: number = 0;
-  codProdSelect: string = "";
-  nombrProdSelect: string = "";
-  nroProdAgua = 3;
+  products: ProductoDto[] = [];
+  productSelected: ProductoDto[] = [];
+  idProductSelected: number = 0;
+  codeProductSelected: string = "";
+  nameProductSelected: string = "";
 
   //Filters Products
-  filtroProdBusqueda: string = "";
-  filtroProdCampo: string = "";
+  productsSearchFilter: string = "";
+  productsFieldSearch: string = "";
 
   //Segurity
   isAdmin = false;
   isUser = false;
 
   //List & Paginated
-  typeListTable = true;
+  tableTypeListed = true;
   nroPage = 0;
   isFirstPage = false;
   isLastPage = false;
@@ -67,9 +56,11 @@ export class ListaProductosComponent implements OnInit {
   nroTotalElements = 0;
   orderBy = "id";
   direction = "asc";
-
   //Errors
   errMsj: string;
+  //Highcharts
+  Highchart = this.generateHighcharts.getHeatmap();
+  HighchartOptions = this.generateHighcharts.getHeatmapOptions();
 
   navigationExtras: NavigationExtras = {
     state: {
@@ -83,23 +74,24 @@ export class ListaProductosComponent implements OnInit {
     private tokenService: TokenService,
     private generateFileService: GenerateFilesService,
     private toastService: ToastNotificationService,
-    private spinLoaderService: SpinLoaderService
+    private spinLoaderService: SpinLoaderService,
+    private generateHighcharts: GenerateHighchartsService
   ) {}
 
   ngOnInit() {
-    this.listarProductos();
-    this.checkEliminarProducto();
+    this.listProducts();
+    this.checkDeleteProducts();
   }
 
-  // ======================
-  // ===== PRODUCT LIST ===
-  // ======================
-  listarProductos() {
+  // =======================
+  // ===== LIST PRODUCTS ===
+  // =======================
+  listProducts() {
     this.productoService
       .listado(this.nroPage, this.nroElements, this.orderBy, this.direction)
       .subscribe(
         (data: any) => {
-          this.productos = data.content;
+          this.products = data.content;
           this.isFirstPage = data.first;
           this.isLastPage = data.last;
           this.totalPages = data.totalPages;
@@ -107,7 +99,6 @@ export class ListaProductosComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-
           this.errMsj = err.error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
@@ -115,14 +106,14 @@ export class ListaProductosComponent implements OnInit {
       );
   }
 
-  // ==================================
-  // ===== PRODUCT LIST WITH FILTERS ===
-  // ===================================
-  listarProductosFilterAndField() {
+  // ====================================
+  // ===== LIST PRODUCTS WITH FILTERS ===
+  // ====================================
+  listProductsFilterAndField() {
     this.productoService
       .listadoFilterAndField(
-        this.filtroProdCampo,
-        this.filtroProdBusqueda,
+        this.productsFieldSearch,
+        this.productsSearchFilter,
         this.nroPage,
         this.nroElements,
         this.orderBy,
@@ -130,7 +121,7 @@ export class ListaProductosComponent implements OnInit {
       )
       .subscribe(
         (data: any) => {
-          this.productos = data.content;
+          this.products = data.content;
           this.isFirstPage = data.first;
           this.isLastPage = data.last;
           this.totalPages = data.totalPages;
@@ -149,24 +140,23 @@ export class ListaProductosComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(campo: string, filtro: string) {
-    this.filtroProdCampo = '';
-    this.filtroProdBusqueda = '';
+    this.productsFieldSearch = "";
+    this.productsSearchFilter = "";
 
-    if (filtro === ('' || null) || campo === ('' || null)) {
-      this.listarProductos();
+    if (filtro === ("" || null) || campo === ("" || null)) {
+      this.listProducts();
     } else {
-      this.filtroProdCampo = campo;
-      this.filtroProdBusqueda = filtro;
+      this.productsFieldSearch = campo;
+      this.productsSearchFilter = filtro;
 
-      this.listarProductosFilterAndField();
+      this.listProductsFilterAndField();
     }
   }
 
-  // =======================
-  // ===== EDIT PRODUCTS ===
-  // =======================
-  editarProducto(producto: any): void {
-
+  // ===============================
+  // ===== EDIT PRODUCT NAVIGATE ===
+  // ===============================
+  navigateEditProduct(producto: any): void {
     this.spinLoaderService.load(100);
 
     this.navigationExtras.state["value"] = producto;
@@ -174,19 +164,18 @@ export class ListaProductosComponent implements OnInit {
   }
 
   // =============================
-  // ==== CHECK DELETE PRODUCTS ===
-  // ==============================
-  checkEliminarProducto() {
+  // ===== CHECK TOKEN SERVICE ===
+  // ===== FOR DELETE PRODUCT  ===
+  //==============================
+  checkDeleteProducts() {
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  // =======================
+  // =========================
   // ===== DELETE PRODUCTS ===
-  // =======================
-  eliminarProducto(id: number): void {
-
+  // =========================
+  deleteProduct(id: number): void {
     this.spinLoaderService.load(100);
-
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
@@ -207,10 +196,8 @@ export class ListaProductosComponent implements OnInit {
   // ====================================
   // ===== DELETE PRODUCT ERROR AUTH===
   // =====================================
-  eliminarProductoNoAuth(id: number): void {
-
+  deleteProductNoAuth(id: number): void {
     this.spinLoaderService.load(100);
-
 
     this.toastService.unauthorizedOperation(
       "Servicio Habilitado para administradores!!"
@@ -222,26 +209,27 @@ export class ListaProductosComponent implements OnInit {
   }
 
   // =========================
-  // ===== RECARGAR-REFRESH===
+  // ===== RELOAD-REFRESH===
   // =========================
   refresh() {
     window.location.reload();
   }
 
-  // ====================
-  // ===== SET PRODUCT===
-  // ====================
-  setProductoSelect(producto: ProductoDto) {
-    this.idProdSelect = producto.id;
-    this.codProdSelect = producto.codigo;
-    this.nombrProdSelect = producto.nombre;
+
+  // =========================
+  // ===== SET PRODUCT SELECT===
+  // =========================
+  setProductSelected(producto: ProductoDto) {
+    this.idProductSelected = producto.id;
+    this.codeProductSelected = producto.codigo;
+    this.nameProductSelected = producto.nombre;
   }
 
   // ====================
   // ===== SET TYPE LIST===
   // ====================
-  setTypeListTable(set: boolean) {
-    this.typeListTable = set;
+  setTableTypeListed(set: boolean) {
+    this.tableTypeListed = set;
   }
 
   // =====================
@@ -256,10 +244,10 @@ export class ListaProductosComponent implements OnInit {
       this.orderBy = type;
       this.direction = direct;
 
-      if (this.filtroProdBusqueda == ("" || null)) {
-        this.listarProductos();
+      if (this.productsSearchFilter == ("" || null)) {
+        this.listProducts();
       } else {
-        this.listarProductosFilterAndField();
+        this.listProductsFilterAndField();
       }
     } catch (error) {
       this.errMsj = error.message;
@@ -271,12 +259,12 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   // ===== LAST PAGE===
   // =====================
-  paginaAnterior(): void {
+  lastPage(): void {
     try {
-      if (this.filtroProdBusqueda == ("" || null)) {
+      if (this.productsSearchFilter == ("" || null)) {
         if (this.nroPage != 0 && this.nroPage > 0) {
           this.nroPage--;
-          this.listarProductos();
+          this.listProducts();
         } else {
           this.toastService.error("No es posible disminuir una página!!");
         }
@@ -290,12 +278,12 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   // ===== NEXT PAGE===
   // =====================
-  paginaSiguiente(): void {
+  nextPage(): void {
     try {
-      if (this.filtroProdBusqueda === ("" || null)) {
+      if (this.productsSearchFilter === ("" || null)) {
         if (!this.isLastPage && this.nroPage >= 0) {
           this.nroPage++;
-          this.listarProductos();
+          this.listProducts();
         } else {
           this.toastService.error("No es posible aumentar una página!!");
         }
@@ -309,14 +297,16 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   // ===== CHANGE PAGE===
   // =====================
-  cambiarPagina(pagina: number): void {
+  changePage(pagina: number): void {
     try {
       this.nroPage = pagina;
 
-      if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-        this.listarProductos();
+      if (
+        this.productsSearchFilter === ("" || null)
+      ) {
+        this.listProducts();
       } else {
-        this.listarProductosFilterAndField();
+        this.listProductsFilterAndField();
       }
     } catch (error) {
       this.errMsj = error.message;
@@ -324,6 +314,9 @@ export class ListaProductosComponent implements OnInit {
       this.toastService.error(this.errMsj);
     }
   }
+  // ======================
+  // ===== GET PAGINATE ===
+  // ======================
 
   getPaginate() {
     try {
@@ -394,145 +387,4 @@ export class ListaProductosComponent implements OnInit {
       this.toastService.error(this.errMsj);
     }
   }
-
-  // =====================
-  // ===== HIGHCHART===
-  // =====================
-  Highcharts03: typeof Highcharts = Highcharts;
-
-  chartOptions03: Highcharts.Options = {
-    credits: {
-      enabled: false,
-    },
-
-    chart: {
-      height: 250,
-      width: 800,
-      inverted: true,
-    },
-
-    title: {
-      text: "",
-    },
-    tooltip: {
-      pointFormat: "<b><strong>{point.name}</strong></b>",
-    },
-    series: [
-      {
-        type: "treemap",
-        layoutAlgorithm: "stripes",
-        alternateStartingDirection: true,
-        levels: [
-          {
-            level: 1,
-            layoutAlgorithm: "stripes",
-            dataLabels: {
-              enabled: true,
-
-              align: "left",
-              verticalAlign: "top",
-              style: {
-                fontSize: "13px",
-                fontWeight: "bold",
-              },
-            },
-          },
-        ],
-        data: [
-          {
-            //-----------------BEBIDAS-------------------
-            id: "Beb",
-            name: "BEBIDAS",
-            color: "rgb(18, 92, 19)",
-          },
-          {
-            name: "Agua",
-            parent: "Beb",
-            value: 1,
-          },
-          {
-            name: "Vinos",
-            parent: "Beb",
-            value: 1,
-          },
-          {
-            name: "Gaseosas",
-            parent: "Beb",
-            value: 1,
-          },
-          //-----------------CARNES/PESCADOS-------------------
-          {
-            id: "Car/Pes",
-            name: "CARNES Y PESCADOS",
-            color: "rgb(35, 112, 20)",
-          },
-          {
-            name: "Carne Vacuna",
-            parent: "Car/Pes",
-            value: 1,
-          },
-          {
-            name: "Pollo/Granja",
-            parent: "Car/Pes",
-            value: 1,
-          },
-          //-----------------CONGELADOS-------------------
-          {
-            id: "Cong",
-            name: "CONGELADOS",
-            color: "rgb(55, 124, 25)",
-          },
-          {
-            name: "Nugg/Rebozados",
-            parent: "Cong",
-            value: 1,
-          },
-          {
-            name: "Hamburguesas",
-            parent: "Cong",
-            value: 1,
-          },
-          {
-            name: "Helados",
-            parent: "Cong",
-            value: 1,
-          },
-          //-----------------LACTEOS/FRESCOS-------------------
-
-          {
-            id: "Lact",
-            name: "LÁCTEOS Y FRESCOS",
-            color: "rgb(75, 134, 30)",
-          },
-          {
-            name: "Leches",
-            parent: "Lact",
-            value: 1,
-          },
-          {
-            name: "Yogures",
-            parent: "Lact",
-            value: 1,
-          },
-
-          //-----------------FRUTAS/VERDURAS-------------------
-          {
-            id: "Frut/Ver",
-            name: "FRUTAS Y VERDURAS",
-            color: "rgb(100, 144, 35)",
-          },
-          {
-            name: "Verduras",
-            parent: "Frut/Ver",
-            value: 1,
-          },
-          {
-            name: "Frutas",
-            parent: "Frut/Ver",
-            value: 1,
-          },
-        ],
-      },
-    ],
-  };
 }
