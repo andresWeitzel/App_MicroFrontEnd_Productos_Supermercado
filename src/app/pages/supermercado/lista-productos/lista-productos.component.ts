@@ -61,6 +61,7 @@ export class ListaProductosComponent implements OnInit {
   //Highcharts
   Highchart = this.generateHighcharts.getHeatmap();
   HighchartOptions = this.generateHighcharts.getHeatmapOptions();
+  //Fix
 
   navigationExtras: NavigationExtras = {
     state: {
