@@ -6,7 +6,7 @@
       <div class="d-flex d-row">
         <h1 class="mt-3">
           <span class="badge text-decoration-underline"
-            >Listado de products</span
+            >Listado de Productos</span
           >
           <!-- BTN MODAL INFO  -->
           <button
@@ -344,7 +344,7 @@
           <div class="mt-0 ms-0">
             <button
               class="btn bg-none p-1 ms-4"
-              (click)="setTypeListTable(false)"
+              (click)="setTableTypeListed(false)"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +379,7 @@
           <!--FIN TYPE LIST CARD-->
           <!--TYPE LIST TABLE-->
           <div class="mt-0 ms-1">
-            <button class="btn bg-none p-1" (click)="setTypeListTable(true)">
+            <button class="btn bg-none p-1" (click)="setTableTypeListed(true)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
@@ -422,7 +422,7 @@
       table-condensed
       class="table table-bordered table-hover text-center"
       id="table"
-      *ngIf="typeListTable; else cardsTable"
+      *ngIf="tableTypeListed; else cardsTable"
     >
       <thead>
         <tr>
@@ -807,7 +807,7 @@
                 <button
                   type="button"
                   class="btn bg-none"
-                  (click)="editarProducto(product)"
+                  (click)="navigateEditProduct(product)"
                 >
                   <img
                     src="{{imgEditProduct}}"
@@ -883,7 +883,7 @@
                     <button
                       type="button"
                       class="btn btn-success bg-none p-1"
-                      (click)="editarProducto(product)"
+                      (click)="navigateEditProduct(product)"
                     >
                       <!--Icono Editar product-->
                       <svg
@@ -978,7 +978,7 @@
         <button
           type="button"
           class="btn border-light alert-link bg-none p-1 m-1"
-          (click)="cambiarPagina(0)"
+          (click)="changePage(0)"
         >
           <img
             src="{{imgLastPagePrevious}}"
@@ -995,7 +995,7 @@
         <button
           type="button"
           class="btn border-light alert-link bg-none p-1 m-1"
-          (click)="paginaAnterior()"
+          (click)="lastPage()"
         >
           <img
             src="{{imgPagePrevious}}"
@@ -1013,7 +1013,7 @@
         <button
           class="btn border-none p-1"
           type="button"
-          (click)="cambiarPagina(0)"
+          (click)="changePage(0)"
         >
           <h2 class="text-white">1</h2>
         </button>
@@ -1025,7 +1025,7 @@
         <button
           class="btn border-none p-1"
           type="button"
-          (click)="cambiarPagina(1)"
+          (click)="changePage(1)"
         >
           <h2 class="text-white">2</h2>
         </button>
@@ -1037,7 +1037,7 @@
         <button
           class="btn border-none p-1"
           type="button"
-          (click)="cambiarPagina(2)"
+          (click)="changePage(2)"
         >
           <h2 class="text-white">3</h2>
         </button>
@@ -1051,7 +1051,7 @@
         <button
           type="button"
           class="btn border-light alert-link bg-none p-1 m-1"
-          (click)="paginaSiguiente()"
+          (click)="nextPage()"
         >
           <img src="assets/icons/pageNext.png" alt="" width="25" height="25" />
         </button>
@@ -1063,7 +1063,7 @@
         <button
           type="button"
           class="btn border-light alert-link bg-none p-1 m-1"
-          (click)="cambiarPagina(this.totalPages - 1)"
+          (click)="changePage(this.totalPages - 1)"
         >
           <img
             src="assets/icons/lastPageNext.png"
@@ -1302,7 +1302,7 @@
                 type="button"
                 class="btn btn-danger btn-sm p-1 m-1"
                 data-bs-dismiss="modal"
-                (click)="eliminarProducto(idProductSelected)"
+                (click)="deleteProduct(idProductSelected)"
               >
                 Eliminar
               </button>
