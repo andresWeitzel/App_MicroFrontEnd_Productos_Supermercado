@@ -382,7 +382,8 @@ Micro Front End acerca de productos de supermercado implementando Angular, Boots
 </br>
 
 ### Documentación Oficial/No Oficial Librerías Frontend
-
+* Migraciones versiones de Angular
+    * [Migrar version 14](https://fjmduran.com/blog/angular-14)
 * Angular Popup
     * [Instalación](https://www.npmjs.com/package/ng-angular-popup)   
 
