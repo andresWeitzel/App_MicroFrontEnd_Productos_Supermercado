@@ -1,7 +1,7 @@
 <img src="./doc/inicio/postLogin.png" style="width: 100%; height: 80%"/>
 
 # App MicroFrontEnd Productos de Supermercado
-Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+Micro Front End acerca de productos de supermercado implementando Angular, Bootstrap, SCSS, HTML5, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías. 
 
 * [Repositorio Api Rest](https://github.com/andresWeitzel/ApiRest_MicroFrontEnd_ProductosSupermercado)
 * [Repositorio base de datos](https://github.com/andresWeitzel/Microdb_productos_supermercado_PostgreSQL)
