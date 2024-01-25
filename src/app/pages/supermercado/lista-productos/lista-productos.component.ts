@@ -61,6 +61,7 @@ export class ListaProductosComponent implements OnInit {
   //Highcharts
   Highchart = this.generateHighcharts.getHeatmap();
   HighchartOptions = this.generateHighcharts.getHeatmapOptions();
+  //Fix
 
   navigationExtras: NavigationExtras = {
     state: {
@@ -98,8 +99,8 @@ export class ListaProductosComponent implements OnInit {
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
         },
-        (err) => {
-          this.errMsj = err.error.message;
+        (error) => {
+          this.errMsj = error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -128,8 +129,8 @@ export class ListaProductosComponent implements OnInit {
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
         },
-        (err) => {
-          this.errMsj = err.message;
+        (error) => {
+          this.errMsj = error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -140,16 +141,22 @@ export class ListaProductosComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(campo: string, filtro: string) {
-    this.productsFieldSearch = "";
-    this.productsSearchFilter = "";
+    try {
+      this.productsFieldSearch = "";
+      this.productsSearchFilter = "";
 
-    if (filtro === ("" || null) || campo === ("" || null)) {
-      this.listProducts();
-    } else {
-      this.productsFieldSearch = campo;
-      this.productsSearchFilter = filtro;
+      if (filtro === "" || filtro === null || campo === "" || campo === null) {
+        this.listProducts();
+      } else {
+        this.productsFieldSearch = campo;
+        this.productsSearchFilter = filtro;
 
-      this.listProductsFilterAndField();
+        this.listProductsFilterAndField();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
@@ -157,10 +164,16 @@ export class ListaProductosComponent implements OnInit {
   // ===== EDIT PRODUCT NAVIGATE ===
   // ===============================
   navigateEditProduct(producto: any): void {
-    this.spinLoaderService.load(100);
+    try {
+      this.spinLoaderService.load(100);
 
-    this.navigationExtras.state["value"] = producto;
-    this.router.navigate(["editar-productos"], this.navigationExtras);
+      this.navigationExtras.state["value"] = producto;
+      this.router.navigate(["editar-productos"], this.navigationExtras);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =============================
@@ -168,7 +181,13 @@ export class ListaProductosComponent implements OnInit {
   // ===== FOR DELETE PRODUCT  ===
   //==============================
   checkDeleteProducts() {
-    this.isAdmin = this.tokenService.isAdmin();
+    try {
+      this.isAdmin = this.tokenService.isAdmin();
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =========================
@@ -185,8 +204,8 @@ export class ListaProductosComponent implements OnInit {
           this.refresh();
         }, 2100);
       },
-      (err) => {
-        this.errMsj = err.error.message;
+      (error) => {
+        this.errMsj = error.message;
         console.log(this.errMsj);
         this.toastService.error(this.errMsj);
       }
@@ -197,39 +216,62 @@ export class ListaProductosComponent implements OnInit {
   // ===== DELETE PRODUCT ERROR AUTH===
   // =====================================
   deleteProductNoAuth(id: number): void {
-    this.spinLoaderService.load(100);
+    try {
+      this.spinLoaderService.load(100);
 
-    this.toastService.unauthorizedOperation(
-      "Servicio Habilitado para administradores!!"
-    );
+      this.toastService.unauthorizedOperation(
+        "Servicio Habilitado para administradores!!"
+      );
 
-    setTimeout(() => {
-      this.refresh();
-    }, 2100);
+      setTimeout(() => {
+        this.refresh();
+      }, 2100);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =========================
   // ===== RELOAD-REFRESH===
   // =========================
   refresh() {
-    window.location.reload();
+    try {
+      window.location.reload();
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
-
 
   // =========================
   // ===== SET PRODUCT SELECT===
   // =========================
   setProductSelected(producto: ProductoDto) {
-    this.idProductSelected = producto.id;
-    this.codeProductSelected = producto.codigo;
-    this.nameProductSelected = producto.nombre;
+    try {
+      this.idProductSelected = producto.id;
+      this.codeProductSelected = producto.codigo;
+      this.nameProductSelected = producto.nombre;
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // ====================
   // ===== SET TYPE LIST===
   // ====================
   setTableTypeListed(set: boolean) {
-    this.tableTypeListed = set;
+    try {
+      this.tableTypeListed = set;
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
   // =====================
@@ -244,7 +286,7 @@ export class ListaProductosComponent implements OnInit {
       this.orderBy = type;
       this.direction = direct;
 
-      if (this.productsSearchFilter == ("" || null)) {
+      if (this.productsSearchFilter == "" || this.productsSearchFilter == null) {
         this.listProducts();
       } else {
         this.listProductsFilterAndField();
@@ -261,7 +303,7 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   lastPage(): void {
     try {
-      if (this.productsSearchFilter == ("" || null)) {
+      if (this.productsSearchFilter == "" || this.productsSearchFilter == null) {
         if (this.nroPage != 0 && this.nroPage > 0) {
           this.nroPage--;
           this.listProducts();
@@ -280,7 +322,7 @@ export class ListaProductosComponent implements OnInit {
   // =====================
   nextPage(): void {
     try {
-      if (this.productsSearchFilter === ("" || null)) {
+      if (this.productsSearchFilter == "" || this.productsSearchFilter == null) {
         if (!this.isLastPage && this.nroPage >= 0) {
           this.nroPage++;
           this.listProducts();
@@ -301,9 +343,7 @@ export class ListaProductosComponent implements OnInit {
     try {
       this.nroPage = pagina;
 
-      if (
-        this.productsSearchFilter === ("" || null)
-      ) {
+      if (this.productsSearchFilter == "" || this.productsSearchFilter == null) {
         this.listProducts();
       } else {
         this.listProductsFilterAndField();
